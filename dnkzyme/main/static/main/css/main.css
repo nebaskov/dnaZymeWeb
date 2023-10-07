@@ -1,0 +1,106 @@
+body {
+    background: #FFFFFF;
+}
+
+aside {
+    float: left;
+    background: #F0F8FF;
+    width: 18%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #000000;
+    border-right: 5px solid #F5F5F5;
+}
+
+aside img {
+    width: 220px;
+    position: relative;
+    left: -15px;
+    /*float: left;*/
+}
+
+aside .logo {
+    font-size: 30px;
+    margin-left: 1px;
+    font-weight: bold;
+    position: relative;
+    top: 4px;
+}
+
+aside h3 {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+aside ul {list-style: none}
+aside .noDecoration, ul li {
+    color: #000000;
+    display: block;
+    text-decoration: none!important;
+    margin-top: 20px;
+    transition: transform .1s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: darkslategray;
+    text-decoration: none!important;
+    transform: scale(1.02);
+}
+
+main .features {
+    float: left;
+    color: #000000;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 50px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+main .features p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+main .features form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    margin-top: 50px;
+}
+
+main .features table {
+    margin-left: auto;
+    margin-right: auto;
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+}
+
+main .features table thead th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd !important;
+}
+
+main .features table tbody td {
+	border: 1px solid #dddddd !important;
+	padding: 5px;
+}
+
+.table-fix {
+    overflow-y: scroll;
+    height: 60vh;
+}
+
+.tbl-conteiner {
+    max-width: 500px;
+    max-height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}

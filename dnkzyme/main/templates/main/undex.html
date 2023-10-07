@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}main text{% endblock %}
+
+{% block content %}
+    <div class="features">
+        {% filter upper%}
+        <h1>Team</h1>
+        {% endfilter %}
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolorum eaque eveniet ex exercitationem id iure non officia sapiente sed.</p>
+<!--        <button class="btn btn-outline-secondary">Prediction</button>-->
+    </div>
+{% endblock %}
