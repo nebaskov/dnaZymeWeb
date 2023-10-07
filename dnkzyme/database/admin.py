@@ -1,8 +1,8 @@
-from .models import MainDataBase
+from .models import DnaDataBase
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 
 
-@admin.register(MainDataBase)
+@admin.register(DnaDataBase)
 class ViewAdmin(ImportExportModelAdmin):
-    list_display = ('metal_ions', 'kobs', 'temperature', 'ph')
+    list_display = ('name', 'catalytic_core', 'buffer', 'metal_ions', 'kobs', 'doi')
