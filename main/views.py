@@ -6,4 +6,4 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'main/undex.html')
+    return render(request, 'main/index.html')

@@ -1,5 +1,7 @@
 from django.db import models
 
+# Create your models here.
+
 
 class MainDataBase(models.Model):
     metal_ions = models.CharField('metal_ions', max_length=50)
