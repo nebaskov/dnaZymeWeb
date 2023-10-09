@@ -1,0 +1,44 @@
+{% extends 'main/layout.html' %}
+{% load static%}
+{% block title %}main text{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Team</h1>
+        <div class="wrapper">
+            <img src="{% static '/main/img/me_photo.png' %}" alt="maria_photo" class="photo">
+            <div class="wrapper_text_box">
+                <h2>Maria Eremeeva</h2>
+                <p>
+                    Digitization of experimental conditions in which the effectiveness of DNAzymes was evaluated.
+                    Construction and optimization of hyperparameters of the model for predicting the activity of
+                    DNAzymes, as well as selection of the most effective
+                    set of predictors from the entire set of parameters.
+                    Development of an architecture for the directed search of DNAzymes with a predetermined target,
+                    cofactors and efficiency.
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> eremeeva_maria@scamt-itmo.ru
+                </p>
+
+            </div>
+        </div>
+        <br>
+        <div class="wrapper">
+            <img src="{% static '/main/img/ns_photo.png' %}" alt="nikita_photo" class="photo">
+            <div class="wrapper_text_box">
+                <h2>Nikita Serov</h2>
+                <p>
+                    Construction and optimization of hyperparameters of the model for predicting the activity of
+                    DNKZIMS by their sequence and experimental conditions, as well as selection of the most effective
+                    set of predictors from the entire set of parameters.
+                    Development of an architecture for the directed search of DNKZIMS with a
+                    predetermined target, cofactors and efficiency.
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> serov@scamt-itmo.ru
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
