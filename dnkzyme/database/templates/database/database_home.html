@@ -1,6 +1,5 @@
 {% extends 'main/layout.html' %}
 {% block title %}Database{% endblock %}
-
 {% block content %}
     <div class="features">
         <h1>DNAzymes database</h1>
@@ -12,16 +11,22 @@
                     <thead>
                         <tr>
                             <th>
-                                metal_ions
+                                Name
                             </th>
                             <th>
-                                kobs
+                                Catalytic Core
                             </th>
                             <th>
-                                temperature
+                                Buffer
                             </th>
                             <th>
-                                pH
+                                Metal Ions
+                            </th>
+                            <th>
+                                Kobs
+                            </th>
+                            <th>
+                                DOI
                             </th>
                         </tr>
                     </thead>
@@ -29,16 +34,22 @@
                     <tbody>
                         <tr>
                             <td>
+                                {{ instance.fields.name }}
+                            </td>
+                            <td>
+                                {{ instance.fields.catalytic_core }}
+                            </td>
+                            <td>
+                                {{ instance.fields.buffer }}
+                            </td>
+                            <td>
                                 {{ instance.fields.metal_ions }}
                             </td>
                             <td>
                                 {{ instance.fields.kobs }}
                             </td>
-                            <td>
-                                {{ instance.fields.temperature }}
-                            </td>
-                            <td>
-                                {{ instance.fields.ph }}
+                            <td width="70px">
+                                {{ instance.fields.doi }}
                             </td>
                         </tr>
                     {% endfor %}

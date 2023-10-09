@@ -13,10 +13,9 @@ aside {
 }
 
 aside img {
-    width: 220px;
+    width: 120%;
     position: relative;
     left: -15px;
-    /*float: left;*/
 }
 
 aside .logo {
@@ -29,11 +28,14 @@ aside .logo {
 
 aside h3 {
     margin-top: 50px;
-    font-size: 30px;
+    font-size: 2.5vw;
 }
 
-aside ul {list-style: none}
+aside ul {
+    list-style: none;
+}
 aside .noDecoration, ul li {
+    font-size: 1.3vw;
     color: #000000;
     display: block;
     text-decoration: none!important;
@@ -61,7 +63,7 @@ main .features h1 {
     margin: 20px auto;
 }
 main .features p {
-    max-width: 800px;
+    max-width: 50vw;
     margin: 20px auto;
 }
 
@@ -72,10 +74,16 @@ main .features form {
     margin-top: 50px;
 }
 
+.tbl-conteiner {
+    max-height: fit-content;
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
 main .features table {
     margin-left: auto;
     margin-right: auto;
-	width: 100%;
 	margin-bottom: 20px;
 	border: 1px solid #dddddd;
 	border-collapse: collapse;
@@ -89,18 +97,17 @@ main .features table thead th {
 }
 
 main .features table tbody td {
+    inline-size: 170px;
+    overflow-wrap: break-word;
+    /*overflow-wrap: break-word;*/
+    /*word-wrap: break-word;*/
+    /*-ms-word-break: break-all;*/
+    column-width: 100px;
 	border: 1px solid #dddddd !important;
 	padding: 5px;
 }
 
 .table-fix {
     overflow-y: scroll;
-    height: 60vh;
-}
-
-.tbl-conteiner {
-    max-width: 500px;
-    max-height: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    height: 58vh;
 }
