@@ -1,6 +1,8 @@
 import os
+from dotenv import load_dotenv
 
 import joblib
+import numpy as np
 import pandas as pd
 import tensorflow as tf
 
@@ -11,9 +13,13 @@ from .src.SeQuant_user.Funcs import (
     SeQuant_encoding,
 )
 
-
-SEQUANT_MODELS_PATH = os.getenv('SEQUANT_MODELS_PATH')
+load_dotenv()
+# SEQUANT_MODELS_PATH = os.getenv('SEQUANT_MODELS_PATH')
+SEQUANT_MODELS_PATH = os.environ['SEQUANT_MODELS_PATH']
 MAIN_MODELS_PATH = os.getenv('MAIN_MODELS_PATH')
+
+print(f'{SEQUANT_MODELS_PATH=}')
+print(f'{MAIN_MODELS_PATH=}')
 
 POLYMER_TYPE = 'DNA'
 MAX_PEPTIDE_LENGTH = 96
@@ -40,6 +46,24 @@ SEQUANT_FEATURES = [
     'chi0n'
 ]
 
+ALL_FEATURES = [
+    'temp',
+    'ph',
+    'na_cl',
+    'k_cl',
+    'cofactor_concentration',
+    'electron_affinity',
+    'exactmw',
+    'amw',
+    'lipinskiHBD',
+    'NumRotatableBonds',
+    'NumAtoms',
+    'FractionCSP3',
+    'NumBridgeheadAtoms',
+    'CrippenMR',
+    'chi0n'
+]
+
 
 def get_pymatgen_desc(element: str) -> dict[str, float]:
     element_obj = Element(element)
@@ -53,22 +77,23 @@ def get_sequant_descriptors(sequences: list[str]) -> dict[str, float]:
     raw_rdkit_descriptors: pd.DataFrame = generate_rdkit_descriptors(
         normalize=None
     )
-    rdkit_descriptors = raw_rdkit_descriptors.iloc[NUCLEOTIDES]
+    rdkit_descriptors = raw_rdkit_descriptors.loc[NUCLEOTIDES]
+    descriptor_names: list[str] = rdkit_descriptors.columns.tolist()
     encoded_sequences: tf.Tensor = SeQuant_encoding(
         sequences_list=sequences,
         polymer_type=POLYMER_TYPE,
         descriptors=rdkit_descriptors,
         num=MAX_PEPTIDE_LENGTH
     )
-    raw_latent_representation: pd.DataFrame = generate_latent_representations(
+    latent_representation = generate_latent_representations(
         sequences_list=sequences,
         sequant_encoded_sequences=encoded_sequences,
         polymer_type=POLYMER_TYPE,
         add_peptide_descriptors=False,
         path_to_model_folder=SEQUANT_MODELS_PATH
     )
-    latent_representation = raw_latent_representation[SEQUANT_FEATURES]
-    return latent_representation
+    repr_df = pd.DataFrame(latent_representation, columns=descriptor_names)
+    return repr_df[SEQUANT_FEATURES]
 
 
 def get_descriptors(
@@ -105,5 +130,6 @@ def make_prediction(descriptors: pd.DataFrame) -> float:
     model = joblib.load(
         os.path.join(MAIN_MODELS_PATH, 'kobs_model.pkl')
     )
-    prediction = model.predict(descriptors)
+    # clean_desc = np.array(descriptors[0][:15], ndmin=2)
+    prediction = model.predict(descriptors[ALL_FEATURES])
     return prediction[0]

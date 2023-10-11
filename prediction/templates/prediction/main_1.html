@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Prediction{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Prediction</h1>
+        <form action="/prediction/prediction" method="post">
+            <input type="text" placeholder="DNA sequence" class="form-control"  name="sequence" id="sequence"><br>
+            <input type="text" placeholder="pH" class="form-control" name="ph" id="ph"><br>
+            <input type="text" placeholder="Temperature, °C" class="form-control" name="temp" id="temp"><br>
+            <input type="text" placeholder="Cofactor" class="form-control" name="cofactor_element" id="cofactor_element"><br>
+            <input type="text" placeholder="Cofactor concentration" class="form-control" name="cofactor_element" id="cofactor_element"><br>
+            <input type="text" placeholder="NaCl" class="form-control" name="na_cl" id="na_cl"><br>
+            <input type="text" placeholder="KCl" class="form-control" name="k_cl" id="k_cl"><br>
+            <button class="btn btn-outline-primary" type="submit">Predict</button>
+        </form>
+    </div>
+
+{% endblock %}
