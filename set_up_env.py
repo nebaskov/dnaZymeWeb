@@ -1,0 +1,5 @@
+import os
+
+PROJECT_PATH = os.getcwd()
+SEQUANT_MODELS_PATH
+MAIN_MODELS_PATH
