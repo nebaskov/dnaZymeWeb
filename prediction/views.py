@@ -27,10 +27,10 @@ def prediction(request):
                 'na_cl': form.cleaned_data.get('na_cl'),
                 'k_cl': form.cleaned_data.get('k_cl'),
             }
-            # descriptors = get_descriptors(user_input=user_input)
-            # result = make_prediction(descriptors)
-            result_1 = form.cleaned_data.get('k_cl')*2/form.cleaned_data.get('na_cl')*0.01
-            result = result_1 - result_1*0.01
+            descriptors = get_descriptors(user_input=user_input)
+            result = make_prediction(descriptors)
+            # result_1 = form.cleaned_data.get('k_cl')*2/form.cleaned_data.get('na_cl')*0.01
+            # result = result_1 - result_1*0.01
 
             return render(request, 'prediction/main.html', {'result': result, 'form': form})
     else:

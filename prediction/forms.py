@@ -52,7 +52,7 @@ class Prediction(forms.Form):
         required=True,
         # label='Cofactor',
         label='',
-        initial='Mg2+',
+        initial='Mg',
         label_suffix='',
         widget=forms.TextInput(
             attrs={
@@ -70,7 +70,7 @@ class Prediction(forms.Form):
         widget=forms.TextInput(
             attrs={
                 'class': 'form-control',
-                'id': 'cofactor_concenctration',
+                'id': 'cofactor_concentration',
                 'name': 'cofactor_concentration',
                 'placeholder': 'Cofactor concentratione'
             }

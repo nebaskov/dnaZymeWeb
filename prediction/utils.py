@@ -26,11 +26,12 @@ MAX_PEPTIDE_LENGTH = 96
 NUCLEOTIDES = ['dA', 'dT', 'dG', 'dC']
 
 USER_FEATURES = [
-    'Temperature',
-    'pH',
-    'NaCl',
-    'KCl',
-    'Mg2+'
+    'temp',
+    'ph',
+    'na_cl',
+    'k_cl',
+    'cofactor',
+    'cofactor_concentration'
 ]
 PYMATGEN_FEATURES = ['electron_affinity']
 
@@ -47,11 +48,11 @@ SEQUANT_FEATURES = [
 ]
 
 ALL_FEATURES = [
-    'temp',
-    'ph',
-    'na_cl',
-    'k_cl',
-    'cofactor_concentration',
+    'Temperature',
+    'pH',
+    'NaCl',
+    'KCl',
+    'Mg2+',
     'electron_affinity',
     'exactmw',
     'amw',
@@ -68,7 +69,7 @@ ALL_FEATURES = [
 def get_pymatgen_desc(element: str) -> dict[str, float]:
     element_obj = Element(element)
     desc_dict: dict[str, float] = {
-        'electron_affinity': element_obj.electron_affinity()
+        'electron_affinity': element_obj.electron_affinity
     }
     return desc_dict
 
@@ -102,7 +103,8 @@ def get_descriptors(
     use_pymatgen: bool = True
 ) -> pd.DataFrame:
     sequence = user_input.get('sequence')
-    cofactor = user_input.get('cofactor')
+    cofactor = user_input.get('cofactor_element')
+    cofactor_conc = user_input.get('cofactor_concentration')
     pymatgen_desc: dict[str, float] = {}
     sequant_desc: pd.DataFrame = pd.DataFrame()
 
@@ -123,6 +125,13 @@ def get_descriptors(
         if desc_value is not None:
             descriptors[feature] = desc_value
 
+    for feature in USER_FEATURES:
+        desc_value = user_input.get(feature)
+        if desc_value is not None:
+            descriptors[feature] = desc_value
+
+    descriptors['cofactor_concentration'] = cofactor_conc
+
     return descriptors
 
 
@@ -130,6 +139,13 @@ def make_prediction(descriptors: pd.DataFrame) -> float:
     model = joblib.load(
         os.path.join(MAIN_MODELS_PATH, 'kobs_model.pkl')
     )
-    # clean_desc = np.array(descriptors[0][:15], ndmin=2)
+    feature_renaming = {
+        'ph': 'pH',
+        'temp': 'Temperature',
+        'k_cl': 'KCl',
+        'na_cl': 'NaCl',
+        'cofactor_concentration': 'Mg2+',
+    }
+    descriptors.rename(columns=feature_renaming, inplace=True)
     prediction = model.predict(descriptors[ALL_FEATURES])
-    return prediction[0]
+    return round(prediction[0], 4)
