@@ -97,7 +97,7 @@ def get_sequant_descriptors(sequences: list[str]) -> dict[str, float]:
 
 
 def get_descriptors(
-    user_input: dict[str, float | str | int],
+    user_input: dict,
     use_sequant: bool = True,
     use_pymatgen: bool = True
 ) -> pd.DataFrame:

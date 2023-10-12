@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class DnaDataBase(models.Model):
+class MainDnaDataBase(models.Model):
     name = models.CharField('name', max_length=50)
     catalytic_core = models.TextField('catalytic_core')
     buffer = models.TextField('buffer')

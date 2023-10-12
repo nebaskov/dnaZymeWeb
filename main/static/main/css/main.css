@@ -69,10 +69,25 @@ main .features p {
 }
 
 main .features form {
-    margin-left: auto;
+    float: left;
+    margin-left: 20%;
     margin-right: auto;
     width: 200px;
     margin-top: 50px;
+}
+.predict-result {
+    margin-top: 250px;
+}
+
+.predict-result h2 {
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+
+.predict-button {
+    margin-left: 350px;
+    margin-top: -250px;
 }
 
 .tbl-conteiner {
