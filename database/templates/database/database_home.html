@@ -1,61 +1,138 @@
-{% extends 'main/layout.html' %}
-{% block title %}Database{% endblock %}
-{% block content %}
-    <div class="features">
-        <h1>DNAzymes database</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis dolorum illum laboriosam laborum
-            magni minus molestiae molestias nesciunt nisi, numquam, optio sed sit.</p>
-        <div class="tbl-conteiner">
-            <div class="table-fix">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Catalytic Core
-                            </th>
-                            <th>
-                                Buffer
-                            </th>
-                            <th>
-                                Metal Ions
-                            </th>
-                            <th>
-                                Kobs
-                            </th>
-                            <th>
-                                DOI
-                            </th>
-                        </tr>
-                    </thead>
-                    {% for instance in db %}
-                    <tbody>
-                        <tr>
-                            <td>
-                                {{ instance.fields.name }}
-                            </td>
-                            <td>
-                                {{ instance.fields.catalytic_core }}
-                            </td>
-                            <td>
-                                {{ instance.fields.buffer }}
-                            </td>
-                            <td>
-                                {{ instance.fields.metal_ions }}
-                            </td>
-                            <td>
-                                {{ instance.fields.kobs }}
-                            </td>
-                            <td width="70px">
-                                {{ instance.fields.doi }}
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-{% endblock %}
+<!doctype html>
+<html lang="en">
+{% load static%}
+<link href="https://fonts.googleapis.com/css?family=Spline+Sans Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+<head> </head>
+<style>
+
+.e8_45 {
+	background-color:rgba(255, 255, 255, 1);
+	width:1440px;
+	height:1024px;
+	position:absolute;
+}
+.e9_696 {
+	color:rgba(0, 0, 0, 1);
+	width:257px;
+	height:31px;
+	position:absolute;
+	left:316px;
+	top:162px;
+	font-family:Roboto;
+	text-align:left;
+	font-size:24px;
+	letter-spacing:0;
+}
+.e9_697 {
+	width:94px;
+	height:94px;
+	position:absolute;
+	left:186px;
+	top:146px;
+	border-top-left-radius:500px;
+	border-top-right-radius:500px;
+	border-bottom-left-radius:500px;
+	border-bottom-right-radius:500px;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e9_698 {
+	color:rgba(0, 0, 0, 1);
+	width:102px;
+	height:42px;
+	position:absolute;
+	left:316px;
+	top:203px;
+	font-family:Roboto;
+	text-align:left;
+	font-size:32px;
+	letter-spacing:0;
+}
+.e9_699 {
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:399px;
+	height:47px;
+	position:absolute;
+	left:316px;
+	top:278px;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+}
+.e9_701 {
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:145px;
+	height:47px;
+	position:absolute;
+	left:805px;
+	top:278px;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+}
+
+
+</style>
+<body>
+  <div class=e8_45><span  class="e9_696">DataBase of DNAzymes</span>
+  <div class="e9_697"></div><span  class="e9_698">Source</span>
+  <div class="e9_699"></div>
+  <div class="e9_701"></div>
+<!--    <div class="tbl-conteiner">-->
+<!--            <div class="table-fix">-->
+<!--                <table>-->
+<!--                    <thead>-->
+<!--                        <tr>-->
+<!--                            <th>-->
+<!--                                Name-->
+<!--                            </th>-->
+<!--                            <th>-->
+<!--                                Catalytic Core-->
+<!--                            </th>-->
+<!--                            <th>-->
+<!--                                Buffer-->
+<!--                            </th>-->
+<!--                            <th>-->
+<!--                                Metal Ions-->
+<!--                            </th>-->
+<!--                            <th>-->
+<!--                                Kobs-->
+<!--                            </th>-->
+<!--                            <th>-->
+<!--                                DOI-->
+<!--                            </th>-->
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                    {% for instance in db %}-->
+<!--                    <tbody>-->
+<!--                        <tr>-->
+<!--                            <td>-->
+<!--                                {{ instance.fields.name }}-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                {{ instance.fields.catalytic_core }}-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                {{ instance.fields.buffer }}-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                {{ instance.fields.metal_ions }}-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                {{ instance.fields.kobs }}-->
+<!--                            </td>-->
+<!--                            <td width="70px">-->
+<!--                                {{ instance.fields.doi }}-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    {% endfor %}-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--      </div>-->
+</div>
+</body>

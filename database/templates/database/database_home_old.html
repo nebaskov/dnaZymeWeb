@@ -1,0 +1,61 @@
+{% extends 'main/layout.html' %}
+{% block title %}Database{% endblock %}
+{% block content %}
+    <div class="features">
+        <h1>DNAzymes database</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis dolorum illum laboriosam laborum
+            magni minus molestiae molestias nesciunt nisi, numquam, optio sed sit.</p>
+        <div class="tbl-conteiner">
+            <div class="table-fix">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Catalytic Core
+                            </th>
+                            <th>
+                                Buffer
+                            </th>
+                            <th>
+                                Metal Ions
+                            </th>
+                            <th>
+                                Kobs
+                            </th>
+                            <th>
+                                DOI
+                            </th>
+                        </tr>
+                    </thead>
+                    {% for instance in db %}
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{ instance.fields.name }}
+                            </td>
+                            <td>
+                                {{ instance.fields.catalytic_core }}
+                            </td>
+                            <td>
+                                {{ instance.fields.buffer }}
+                            </td>
+                            <td>
+                                {{ instance.fields.metal_ions }}
+                            </td>
+                            <td>
+                                {{ instance.fields.kobs }}
+                            </td>
+                            <td width="70px">
+                                {{ instance.fields.doi }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

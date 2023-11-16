@@ -15,3 +15,7 @@ def knowledgebase(request):
 
 def generation(request):
     return render(request, 'main/generation.html')
+
+
+def new_main(request):
+    return render(request, 'main/new_main.html')

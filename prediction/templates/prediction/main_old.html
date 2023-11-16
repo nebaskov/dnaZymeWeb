@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Prediction{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>K<sub>obs</sub> prediction</h1>
+        <form action="/prediction/prediction" method="post">
+            {% csrf_token %}
+            {{ form.sequence }}<br>
+            {{ form.ph }}<br>
+            {{ form.temp }}<br>
+            {{ form.cofactor_element }}<br>
+            {{ form.cofactor_concentraion }}<br>
+            {{ form.na_cl }}<br>
+            {{ form.k_cl }}<br>
+            <div class="predict-button">
+                <button class="btn btn-outline-dark btn-lg" type="submit">=</button>
+            </div>
+        </form>
+        <div class="predict-result">
+            <h2>{{ result }}</h2>
+        </div>
+    </div>
+{% endblock %}
