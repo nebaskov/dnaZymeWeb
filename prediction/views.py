@@ -10,7 +10,11 @@ from .utils import (
 
 
 def start(request):
-    return render(request, 'prediction/main.html')
+    form = Prediction(request.POST)
+    data = {
+        'form': form
+    }
+    return render(request, 'prediction/templates/prediction/main.html', data)
 
 
 @csrf_exempt

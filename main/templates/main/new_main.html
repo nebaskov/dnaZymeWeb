@@ -1,44 +1,67 @@
 <!doctype html>
+{% extends 'main/layout_main.html' %}
+
 <html lang="en">
 {% load static%}
-<link href="https://fonts.googleapis.com/css?family=Spline+Sans Mono&display=swap" rel="stylesheet">
+{% block content %}
 <link href="https://fonts.googleapis.com/css?family=Syne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Spline+Sans Mono&display=swap" rel="stylesheet">
 
 <head> </head>
 <style>
-
 .e1_4 {
 	background-color:rgba(255, 255, 255, 1);
-	width:1440px;
-	height:4869px;
+	width:100vw;
+	height:600vh;
 	position:absolute;
 }
-.e1_5 {
+.e26_2 {
 	background-color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
-	width:1440px;
-	height:528px;
+	width:100vw;
+	height:40vh;
 	position:absolute;
-	left:0px;
-	top:0px;
 }
-.e1_8 {
+.e26_2 .e26_5 {
+	color:rgba(255, 255, 255, 1);
+	width:973px;
+	height:108px;
+    position:absolute;
+    top:10vh;
+    left: 10vw;
+    bottom: 10vh;
+	font-family:Syne;
+	font-size:15vh;
+	letter-spacing:0;
+}
+.e26_6 {
 	background-color:rgba(231.00000143051147, 236.00000113248825, 239.00000095367432, 1);
-	width:1440px;
-	height:392px;
+	width:100vw;
+	height:50vh;
 	position:absolute;
-	left:0px;
-	top:524px;
+	top:40vh;
 }
-.e2_12 {
+.e26_6 .e26_7 {
 	color:rgba(0, 0, 0, 1);
-	width:504px;
-	height:187px;
+	position:relative;
+    height:60vh;
+    width:10%;
+	left:7%;
+	top:10%;
+	font-family:Syne;
+	text-align:left;
+	font-size:12vh;
+	letter-spacing:0;
+}
+.e26_6 .e26_9 {
+	color:rgba(0, 0, 0, 1);
+	width: 65vw;
+	height:40vh;
 	position:absolute;
-	left:152px;
-	top:687px;
+	left:7%;
+	top:30%;
 	font-family:Spline Sans Mono;
 	text-align:left;
-	font-size:20px;
+	font-size:100%;
 	letter-spacing:0;
 }
 .e1_9 {
@@ -47,7 +70,7 @@
 	position:absolute;
 	left:105px;
 	top:1006px;
-	background-image:url(paint1.png);
+	{#background-image:url(images/paint1_1.png);#}
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -56,42 +79,18 @@
 	height:524px;
 	position:absolute;
 	left:768px;
-	top:1595px;
-	background-image:url('main/img/paint1.png');
+	top:5%;
+	{#background-image:url(images/paint1_2.png);#}
 	background-repeat:no-repeat;
 	background-size:cover;
 }
-.e2_11 {
-	color:rgba(0, 0, 0, 1);
-	width:225px;
-	height:58px;
-	position:absolute;
-	left:152px;
-	top:600px;
-	font-family:Syne;
-	text-align:left;
-	font-size:48px;
-	letter-spacing:0;
-}
-.e2_15 {
-	color:rgba(0, 0, 0, 1);
-	width:395px;
-	height:76px;
-	position:absolute;
-	left:799px;
-	top:1165px;
-	font-family:Syne;
-	text-align:left;
-	font-size:32px;
-	letter-spacing:0;
-}
-.e2_16 {
+.text_wight_1 .e2_16 {
 	color:rgba(0, 0, 0, 1);
 	width:395px;
 	height:151px;
 	position:absolute;
-	left:799px;
-	top:1260px;
+	left:60%;
+	top:20%;
 	font-family:Spline Sans Mono;
 	text-align:left;
 	font-size:16px;
@@ -100,10 +99,10 @@
 .e2_18 {
 	color:rgba(0, 0, 0, 1);
 	width:395px;
-	height:76px;
+	height:114px;
 	position:absolute;
 	left:226px;
-	top:1766px;
+	top:1719px;
 	font-family:Syne;
 	text-align:left;
 	font-size:32px;
@@ -121,179 +120,199 @@
 	font-size:16px;
 	letter-spacing:0;
 }
-.e2_13 {
-	color:rgba(255, 255, 255, 1);
-	width:1336px;
-	height:240px;
-	position:absolute;
-	left:62px;
-	top:240px;
-	font-family:Syne;
-	text-align:left;
-	font-size:200px;
-	letter-spacing:0;
-}
 .e7_21 {
 	background-color:rgba(231.00000143051147, 236.00000113248825, 239.00000095367432, 1);
-	width:1440px;
+	width:100vw;
 	height:1011px;
 	position:absolute;
 	left:0px;
 	top:2192px;
 }
-.e7_23 {
+.text_wight_1 .e7_23 {
 	color:rgba(0, 0, 0, 1);
 	width:395px;
-	height:76px;
+	height:114px;
 	position:absolute;
-	left:799px;
-	top:1165px;
+	left:60%;
+	{#top:;#}
 	font-family:Syne;
 	text-align:left;
 	font-size:32px;
 	letter-spacing:0;
 }
-.e7_22 {
-	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
+.main_prediction_button {
 	width:1092px;
 	height:399px;
 	position:absolute;
 	left:181px;
 	top:2273px;
-	border-top-left-radius:70px;
-	border-top-right-radius:70px;
-	border-bottom-left-radius:70px;
-	border-bottom-right-radius:70px;
 }
-.e7_28 {
+.main_prediction_button_rect {
 	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
-	width:516px;
-	height:414px;
+	width:1092px;
+	height:399px;
 	position:absolute;
-	left:180px;
-	top:2703px;
+	left:0px;
+	top:0px;
 	border-top-left-radius:70px;
 	border-top-right-radius:70px;
 	border-bottom-left-radius:70px;
 	border-bottom-right-radius:70px;
 }
-.e7_29 {
-	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
-	width:516px;
-	height:414px;
+.e7_27 {
+	width:958px;
+	height:212px;
 	position:absolute;
-	left:755px;
-	top:2703px;
-	border-top-left-radius:70px;
-	border-top-right-radius:70px;
-	border-bottom-left-radius:70px;
-	border-bottom-right-radius:70px;
-}
-.e7_25 {
-	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
-	width:182px;
-	height:38px;
-	position:absolute;
-	left:256px;
-	top:2315px;
-	font-family:Syne;
-	text-align:left;
-	font-size:32px;
-	letter-spacing:0;
-}
-.e7_30 {
-	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
-	width:198px;
-	height:38px;
-	position:absolute;
-	left:811px;
-	top:2759px;
-	font-family:Syne;
-	text-align:left;
-	font-size:32px;
-	letter-spacing:0;
-}
-.e7_31 {
-	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
-	width:224px;
-	height:38px;
-	position:absolute;
-	left:244px;
-	top:2759px;
-	font-family:Syne;
-	text-align:left;
-	font-size:32px;
-	letter-spacing:0;
+	left:56px;
+	top:145px;
+	{#background-image:url(images/paint1_3.png);#}
+	background-repeat:no-repeat;
+	background-size:cover;
 }
 .e7_26 {
 	color:rgba(0, 0, 0, 1);
 	width:403px;
 	height:19px;
 	position:absolute;
-	left:256px;
-	top:2363px;
+	left:75px;
+	top:90px;
 	font-family:Spline Sans Mono;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
+}
+.e7_25 {
+	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
+	width:182px;
+	height:38px;
+	position:absolute;
+	left:75px;
+	top:42px;
+	font-family:Syne;
+	text-align:left;
+	font-size:32px;
+	letter-spacing:0;
+}
+.visualisation_button {
+	width:516px;
+	height:414px;
+	position:absolute;
+	left:180px;
+	top:2703px;
+}
+.e7_28 {
+	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
+	width:516px;
+	height:414px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:70px;
+	border-top-right-radius:70px;
+	border-bottom-left-radius:70px;
+	border-bottom-right-radius:70px;
+}
+.e7_31 {
+	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
+	width:224px;
+	height:38px;
+	position:absolute;
+	left:64px;
+	top:56px;
+	font-family:Syne;
+	text-align:left;
+	font-size:32px;
+	letter-spacing:0;
+}
+.e7_34 {
+	width:403px;
+	height:212px;
+	position:absolute;
+	left:64px;
+	top:144px;
+	{#background-image:url(images/paint1_4.png);#}
+	background-repeat:no-repeat;
+	background-size:cover;
 }
 .e7_32 {
 	color:rgba(0, 0, 0, 1);
 	width:355px;
 	height:19px;
 	position:absolute;
-	left:244px;
-	top:2807px;
+	left:64px;
+	top:104px;
 	font-family:Spline Sans Mono;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
+}
+.main_generation_button {
+	width:516px;
+	height:414px;
+	position:absolute;
+	left:755px;
+	top:2703px;
+}
+.e7_29 {
+	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
+	width:516px;
+	height:414px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:70px;
+	border-top-right-radius:70px;
+	border-bottom-left-radius:70px;
+	border-bottom-right-radius:70px;
+}
+.e7_30 {
+	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
+	width:198px;
+	height:38px;
+	position:absolute;
+	left:56px;
+	top:56px;
+	font-family:Syne;
+	text-align:left;
+	font-size:32px;
+	letter-spacing:0;
+}
+.e7_35 {
+	width:403px;
+	height:212px;
+	position:absolute;
+	left:56px;
+	top:144px;
+	{#background-image:url(images/paint1_5.png);#}
+	background-repeat:no-repeat;
+	background-size:cover;
 }
 .e7_33 {
 	color:rgba(0, 0, 0, 1);
 	width:403px;
 	height:19px;
 	position:absolute;
-	left:811px;
-	top:2807px;
+	left:56px;
+	top:104px;
 	font-family:Spline Sans Mono;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
 }
-.e7_27 {
-	width:958px;
-	height:212px;
-	position:absolute;
-	left:256px;
-	top:2404px;
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e7_34 {
-	width:403px;
-	height:212px;
-	position:absolute;
-	left:244px;
-	top:2847px;
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e7_35 {
-	width:403px;
-	height:212px;
-	position:absolute;
-	left:811px;
-	top:2847px;
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e7_36 {
-	width:1440px;
+.e26_13 {
+	width:100vw;
 	height:899px;
 	position:absolute;
 	left:0px;
 	top:3203px;
+}
+.e7_36 {
+	width:100vw;
+	height:899px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	{#background-image:url(images/paint1_6.png);#}
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -303,7 +322,7 @@
 	height:288px;
 	position:absolute;
 	left:365px;
-	top:3497px;
+	top:294px;
 	font-family:Syne;
 	text-align:center;
 	font-size:80px;
@@ -367,6 +386,7 @@
 	border-top-right-radius:500px;
 	border-bottom-left-radius:500px;
 	border-bottom-right-radius:500px;
+	{#background-image:url(images/paint1_7.png);#}
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -380,26 +400,56 @@
 	border-top-right-radius:500px;
 	border-bottom-left-radius:500px;
 	border-bottom-right-radius:500px;
+	{#background-image:url(images/paint1_8.png);#}
 	background-repeat:no-repeat;
 	background-size:cover;
 }
+.text_wight_1 {
+    position:absolute;
+    width:395px;
+	left:40%;
+	top:600px;
+}
 
 </style>
-<body>
-  <div class=e1_4>
-  <div class="e1_5"></div>
-  <div class="e1_8"></div><span  class="e2_12">Welcome to the future of genetic research. At Ominzyme, we're not just observers of the genome, we're its maestros. We are committed to taking DNAzymes to phenomenal new heights.</span>
+<div class=e1_4>
+  <div class=e26_2><span  class="e26_5">SEQUENCE CRAFT</span></div>
+  <div class=e26_6><span  class="e26_7">About Us</span>
+      <br>
+      <span  class="e26_9">At SequenceCraft we are leading the way in creating innovative solutions for viral plant
+          disease treatment. Our groundbreaking project focuses on the development of new catalytic DNA, known as DNAzymes.
+          Using state-of-the-art machine learning methods, we aim to unlock the full potential of DNAzymes and revolutionize
+          the way plant diseases are controlled. Our team of expert researchers are dedicated to harnessing the power
+          of technology to engineer DNAzymes that will effectively target and neutralize viral infections in plants.
+      </span></div>
   <div class="e1_9"></div>
-  <div class="e2_17"></div><span  class="e2_11">About Us</span><span  class="e2_15">Envisioning the Future with DNAzymes</span><span  class="e2_16">Harness the power of DNAzymes and experience an entirely new dimension of bioprocessing. We’re transforming the way genetic research is done.</span><span  class="e2_18">Building DNAzyme Workhorses</span><span  class="e2_19">Creating robust, customizable DNAzymes that are not just effective, but extraordinary. We’re steering a revolution, changing the face of genetic engineering forever.</span><span  class="e2_13">OMINZYME</span>
-  <div class="e7_21"></div><span  class="e7_23">Envisioning the Future with DNAzymes</span>
-  <div class="e7_22"></div>
-  <div class="e7_28"></div>
-  <div class="e7_29"></div><span  class="e7_25">Prediction</span><span  class="e7_30">Generation</span><span  class="e7_31">Visualization</span><span  class="e7_26">Providing insights into DNAzymes activity.</span><span  class="e7_32">State-of-the-art visualization tools.</span><span  class="e7_33">Creating potent DNAzymes, ready to deploy.</span>
-  <div class="e7_27"></div>
-  <div class="e7_34"></div>
-  <div class="e7_35"></div>
-  <div class="e7_36"></div><span  class="e7_37">Combining Technology and Biology.</span><span  class="e7_40">David</span><span  class="e7_43">Eva</span><span  class="e7_41">Co-Founder & CEO</span><span  class="e7_44">Co-Founder & CTO</span>
+    <div class="text_wight_1">
+        <span  class="e7_23">Redefining Crop Protection Against Viral Plant Diseases</span>
+        <span  class="e2_16">We are on a mission to develop a breakthrough in crop protection against viral plant diseases. With our research on DNAzymes, we are developing advanced defense mechanisms that will bolster plant health and secure sustainable food production for future generations</span>
+            </div>
+    <div class="text_wight_2">
+        <span  class="e2_18">Machine Learning for Next-Generation DNAzyme Design</span>
+        <span  class="e2_19">Discover the future of oligonucleotides research as we combine machine learning, genetic algorithms, and gradient boosting models to revolutionize DNAzyme design. Experience the power of advanced techniques in creating highly efficient and tailored DNAzymes for sustainable agriculture. Join us in shaping a greener future through innovative genetic engineering methods</span>
+
+    </div>
+{#<div class="e2_17"></div>#}
+    <div class="e7_21"></div>
+  <div class=main_prediction_button>
+    <div class="main_prediction_button_rect"></div>
+    <div class="e7_27"></div><span  class="e7_26">Providing insights into DNAzymes activity.</span><span  class="e7_25">Prediction</span>
+  </div>
+  <div class=visualisation_button>
+    <div class="e7_28"></div><span  class="e7_31">Visualization</span>
+    <div class="e7_34"></div><span  class="e7_32">State-of-the-art visualization tools.</span>
+  </div>
+  <div class=main_generation_button>
+    <div class="e7_29"></div><span  class="e7_30">Generation</span>
+    <div class="e7_35"></div><span  class="e7_33">Creating potent DNAzymes, ready to deploy.</span>
+  </div>
+  <div class=e26_13>
+    <div class="e7_36"></div><span  class="e7_37">Combining Technology and Biology.</span>
+  </div><span  class="e7_40">David</span><span  class="e7_43">Eva</span><span  class="e7_41">Co-Founder & CEO</span><span  class="e7_44">Co-Founder & CTO</span>
   <div class="e7_39"></div>
   <div class="e7_42"></div>
 </div>
-</body>
+{% endblock %}

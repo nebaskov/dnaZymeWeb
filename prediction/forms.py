@@ -11,10 +11,10 @@ class Prediction(forms.Form):
         label_suffix='',
         widget=forms.TextInput(
             attrs={
-                'class': 'form-control',
+                'class': 'sequence_form',
                 'id': 'sequence',
                 'name': 'sequence',
-                'placeholder': 'DNA sequence'
+                # 'placeholder': 'DNA sequence'
             }
         )
     )
@@ -27,10 +27,10 @@ class Prediction(forms.Form):
         label_suffix='',
         widget=forms.TextInput(
             attrs={
-                'class': 'form-control',
+                'class': 'ph_form',
                 'id': 'ph',
                 'name': 'ph',
-                'placeholder': 'pH'
+                # 'placeholder': 'pH'
             }
         )
     )
@@ -41,10 +41,10 @@ class Prediction(forms.Form):
         label='',
         widget=forms.TextInput(
             attrs={
-                'class': 'form-control',
+                'class': 'temp_form',
                 'id': 'cofactor_element',
                 'name': 'cofactor_element',
-                'placeholder': 'Temperature, °C'
+#                 # 'placeholder': 'Temperature, °C'
             }
         )
     )
@@ -56,10 +56,10 @@ class Prediction(forms.Form):
         label_suffix='',
         widget=forms.TextInput(
             attrs={
-                'class': 'form-control',
+                'class': 'cofactor_form',
                 'id': 'cofactor_element',
                 'name': 'cofactor_element',
-                'placeholder': 'Cofactor'
+                # 'placeholder': 'Cofactor'
             }
         )
     )
@@ -69,10 +69,10 @@ class Prediction(forms.Form):
         label='',
         widget=forms.TextInput(
             attrs={
-                'class': 'form-control',
+                'class': 'cofactore_concentration_form',
                 'id': 'cofactor_concentration',
                 'name': 'cofactor_concentration',
-                'placeholder': 'Cofactor concentratione'
+                # 'placeholder': 'Cofactor concentratione'
             }
         )
     )
@@ -83,10 +83,10 @@ class Prediction(forms.Form):
         label_suffix='',
         widget=forms.TextInput(
             attrs={
-                'class': 'form-control',
+                'class': 'nacl_form',
                 'id': 'na_cl',
                 'name': 'na_cl',
-                'placeholder': 'NaCl'
+                # 'placeholder': 'NaCl'
             }
         )
     )
@@ -97,10 +97,10 @@ class Prediction(forms.Form):
         label_suffix='',
         widget=forms.TextInput(
             attrs={
-                'class': 'form-control',
+                'class': 'kcl_form',
                 'id': 'k_cl',
                 'name': 'k_cl',
-                'placeholder': 'KCl'
+                # 'placeholder': 'KCl'
             }
         )
     )
