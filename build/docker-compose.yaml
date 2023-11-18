@@ -1,13 +1,59 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  psql:
-    image: postgres
+  # db:
+  #   image: postgres:16
+  #   container_name: postgres
+  #   restart: unless-stopped
+  #   environment:
+  #     - POSTGRES_USER=admin
+  #     - POSTGRES_PASSWORD=admin
+  #   ports:
+  #     - 5432:5432
+  #   volumes:
+  #     - ../db_data:/var/lib/pgsql/data
+
+  web:
+    build:
+      context: ..
+      dockerfile: ./build/Dockerfile
     restart: unless-stopped
+    container_name: web
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
-    ports:
-      - 5432:5432
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=${DEBUG}
+      - SEQUANT_MODELS_PATH=${SEQUANT_MODELS_PATH}
+      - MAIN_MODELS_PATH=${MAIN_MODELS_PATH}
     volumes:
-      - ../db_data:/var/lib/pgsql/data
+      - ../database:/usr/src/app/database
+      - ../dnaZymeWeb:/usr/src/app/dnaZymeWeb
+      - ../main:/usr/src/app/main
+      - ../prediction:/usr/src/app/prediction
+    networks:
+      - backend
+    expose:
+      - "8000"
+
+  nginx:
+    build: ./nginx
+    restart: always
+    container_name: nginx
+    ports:
+      - "8668:80"
+    networks:
+      - backend
+    volumes:
+      - ../main/static:/static
+      - ./nginx/:/etc/nginx/conf.d
+    depends_on:
+      - web
+
+networks:
+  backend:
+
+volumes:
+  database:
+  dnaZymeWeb:
+  main:
+  prediction:
+  nginx:
