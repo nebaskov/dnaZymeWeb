@@ -52,7 +52,7 @@ ALL_FEATURES = [
     'pH',
     'NaCl',
     'KCl',
-    'Mg2+',
+    'Mg2+',  # TODO: ask about exact feature name
     'electron_affinity',
     'exactmw',
     'amw',
