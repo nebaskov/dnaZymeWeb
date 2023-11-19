@@ -11,7 +11,9 @@ class MainDnaDataBase(models.Model):
 
     class Meta:
         ordering = ['id']
-        db_table = 'dnaZyme'
+        verbose_name = 'dnazyme'
+        verbose_name_plural = 'dnazymes'
+        db_table = 'dnazyme'
 
     def __str__(self):
         return self.name
