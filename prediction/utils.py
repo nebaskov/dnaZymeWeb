@@ -24,7 +24,6 @@ from .src.SeQuant_user.Funcs import (
 )
 
 load_dotenv()
-# SEQUANT_MODELS_PATH = os.getenv('SEQUANT_MODELS_PATH')
 SEQUANT_MODELS_PATH = os.environ['SEQUANT_MODELS_PATH']
 MAIN_MODELS_PATH = os.getenv('MAIN_MODELS_PATH')
 
@@ -62,7 +61,7 @@ ALL_FEATURES = [
     'pH',
     'NaCl',
     'KCl',
-    'cofactor_con',
+    'cofactor_conc',
     'electron_affinity',
     'exactmw',
     'amw',
@@ -154,7 +153,7 @@ def make_prediction(descriptors: pd.DataFrame) -> float:
         'temp': 'Temperature',
         'k_cl': 'KCl',
         'na_cl': 'NaCl',
-        'cofactor_concentration': 'Mg2+',
+        'cofactor_concentration': 'cofactor_conc',
     }
     descriptors.rename(columns=feature_renaming, inplace=True)
     prediction = model.predict(descriptors[ALL_FEATURES])

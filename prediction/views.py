@@ -11,12 +11,8 @@ from .utils import (
 # Create your views here.
 
 
-def start(request):
-    form = Prediction(request.POST)
-    data = {
-        'form': form
-    }
-    return render(request, 'prediction/templates/prediction/main.html', data)
+def result(request):
+    return render(request, 'prediction/templates/prediction/result.html')
 
 
 @csrf_exempt
@@ -38,7 +34,7 @@ def prediction(request):
             seq_properties = get_seq_properties(user_input.get('sequence'))
             buffer = process_buffer(user_input)
 
-            return render(request, 'prediction/main.html', {'result': result, 'form': form})
+            return render(request, 'prediction/result.html', {'result': result})
     else:
         form = Prediction()
         return render(request, 'prediction/main.html', {'form': form})
