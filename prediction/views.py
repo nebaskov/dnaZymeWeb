@@ -9,12 +9,8 @@ from .utils import (
 # Create your views here.
 
 
-def start(request):
-    form = Prediction(request.POST)
-    data = {
-        'form': form
-    }
-    return render(request, 'prediction/templates/prediction/main.html', data)
+def result(request):
+    return render(request, 'prediction/templates/prediction/result.html')
 
 
 @csrf_exempt
