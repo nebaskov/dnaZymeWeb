@@ -52,7 +52,7 @@ ALL_FEATURES = [
     'pH',
     'NaCl',
     'KCl',
-    'Mg2+',
+    'cofactor_con',
     'electron_affinity',
     'exactmw',
     'amw',
