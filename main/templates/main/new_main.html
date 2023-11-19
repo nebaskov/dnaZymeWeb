@@ -163,7 +163,8 @@
 	letter-spacing:0;
 }
 
-.visualisation_button {
+.db_button {
+    border: 0;
 	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
 	width:35vw;
 	height:42vh;
@@ -185,7 +186,7 @@
 	font-size:4vh;
 	letter-spacing:0;
 }
-.visualisation_paint {
+.db_paint {
 	width:403px;
 	height:212px;
 	position:absolute;
@@ -205,6 +206,7 @@
 	letter-spacing:0;
 }
 .main_generation_button {
+    border: 0;
 	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
 	width:35vw;
 	height:42vh;
@@ -396,7 +398,62 @@
     left:57.5vw;
     text-align: center;
 }
+.prediction_button_paint {
+    position: absolute;
+    width: 65vw;
+    height: 20vh;
+    top: 15vh;
+    left:5vw;
+    border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
 
+}
+.main_prediction_button_rect:hover {background-color: #D3DBE0;}
+
+.main_prediction_button_rect:active {
+  background-color: #D3DBE0;
+  transform: translateY(2px);
+}
+
+.db_button:hover {background-color: #D3DBE0;}
+
+.db_button:active {
+  background-color: #D3DBE0;
+  transform: translateY(2px);
+}
+
+.main_generation_button:hover {background-color: #D3DBE0;}
+
+.main_generation_button:active {
+  background-color: #D3DBE0;
+  transform: translateY(2px);
+}
+.db_button_paint {
+    position: absolute;
+    width: 25vw;
+    height: 20vh;
+    top: 15vh;
+    left:5vw;
+    border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+
+}
+.generation_button_paint {
+    position: absolute;
+    width: 25vw;
+    height: 20vh;
+    top: 15vh;
+    left:5vw;
+    border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+
+}
 </style>
 <div class=e1_4>
   <div class=e26_2><span  class="e26_5">SEQUENCE CRAFT</span></div>
@@ -423,15 +480,19 @@
     <button class="main_prediction_button_rect" onclick="location.href='https://sequencecraft.aicidlab.itmo.ru/prediction/start'">
       <span  class="e7_25">Prediction</span>
       <span  class="e7_26">Providing insights into DNAzymes activity.</span>
+      <img src="{% static '/main/img/prediction_edited_thick.jpg' %}" alt="background_ctb" class="prediction_button_paint">
         </button>
-    <div class="visualisation_button">
-        <span  class="e7_31">Visualization</span>
-    <div class="visualisation_paint"></div><span  class="e7_32">State-of-the-art visualization tools.</span>
-  </div>
-    <div class="main_generation_button">
+    <button class="db_button"  onclick="location.href='https://sequencecraft.aicidlab.itmo.ru/database/'">
+        <span  class="e7_31">DataBase</span>
+    <span  class="e7_32">State-of-the-art visualization tools.</span>
+        <img src="{% static '/main/img/db.jpg' %}" alt="background_ctb" class="db_button_paint">
+
+  </button>
+    <button class="main_generation_button" onclick="location.href='https://sequencecraft.aicidlab.itmo.ru/database/'">
         <span  class="e7_30">Generation</span>
-    <div class="e7_35"></div><span  class="e7_33">Creating potent DNAzymes, ready to deploy.</span>
-        </div>
+    <span  class="e7_33">Creating potent DNAzymes, ready to deploy.</span>
+        <img src="{% static '/main/img/generation_icon.png' %}" alt="background_ctb" class="generation_button_paint">
+        </button>
         </div>
   <div class=e26_13>
       <img src="{% static '/main/img/dna.jpg' %}" alt="background_ctb" class="back_ctb">
