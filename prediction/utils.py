@@ -1,4 +1,6 @@
 import os
+import base64
+from io import BytesIO
 from dotenv import load_dotenv
 
 import joblib
@@ -7,6 +9,14 @@ import pandas as pd
 import tensorflow as tf
 
 from pymatgen.core import Element
+from Bio.SeqUtils import (
+    GC,
+    molecular_weight,
+    MeltingTemp
+)
+
+import matplotlib.pyplot as plt
+
 from .src.SeQuant_user.Funcs import (
     generate_rdkit_descriptors,
     generate_latent_representations,
@@ -149,3 +159,32 @@ def make_prediction(descriptors: pd.DataFrame) -> float:
     descriptors.rename(columns=feature_renaming, inplace=True)
     prediction = model.predict(descriptors[ALL_FEATURES])
     return round(prediction[0], 4)
+
+
+def get_graph():
+    buffer = BytesIO()
+    plt.savefig(buffer, format='png')
+    image_png = buffer.getvalue()
+    graph = base64.b64encode(image_png)
+    graph = graph.decode('utf-8')
+    buffer.close()
+    return graph
+
+
+def get_seq_properties(sequence: str) -> dict:
+    return {
+        'length': len(sequence),
+        'gc_content': round(GC(sequence), 2),
+        'mol_weight': round(molecular_weight(sequence), 2),
+        'melting_temp': round(MeltingTemp.Tm_Wallace(sequence), 2)
+    }
+
+
+def process_buffer(user_input: dict) -> str:
+    buffer = 'HEPES pH {ph}, {na_cl} mM NaCl, {k_cl} mM KCl, Temperature {temp} C'
+    return buffer.format(
+        ph=user_input.get('ph'),
+        temp=user_input.get('temp'),
+        na_cl=user_input.get('na_cl'),
+        k_cl=user_input.get('k_cl')
+    )

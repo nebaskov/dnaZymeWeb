@@ -3,7 +3,9 @@ from django.views.decorators.csrf import csrf_exempt
 from prediction.forms import Prediction
 from .utils import (
     get_descriptors,
-    make_prediction
+    make_prediction,
+    get_seq_properties,
+    process_buffer
 )
 
 # Create your views here.
@@ -33,8 +35,8 @@ def prediction(request):
             }
             descriptors = get_descriptors(user_input=user_input)
             result = make_prediction(descriptors)
-            # result_1 = form.cleaned_data.get('k_cl')*2/form.cleaned_data.get('na_cl')*0.01
-            # result = result_1 - result_1*0.01
+            seq_properties = get_seq_properties(user_input.get('sequence'))
+            buffer = process_buffer(user_input)
 
             return render(request, 'prediction/main.html', {'result': result, 'form': form})
     else:
