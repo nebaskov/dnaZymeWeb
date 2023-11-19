@@ -4,6 +4,8 @@
 <html lang="en">
 {% load static%}
 {% block content %}
+   <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Syne&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Spline+Sans Mono&display=swap" rel="stylesheet">
 
@@ -28,7 +30,7 @@
     bottom: 10vh;
 	font-family:Syne;
     left:7%;
-	font-size:15vh;
+	font-size:14vh;
 	letter-spacing:0;
 }
 .e26_6 {
@@ -46,19 +48,19 @@
 	top:10%;
 	font-family:Syne;
 	text-align:left;
-	font-size:7vh;
+	font-size:6vh;
 	letter-spacing:0;
 }
 .e26_6 .e26_9 {
 	color:rgba(0, 0, 0, 1);
-	width: 65vw;
+	width: 50vw;
 	height:40vh;
 	position:absolute;
 	left:7%;
 	top:30%;
 	font-family:Spline Sans Mono;
 	text-align:left;
-	font-size:2.5vh;
+	font-size:2vh;
 	letter-spacing:0;
 }
 .e1_9 {
@@ -70,33 +72,24 @@
 	background-repeat:no-repeat;
 	background-size:cover;
 }
-.e2_17 {
-	width:525px;
-	height:524px;
-	position:absolute;
-	left:768px;
-	top:5%;
-	background-repeat:no-repeat;
-	background-size:cover;
-}
 .text_wight_1 .e2_16 {
 	color:rgba(0, 0, 0, 1);
 	height:35vh;
 	position:absolute;
-	top:18vh;
+	top:15vh;
 	font-family:Spline Sans Mono;
 	text-align:left;
-	font-size:2.5vh;
+	font-size:2vh;
 	letter-spacing:0;
 }
 .text_wight_2 .e2_18 {
 	color:rgba(0, 0, 0, 1);
 	height:114px;
 	position:absolute;
-    top:2vh;
+    top:5vh;
 	font-family:Syne;
 	text-align:left;
-	font-size:5vh;
+	font-size:4vh;
 	letter-spacing:0;
 }
 .text_wight_2 .e2_19 {
@@ -106,13 +99,13 @@
 	top:20vh;
 	font-family:Spline Sans Mono;
 	text-align:left;
-	font-size:2.5vh;
+	font-size:2vh;
 	letter-spacing:0;
 }
 .button_grey_block {
 	background-color:rgba(231.00000143051147, 236.00000113248825, 239.00000095367432, 1);
 	width:100vw;
-	height:95vh;
+	height:105vh;
 	position:absolute;
 	left:0px;
 	top:190vh;
@@ -123,16 +116,17 @@
 	position:absolute;
 	font-family:Syne;
 	text-align:left;
-	font-size:5vh;
+	font-size:4vh;
 	letter-spacing:0;
 }
 
 .main_prediction_button_rect {
+    border: 0;
 	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
 	width:75vw;
 	height:42vh;
 	position:absolute;
-    top: 3vh;
+    top: 8vh;
     left:10vw;
 	border-top-left-radius:70px;
 	border-top-right-radius:70px;
@@ -169,12 +163,13 @@
 	letter-spacing:0;
 }
 
-.visualisation_button {
+.db_button {
+    border: 0;
 	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
 	width:35vw;
 	height:42vh;
 	position:absolute;
-    top: 50vh;
+    top: 55vh;
     left:10vw;
 	border-top-left-radius:70px;
 	border-top-right-radius:70px;
@@ -191,7 +186,7 @@
 	font-size:4vh;
 	letter-spacing:0;
 }
-.visualisation_paint {
+.db_paint {
 	width:403px;
 	height:212px;
 	position:absolute;
@@ -211,11 +206,12 @@
 	letter-spacing:0;
 }
 .main_generation_button {
+    border: 0;
 	background-color:rgba(216.00000232458115, 224.000001847744, 229.00000154972076, 1);
 	width:35vw;
 	height:42vh;
 	position:absolute;
-    top: 50vh;
+    top: 55vh;
     left:50vw;
 	border-top-left-radius:70px;
 	border-top-right-radius:70px;
@@ -256,7 +252,8 @@
 	height:100vh;
 	position:absolute;
 	left:0px;
-	top:285vh;
+	top:295vh;
+    background-size: cover;
 }
 .e7_36 {
 	width:100vw;
@@ -268,12 +265,12 @@
 	background-size:cover;
 }
 .e7_37 {
-	color:rgba(0, 0, 0, 1);
+	color:#FFFFFF;
 	width:50vw;
 	height:50vh;
 	position:absolute;
 	left:22.5vw;
-	top:40vh;
+	top:30vh;
 	font-family:Syne;
 	text-align:center;
 	font-size:10vh;
@@ -281,89 +278,181 @@
 }
 .e7_40 {
 	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
-	width:151px;
-	height:36px;
 	position:absolute;
-	left:386px;
-	top:4491px;
+    left: 1vw;
 	font-family:Syne;
-	text-align:center;
-	font-size:30px;
-	letter-spacing:0;
+	text-align:left;
+	font-size:4vh;
+
 }
 .e7_43 {
 	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
-	width:151px;
-	height:36px;
 	position:absolute;
-	left:905px;
-	top:4491px;
 	font-family:Syne;
 	text-align:center;
-	font-size:30px;
-	letter-spacing:0;
+	font-size:4vh;
 }
 .e7_41 {
 	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
-	width:329px;
-	height:31px;
 	position:absolute;
-	left:297px;
-	top:4536px;
+    top:5vh;
 	font-family:Syne;
-	text-align:center;
-	font-size:26px;
+	text-align:left;
+	font-size:3vh;
 	letter-spacing:0;
 }
 .e7_44 {
 	color:rgba(39.00000147521496, 76.0000030696392, 119.00000050663948, 1);
-	width:329px;
-	height:31px;
 	position:absolute;
-	left:815px;
-	top:4536px;
+    top:5vh;
+    left: 1vw;
 	font-family:Syne;
-	text-align:center;
-	font-size:26px;
+	text-align:left;
+	font-size:3vh;
 	letter-spacing:0;
-}
-.e7_39 {
-	width:222px;
-	height:222px;
-	position:absolute;
-	left:351px;
-	top:4243px;
-	border-top-left-radius:500px;
-	border-top-right-radius:500px;
-	border-bottom-left-radius:500px;
-	border-bottom-right-radius:500px;
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e7_42 {
-	width:222px;
-	height:222px;
-	position:absolute;
-	left:870px;
-	top:4243px;
-	border-top-left-radius:500px;
-	border-top-right-radius:500px;
-	border-bottom-left-radius:500px;
-	border-bottom-right-radius:500px;
-	background-repeat:no-repeat;
-	background-size:cover;
 }
 .text_wight_1 {
     position:absolute;
-    width:40vw;
+    width:30vw;
 	left:55vw;
-	top:95vh;
+	top:100vh;
+}
+.redefining_paint {
+    position:absolute;
+    height:35vh;
+    width:30vw;
+	left:15vw;
+	top:100vh;
+    border-top-left-radius:40px;
+	border-top-right-radius:40px;
+	border-bottom-left-radius:40px;
+	border-bottom-right-radius:40px;
 }
 .text_wight_2 {
     position:absolute;
-    width:40vw;
-	left:7%;
+    width:30vw;
+	left:15vw;
 	top:135vh;
+}
+.machine_paint {
+    position:absolute;
+    height: 35vh;
+    width:30vw;
+	left:55vw;
+	top:142vh;
+    border-top-left-radius:40px;
+	border-top-right-radius:40px;
+	border-bottom-left-radius:40px;
+	border-bottom-right-radius:40px;
+}
+.back_ctb {
+    width:100vw;
+	height:100vh;
+	position:absolute;
+	left:0px;
+}
+.contacts {
+    width:100vw;
+	height:50vh;
+	position:absolute;
+	top:395vh;
+    background-size: cover;
+}
+
+.contacts .nikita_contact {
+    width:30vw;
+	height:15vh;
+    position:absolute;
+    top:37vh;
+    left:1vw;
+    text-align: left;
+}
+
+.contacts .masha_contact {
+    width:30vw;
+	height:15vh;
+    position:absolute;
+    top:37vh;
+    left:0.6vw;
+    text-align: left;
+}
+.contacts .nikita_photo {
+    position: absolute;
+    width: 15vw;
+    height: 30vh;
+}
+.contacts .masha_photo {
+    position: absolute;
+    width: 15vw;
+    height: 30vh;
+}
+.contacts .for_nikita {
+    position: absolute;
+    top: 13vh;
+    left:26vw;
+    text-align: center;
+}
+.contacts .for_masha {
+    position:absolute;
+    top:13vh;
+    left:57.5vw;
+    text-align: center;
+}
+.prediction_button_paint {
+    position: absolute;
+    width: 65vw;
+    height: 20vh;
+    top: 15vh;
+    left:5vw;
+    border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+
+}
+.main_prediction_button_rect:hover {background-color: #D3DBE0;}
+
+.main_prediction_button_rect:active {
+  background-color: #D3DBE0;
+  transform: translateY(2px);
+}
+
+.db_button:hover {background-color: #D3DBE0;}
+
+.db_button:active {
+  background-color: #D3DBE0;
+  transform: translateY(2px);
+}
+
+.main_generation_button:hover {background-color: #D3DBE0;}
+
+.main_generation_button:active {
+  background-color: #D3DBE0;
+  transform: translateY(2px);
+}
+.db_button_paint {
+    position: absolute;
+    width: 25vw;
+    height: 20vh;
+    top: 15vh;
+    left:5vw;
+    border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+
+}
+.generation_button_paint {
+    position: absolute;
+    width: 25vw;
+    height: 20vh;
+    top: 15vh;
+    left:5vw;
+    border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+
 }
 </style>
 <div class=e1_4>
@@ -376,35 +465,54 @@
           the way plant diseases are controlled. Our team of expert researchers are dedicated to harnessing the power
           of technology to engineer DNAzymes that will effectively target and neutralize viral infections in plants.
       </span></div>
-{#  <div class="e1_9"></div>#}
+    <img src="{% static '/main/img/generation_edited.jpg' %}" alt="background_ctb" class="redefining_paint">
     <div class="text_wight_1">
         <span  class="e7_23">Redefining Crop Protection Against Viral Plant Diseases</span>
         <span  class="e2_16">We are on a mission to develop a breakthrough in crop protection against viral plant diseases. With our research on DNAzymes, we are developing advanced defense mechanisms that will bolster plant health and secure sustainable food production for future generations</span>
             </div>
+    <img src="{% static '/main/img/backgroung_edited_2.jpg' %}" alt="background_ctb" class="machine_paint">
     <div class="text_wight_2">
         <span  class="e2_18">Machine Learning for Next-Generation DNAzyme Design</span>
         <span  class="e2_19">Discover the future of oligonucleotides research as we combine machine learning, genetic algorithms, and gradient boosting models to revolutionize DNAzyme design. Experience the power of advanced techniques in creating highly efficient and tailored DNAzymes for sustainable agriculture. Join us in shaping a greener future through innovative genetic engineering methods</span>
 
     </div>
-<div class="e2_17"></div>
     <div class="button_grey_block">
-    <div class="main_prediction_button_rect">
+    <button class="main_prediction_button_rect" onclick="location.href='https://sequencecraft.aicidlab.itmo.ru/prediction/prediction'">
       <span  class="e7_25">Prediction</span>
       <span  class="e7_26">Providing insights into DNAzymes activity.</span>
-        </div>
-    <div class="visualisation_button">
-        <span  class="e7_31">Visualization</span>
-    <div class="visualisation_paint"></div><span  class="e7_32">State-of-the-art visualization tools.</span>
-  </div>
-    <div class="main_generation_button">
+      <img src="{% static '/main/img/prediction_edited_thick.jpg' %}" alt="background_ctb" class="prediction_button_paint">
+        </button>
+    <button class="db_button"  onclick="location.href='https://sequencecraft.aicidlab.itmo.ru/database/'">
+        <span  class="e7_31">DataBase</span>
+    <span  class="e7_32">State-of-the-art visualization tools.</span>
+        <img src="{% static '/main/img/db.jpg' %}" alt="background_ctb" class="db_button_paint">
+
+  </button>
+    <button class="main_generation_button" onclick="location.href='https://sequencecraft.aicidlab.itmo.ru/database/'">
         <span  class="e7_30">Generation</span>
-    <div class="e7_35"></div><span  class="e7_33">Creating potent DNAzymes, ready to deploy.</span>
-        </div>
+    <span  class="e7_33">Creating potent DNAzymes, ready to deploy.</span>
+        <img src="{% static '/main/img/generation_icon.png' %}" alt="background_ctb" class="generation_button_paint">
+        </button>
         </div>
   <div class=e26_13>
+      <img src="{% static '/main/img/dna.jpg' %}" alt="background_ctb" class="back_ctb">
     <span  class="e7_37">Combining Technology and Biology.</span>
-  </div><span  class="e7_40">David</span><span  class="e7_43">Eva</span><span  class="e7_41">Co-Founder & CEO</span><span  class="e7_44">Co-Founder & CTO</span>
-  <div class="e7_39"></div>
-  <div class="e7_42"></div>
+  </div>
+    <div class="contacts">
+        <div class="for_nikita">
+            <img src="{% static '/main/img/nikita_photoaidcom_cropped.jpg' %}" alt="background_ctb" class="nikita_photo">
+            <div class="nikita_contact">
+            <span  class="e7_40">Nikita Serov</span>
+            <span  class="e7_41">Co-Founder & CEO</span>
+        </div>
+        </div>
+        <div class="for_masha">
+        <img src="{% static '/main/img/masha_photoaidcom_cropped.jpg' %}" alt="background_ctb" class="masha_photo">
+        <div class="masha_contact">
+            <span  class="e7_43">Maria Eremeeva</span>
+            <span  class="e7_44">Co-Founder & CTO</span>
+            </div>
+            </div>
+        </div>
 </div>
 {% endblock %}
