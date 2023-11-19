@@ -32,7 +32,7 @@ def prediction(request):
             # result_1 = form.cleaned_data.get('k_cl')*2/form.cleaned_data.get('na_cl')*0.01
             # result = result_1 - result_1*0.01
 
-            return render(request, 'prediction/main.html', {'result': result, 'form': form})
+            return render(request, 'prediction/result.html', {'result': result})
     else:
         form = Prediction()
         return render(request, 'prediction/main.html', {'form': form})
