@@ -9,5 +9,9 @@ class MainDnaDataBase(models.Model):
     kobs = models.CharField('kobs', max_length=50)
     doi = models.CharField('doi', max_length=50)
 
+    class Meta:
+        ordering = ['id']
+        db_table = 'dnaZyme'
+
     def __str__(self):
         return self.name
