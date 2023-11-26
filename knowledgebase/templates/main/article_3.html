@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+{% extends 'main/layout_main.html' %}
+<html lang="en">
+<!doctype html>
+{% block content %}
+<html lang="en">
+{% load static%}
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+.e54_138 {
+	background-color:rgba(255, 255, 255, 1);
+	width:95vw;
+	height:300vh;
+	position:absolute;
+}
+.article_background {
+	width:99vw;
+	height:50vh;
+	position:absolute;
+}
+.article_title_block {
+	width:40vw;
+	height:27vh;
+	position:absolute;
+	left:10vw;
+	top:30vh;
+    background-color:rgba(119.00000050663948, 173.00000488758087, 235.0000011920929, 1);
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+
+.e54_146 {
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:36vw;
+	height:1px;
+	position:absolute;
+	left:2vw;
+	top:22vh;
+}
+.main_article_text {
+	color:rgba(0, 0, 0, 1);
+	width:60vw;
+	height:100vh;
+	position:absolute;
+	left:17.5vw;
+	top:65vh;
+	font-family:Roboto;
+	text-align: justify;
+	font-size:2.5vh;
+	letter-spacing:0;
+}
+.article_title {
+	color:rgba(255, 255, 255, 1);
+	width:36vw;
+	height:18vh;
+	position:absolute;
+    top: 4vh;
+    left: 2vw;
+    font-weight: 500;
+	font-family:Roboto;
+	text-align:left;
+	font-size:32px;
+	letter-spacing:0;
+}
+.e65_152 {
+	color:rgba(0, 0, 0, 1);
+	position:absolute;
+	left:14vw;
+	font-family:Roboto;
+	text-align:left;
+	font-size:10vh;
+	letter-spacing:0;
+}
+.e65_153 {
+	color:rgba(0, 0, 0, 1);
+	width:50vw;
+	position:absolute;
+	left:14vw;
+	top:12vh;
+	font-family:Roboto;
+	text-align:left;
+	font-size:6vh;
+	letter-spacing:0;
+}
+
+.e65_163 {
+	width:25vw;
+	height:40vh;
+	position:absolute;
+	top:24vh;
+    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+.recommended_articles_image {
+	background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 0.5299999713897705);
+	width:25vw;
+	height:25vh;
+	position:absolute;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+.recommended_articles_title {
+	color:rgba(0, 0, 0, 1);
+	width:19vw;
+	height:10vh;
+	position:absolute;
+	left:3vw;
+	top:27vh;
+	font-family:Roboto;
+	text-align:left;
+	font-size:3vh;
+	letter-spacing:0;
+}
+.e65_172 {
+	width:25vw;
+	height:40vh;
+	position:absolute;
+	top:24vh;
+    left: 27vw;
+    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+.e65_176 {
+	width:25vw;
+	height:40vh;
+	position:absolute;
+	top:24vh;
+    left: 54vw;
+    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+.e65_184 {
+	width:60vw;
+	height:30vh;
+	position:absolute;
+	left:16vw;
+	top:27vh;
+    background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 1);
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+
+.e65_185 {
+	color:rgba(0, 0, 0, 1);
+	width:52vw;
+	height:24vh;
+	position:absolute;
+	left:4vw;
+	top:4vh;
+	font-family:Roboto;
+	text-align:left;
+	font-size:3vh;
+	letter-spacing:0;
+}
+.e65_183 {
+	background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 1);
+	width:12.5vw;
+	height:25vh;
+	position:absolute;
+	top:15vh;
+	border-top-left-radius:100px;
+	border-top-right-radius:100px;
+	border-bottom-left-radius:100px;
+	border-bottom-right-radius:100px;
+}
+.recommended_articles {
+    position: absolute;
+    top: 140vh;
+    left: 10vw;
+    width:79vw;
+	height:70vh;
+}
+
+.abuot_author {
+    position: absolute;
+    top: 220vh;
+    left: 10vw;
+    width:79vw;
+	height:70vh;
+}
+
+.abuot_author_about {
+    color:rgba(0, 0, 0, 1);
+	position:absolute;
+	left:16vw;
+	font-family:Roboto;
+	text-align:left;
+	font-size:10vh;
+	letter-spacing:0;
+}
+
+.abuot_author_authtor {
+    color:rgba(0, 0, 0, 1);
+	width:50vw;
+	position:absolute;
+	left:16vw;
+	top:12vh;
+	font-family:Roboto;
+	text-align:left;
+	font-size:6vh;
+	letter-spacing:0;
+}
+</style>
+
+<div class=e54_138>
+    <img src="{% static '/knowledgebase/img/article_3_fon.png' %}" alt="background_ctb" class="article_background">
+  <div class=article_title_block>
+      <div  class="article_title">Recent advancements in the understanding of DNAzyme kinetics</div>
+        <div class="e54_146"></div>
+  </div>
+
+    <div  class="main_article_text">Recent advancements in the understanding of DNAzyme kinetics have revealed valuable insights into the catalytic properties of these unique enzymes. DNAzymes, also known as catalytic DNA or deoxyribozymes, are single-stranded DNA molecules capable of catalyzing specific reactions. The kinetics of DNAzyme catalysis involve two important factors: binding affinity and rate constants.
+
+Binding affinity refers to the strength with which a DNAzyme binds to its target molecule. Recent research has shown that modifying the structure of DNAzymes can enhance their binding affinity, leading to more efficient catalysis. This opens up new possibilities for designing highly effective DNAzymes for various applications.
+
+Rate constants play a crucial role in determining the speed at which a reaction occurs. Understanding the rate constants involved in DNAzyme catalysis allows researchers to optimize reaction conditions and improve overall efficiency. Recent studies have uncovered novel mechanisms and reaction pathways involved in DNAzyme catalysis, providing valuable insights into their functioning.
+
+The implications of understanding DNAzyme kinetics are significant. In biomedical research, it offers potential for developing targeted therapies using DNAzymes as therapeutic agents against specific disease-causing molecules. Additionally, understanding the kinetics of DNAzymes can aid in designing biosensors for detecting and quantifying various analytes with high sensitivity and specificity.
+
+Furthermore, this knowledge can be applied in environmental monitoring to detect pollutants or contaminants efficiently. By harnessing the power of DNAzyme kinetics, researchers can develop innovative solutions for pollution control and remediation.
+</div>
+
+    <div class="recommended_articles">
+        <div  class="e65_152">Recommended</div>
+        <div  class="e65_153">Articles</div>
+
+        <div class=e65_163>
+            <img src="{% static '/main/img/backgroung_edited_2.jpg' %}" alt="background_ctb" class="recommended_articles_image">
+            <div  class="recommended_articles_title">At SequenceCraft we are leading the </div>
+        </div>
+
+        <div class=e65_172>
+            <img src="{% static '/main/img/dna.jpg' %}" alt="background_ctb" class="recommended_articles_image">
+        <div  class="recommended_articles_title">At SequenceCraft we are leading the </div>
+        </div>
+
+        <div class=e65_176>
+            <img src="{% static '/main/img/prediction_edited_thick.jpg' %}" alt="background_ctb" class="recommended_articles_image">
+            <div  class="recommended_articles_title">At SequenceCraft we are leading the </div>
+        </div>
+    </div>
+
+    <div class="abuot_author">
+        <div  class="abuot_author_about">About</div>
+        <div  class="abuot_author_authtor">the author</div>
+
+        <div class=e65_184>
+
+        <div  class="e65_185">Jenna Bradley is our DNAzyme expert.
+        She leads our research and development efforts, providing valuable insights and expertise
+        in the field of DNAzyme design.
+        <div></div>
+            <br>
+        Follow her @jenna.b</div>
+        </div>
+
+        <img src="{% static '/main/img/masha_photoaidcom_cropped.jpg' %}" alt="background_ctb" class="e65_183">
+
+    </div>
+
+</div>
+
+{% endblock %}
+</html>

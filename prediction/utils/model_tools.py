@@ -2,11 +2,11 @@ import os
 from dotenv import load_dotenv
 
 import joblib
-import numpy as np
 import pandas as pd
 import tensorflow as tf
 
 from pymatgen.core import Element
+
 from .src.SeQuant_user.Funcs import (
     generate_rdkit_descriptors,
     generate_latent_representations,
@@ -148,3 +148,7 @@ def make_prediction(descriptors: pd.DataFrame) -> float:
     descriptors.rename(columns=feature_renaming, inplace=True)
     prediction = model.predict(descriptors[ALL_FEATURES])
     return round(prediction[0], 4)
+
+
+
+

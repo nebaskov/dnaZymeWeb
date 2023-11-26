@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+{% extends 'main/layout_main.html' %}
+<html lang="en">
+<!doctype html>
+{% block content %}
+<html lang="en">
+{% load static%}
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+.e54_138 {
+	background-color:rgba(255, 255, 255, 1);
+	width:95vw;
+	height:300vh;
+	position:absolute;
+}
+.article_background {
+	width:99vw;
+	height:50vh;
+	position:absolute;
+}
+.article_title_block {
+	width:40vw;
+	height:27vh;
+	position:absolute;
+	left:10vw;
+	top:30vh;
+    background-color:rgba(119.00000050663948, 173.00000488758087, 235.0000011920929, 1);
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+
+.e54_146 {
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:36vw;
+	height:1px;
+	position:absolute;
+	left:2vw;
+	top:22vh;
+}
+.main_article_text {
+	color:rgba(0, 0, 0, 1);
+	width:60vw;
+	height:100vh;
+	position:absolute;
+	left:17.5vw;
+	top:65vh;
+	font-family:Roboto;
+	text-align: justify;
+	font-size:2.5vh;
+	letter-spacing:0;
+}
+.article_title {
+	color:rgba(255, 255, 255, 1);
+	width:36vw;
+	height:18vh;
+	position:absolute;
+    top: 4vh;
+    left: 2vw;
+    font-weight: 500;
+	font-family:Roboto;
+	text-align:left;
+	font-size:32px;
+	letter-spacing:0;
+}
+.e65_152 {
+	color:rgba(0, 0, 0, 1);
+	position:absolute;
+	left:14vw;
+	font-family:Roboto;
+	text-align:left;
+	font-size:10vh;
+	letter-spacing:0;
+}
+.e65_153 {
+	color:rgba(0, 0, 0, 1);
+	width:50vw;
+	position:absolute;
+	left:14vw;
+	top:12vh;
+	font-family:Roboto;
+	text-align:left;
+	font-size:6vh;
+	letter-spacing:0;
+}
+
+.e65_163 {
+	width:25vw;
+	height:40vh;
+	position:absolute;
+	top:24vh;
+    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+.recommended_articles_image {
+	background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 0.5299999713897705);
+	width:25vw;
+	height:25vh;
+	position:absolute;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+.recommended_articles_title {
+	color:rgba(0, 0, 0, 1);
+	width:19vw;
+	height:10vh;
+	position:absolute;
+	left:3vw;
+	top:27vh;
+	font-family:Roboto;
+	text-align:left;
+	font-size:3vh;
+	letter-spacing:0;
+}
+.e65_172 {
+	width:25vw;
+	height:40vh;
+	position:absolute;
+	top:24vh;
+    left: 27vw;
+    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+.e65_176 {
+	width:25vw;
+	height:40vh;
+	position:absolute;
+	top:24vh;
+    left: 54vw;
+    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+
+.e65_184 {
+	width:60vw;
+	height:30vh;
+	position:absolute;
+	left:16vw;
+	top:27vh;
+    background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 1);
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+
+.e65_185 {
+	color:rgba(0, 0, 0, 1);
+	width:52vw;
+	height:24vh;
+	position:absolute;
+	left:4vw;
+	top:4vh;
+	font-family:Roboto;
+	text-align:left;
+	font-size:3vh;
+	letter-spacing:0;
+}
+.e65_183 {
+	background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 1);
+	width:12.5vw;
+	height:25vh;
+	position:absolute;
+	top:15vh;
+	border-top-left-radius:100px;
+	border-top-right-radius:100px;
+	border-bottom-left-radius:100px;
+	border-bottom-right-radius:100px;
+}
+.recommended_articles {
+    position: absolute;
+    top: 140vh;
+    left: 10vw;
+    width:79vw;
+	height:70vh;
+}
+
+.abuot_author {
+    position: absolute;
+    top: 220vh;
+    left: 10vw;
+    width:79vw;
+	height:70vh;
+}
+
+.abuot_author_about {
+    color:rgba(0, 0, 0, 1);
+	position:absolute;
+	left:16vw;
+	font-family:Roboto;
+	text-align:left;
+	font-size:10vh;
+	letter-spacing:0;
+}
+
+.abuot_author_authtor {
+    color:rgba(0, 0, 0, 1);
+	width:50vw;
+	position:absolute;
+	left:16vw;
+	top:12vh;
+	font-family:Roboto;
+	text-align:left;
+	font-size:6vh;
+	letter-spacing:0;
+}
+</style>
+
+<div class=e54_138>
+    <img src="{% static '/knowledgebase/img/article_7_fon.png' %}" alt="background_ctb" class="article_background">
+  <div class=article_title_block>
+      <div  class="article_title">Challenges and future prospects in DNAzymes research</div>
+        <div class="e54_146"></div>
+  </div>
+
+    <div  class="main_article_text">DNAzymes, short for DNA enzymes, are synthetic DNA molecules that possess enzymatic activity. They have emerged as a promising tool in various fields, including diagnostics, therapeutics, and nanotechnology. However, the design and optimization of DNAzymes present several challenges.
+
+One of the key challenges is the selection of suitable DNA sequences using Systematic Evolution of Ligands by Exponential Enrichment (SELEX). SELEX allows researchers to identify high-affinity DNAzymes from a large pool of random sequences. However, this process can be time-consuming and labor-intensive.
+
+Another challenge lies in the design and optimization of functional DNAzymes. The efficiency and specificity of these molecules need to be carefully fine-tuned. Additionally, stability under physiological conditions is crucial for their successful application in biological systems.
+
+To overcome these challenges, researchers are exploring various strategies and technologies. One approach is to incorporate modified nucleotides or non-natural bases into the DNA sequence to enhance stability and catalytic activity. Furthermore, computational algorithms can aid in predicting potential catalytic motifs within large sequence libraries.
+
+Advancements in nanotechnology offer exciting prospects for DNAzyme research. By combining DNAzymes with nanoparticles or other nanomaterials, novel sensing platforms can be developed for applications such as environmental monitoring or disease diagnosis.
+
+The future prospects for DNAzyme research are highly promising. One area where they show great potential is personalized medicine. With their ability to target specific RNA molecules or proteins involved in diseases like cancer or viral infections, DNAzymes could revolutionize treatment approaches by providing tailored therapies based on individual genetic profiles.
+
+Additionally, the use of DNAzymes in nanotechnology opens up possibilities for precise control over molecular assembly processes at the nanoscale level. This could lead to advancements in drug delivery systems or the development of novel materials with unique properties.
+
+In conclusion, while there are challenges associated with designing and optimizing DNAzymes, ongoing research and technological advancements offer potential solutions. The use of SELEX, incorporation of modified nucleotides, and computational algorithms are strategies being explored to overcome these challenges. Furthermore, the future prospects for DNAzyme research are promising, with applications in personalized medicine and nanotechnology on the horizon. As scientists continue to unravel the full potential of DNAzymes, we can expect exciting developments that will shape various fields of science and technology.
+</div>
+
+    <div class="recommended_articles">
+        <div  class="e65_152">Recommended</div>
+        <div  class="e65_153">Articles</div>
+
+        <div class=e65_163>
+            <img src="{% static '/main/img/backgroung_edited_2.jpg' %}" alt="background_ctb" class="recommended_articles_image">
+            <div  class="recommended_articles_title">At SequenceCraft we are leading the </div>
+        </div>
+
+        <div class=e65_172>
+            <img src="{% static '/main/img/dna.jpg' %}" alt="background_ctb" class="recommended_articles_image">
+        <div  class="recommended_articles_title">At SequenceCraft we are leading the </div>
+        </div>
+
+        <div class=e65_176>
+            <img src="{% static '/main/img/prediction_edited_thick.jpg' %}" alt="background_ctb" class="recommended_articles_image">
+            <div  class="recommended_articles_title">At SequenceCraft we are leading the </div>
+        </div>
+    </div>
+
+    <div class="abuot_author">
+        <div  class="abuot_author_about">About</div>
+        <div  class="abuot_author_authtor">the author</div>
+
+        <div class=e65_184>
+
+        <div  class="e65_185">Jenna Bradley is our DNAzyme expert.
+        She leads our research and development efforts, providing valuable insights and expertise
+        in the field of DNAzyme design.
+        <div></div>
+            <br>
+        Follow her @jenna.b</div>
+        </div>
+
+        <img src="{% static '/main/img/masha_photoaidcom_cropped.jpg' %}" alt="background_ctb" class="e65_183">
+
+    </div>
+
+</div>
+
+{% endblock %}
+</html>
