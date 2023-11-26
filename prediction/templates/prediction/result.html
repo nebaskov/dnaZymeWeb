@@ -420,16 +420,16 @@
       <span  class="candidate_header">DNAzyme candidate</span>
       <div class="candidate_info_rectangle">
           <div class="melting_text">
-              <span  class="e33_10">0</span>
+              <span  class="e33_10"> {{ melting_temp }} </span>
               <span  class="e33_12">Melting Point</span>
           </div>
           <div class="mol_weight_text">
-              <span  class="e33_13">0</span>
+              <span  class="e33_13"> {{ mol_weight }} </span>
               <span  class="e33_15">Molecular</span>
               <span  class="mol_weight_text_w">Weight</span>
           </div>
           <div class="gc_text">
-              <span  class="e33_14">0</span>
+              <span  class="e33_14"> {{ gc_content }} </span>
               <span  class="e33_16">GC-content</span>
           </div>
       </div>
@@ -437,8 +437,8 @@
     <div class="generation_results">
         <span  class="e33_17">Generation result</span>
         <div class=lenght_block>
-            <div  class="e33_24">Sequence lenght</div>
-            <div  class="e33_21">100</div>
+            <div  class="e33_24">Sequence length</div>
+            <div  class="e33_21"> {{ seq_length }} </div>
             <div class="e33_29"></div>
         </div>
 
@@ -459,7 +459,7 @@
         <div  class="e33_63">Sequence Achievements</div>
         <div class="buffer_conditions_rect">
             <div  class="e33_71">Buffer Conditions</div>
-            <div  class="e33_72">HEPES pH 7.5, 100 mM NaCl, 0.05 mM ZnCl2</div>
+            <div  class="e33_72"> {{ buffer }} </div>
         </div>
         <div class="e33_66"></div>
   </div>
