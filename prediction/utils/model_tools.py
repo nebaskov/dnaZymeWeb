@@ -7,7 +7,7 @@ import tensorflow as tf
 
 from pymatgen.core import Element
 
-from src.SeQuant_user.Funcs import (
+from prediction.src.SeQuant_user.Funcs import (
     generate_rdkit_descriptors,
     generate_latent_representations,
     SeQuant_encoding,

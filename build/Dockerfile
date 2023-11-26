@@ -11,6 +11,8 @@ COPY ./main/ ./main
 COPY ./prediction/ ./prediction
 COPY ./requirements.txt .
 COPY ./knowledgebase ./knowledgebase
+COPY ./templates ./templates
+COPY ./static ./static
 COPY ./manage.py .
 
 RUN pip3 install -r requirements.txt

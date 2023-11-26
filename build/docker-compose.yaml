@@ -24,6 +24,8 @@ services:
       - ../main:/usr/src/app/main
       - ../prediction:/usr/src/app/prediction
       - ../knowledgebase:/usr/src/app/knowledgebase
+      - ../templates:/usr/src/app/templates
+      - ../static:/usr/src/app/static
     networks:
       - seq_backend
     expose:
@@ -39,7 +41,8 @@ services:
     networks:
       - seq_backend
     volumes:
-      - ../main/static:/static
+      - ../static:/static
+      - ../templates:/templates
       - ./nginx/:/etc/nginx/conf.d
     depends_on:
       - web
@@ -54,3 +57,5 @@ volumes:
   prediction:
   knowledgebase:
   nginx:
+  static:
+  templates:
