@@ -3,7 +3,8 @@ version: "3.8"
 services:
   db:
     image: postgres:16
-    container_name: postgres
+    container_name: seqcraft_postgres
+    hostname: "postgres"
     restart: unless-stopped
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
@@ -21,7 +22,8 @@ services:
       context: ..
       dockerfile: ./build/Dockerfile
     restart: unless-stopped
-    container_name: web
+    container_name: seqcraft_web
+    hostname: "web"
     environment:
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=${DEBUG}
@@ -45,7 +47,8 @@ services:
   nginx:
     build: ./nginx
     restart: always
-    container_name: nginx
+    container_name: seqcraft_nginx
+    hostname: "nginx"
     ports:
       - "8668:80"
     networks:
