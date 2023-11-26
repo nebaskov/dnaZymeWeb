@@ -30,11 +30,15 @@ def prediction(request):
                 'k_cl': form.cleaned_data.get('k_cl'),
             }
             descriptors = get_descriptors(user_input=user_input)
-            result = make_prediction(descriptors)
             seq_properties = get_seq_properties(user_input.get('sequence'))
-            buffer = process_buffer(user_input)
 
-            return render(request, 'prediction/result.html', {'result': result})
+            context = {
+                'result': make_prediction(descriptors),
+                'buffer': process_buffer(user_input)
+            }
+            context.update(seq_properties)
+
+            return render(request, 'prediction/result.html', context)
     else:
         form = Prediction()
         return render(request, 'prediction/main.html', {'form': form})

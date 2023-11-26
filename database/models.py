@@ -2,10 +2,10 @@ from django.db import models
 
 
 class MainDnaDataBase(models.Model):
-    id = models.BigIntegerField(primary_key=True, null=False)
-    sequence = models.CharField(max_length=96, null=False)
-    activity = models.FloatField(null=False)
-    year_of_publication = models.IntegerField(max_length=4, null=False)
+    id = models.BigIntegerField(primary_key=True)
+    sequence = models.CharField(max_length=96, null=False, default='')
+    activity = models.FloatField(null=False, default=0)
+    year_of_publication = models.IntegerField()
 
     class Meta:
         ordering = ['id']
