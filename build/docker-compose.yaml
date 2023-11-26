@@ -39,6 +39,7 @@ services:
       - ../dnaZymeWeb:/usr/src/app/dnaZymeWeb
       - ../main:/usr/src/app/main
       - ../prediction:/usr/src/app/prediction
+      - ../knowledgebase:/usr/src/app/knowledgebase
     networks:
       - seq_backend
     expose:
@@ -67,5 +68,6 @@ volumes:
   dnaZymeWeb:
   main:
   prediction:
+  knowledgebase:
   nginx:
   db_data:
