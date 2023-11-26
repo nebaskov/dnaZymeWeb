@@ -3,6 +3,7 @@ from Bio.SeqUtils import (
     molecular_weight,
     MeltingTemp
 )
+from django.db import connection
 
 
 def get_seq_properties(sequence: str) -> dict:
@@ -21,3 +22,17 @@ def process_buffer(user_input: dict) -> str:
         na_cl=user_input.get('na_cl'),
         k_cl=user_input.get('k_cl')
     )
+
+
+def get_clones(sequence: str) -> int:
+    with connection.cursor() as cursor:
+        cursor.execute(
+            'SELECT COUNT(*) FROM '
+            '(SELECT id, sequence FROM dnazyme) AS t '
+            'WHERE LEVENSHTEIN(%s, t.sequence) > 30',
+            [sequence]
+        )
+        count = cursor.fetchone()
+    if count is not None and len(count) >= 1:
+        return count[0]
+    return 0

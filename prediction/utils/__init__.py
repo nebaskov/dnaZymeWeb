@@ -4,5 +4,6 @@ from .model_tools import (
 )
 from .seq_tools import (
     process_buffer,
-    get_seq_properties
+    get_seq_properties,
+    get_clones
 )

@@ -5,7 +5,8 @@ from .utils import (
     get_descriptors,
     make_prediction,
     get_seq_properties,
-    process_buffer
+    process_buffer,
+    get_clones
 )
 
 
@@ -32,7 +33,8 @@ def prediction(request):
 
             context = {
                 'result': make_prediction(descriptors),
-                'buffer': process_buffer(user_input)
+                'buffer': process_buffer(user_input),
+                'clones': get_clones(user_input.get('sequence'))
             }
             context.update(seq_properties)
 
