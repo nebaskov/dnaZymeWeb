@@ -1,22 +1,6 @@
 version: "3.8"
 
 services:
-  db:
-    image: postgres:16
-    container_name: seqcraft_postgres
-    hostname: "postgres"
-    restart: unless-stopped
-    environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DB}
-    ports:
-      - "5897:5432"
-    volumes:
-      - ../db_data:/var/lib/pgsql/data
-    networks:
-      - seq_backend
-
   web:
     build:
       context: ..
@@ -70,4 +54,3 @@ volumes:
   prediction:
   knowledgebase:
   nginx:
-  db_data:
