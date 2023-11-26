@@ -1,17 +1,6 @@
 import base64
 from io import BytesIO
-
 import matplotlib.pyplot as plt
-# import forgi.visual.mplotlib as fvm
-# import forgi
-
-
-def gc_count(sequence: str):
-    pass
-
-
-def second_structure_plot(sequence: str) -> None:
-    pass
 
 
 def get_graph():

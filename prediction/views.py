@@ -8,8 +8,6 @@ from .utils import (
     process_buffer
 )
 
-# Create your views here.
-
 
 def result(request):
     return render(request, 'prediction/templates/prediction/result.html')
