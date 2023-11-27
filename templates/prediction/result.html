@@ -465,7 +465,8 @@
   </div>
     <div class="lev_dist">
         <div  class="e33_74">Levenstein distances</div>
-        <img src="{% static 'main/img/sequence_clustering.png' %}" alt="background_ctb" class="sequence_clustering_paint">
+        <!-- <img src="{% static 'main/img/sequence_clustering.png' %}" alt="background_ctb" class="sequence_clustering_paint"> -->
+        <img src="data:image/png;base64, {{ levenshtein|safe }}" alt="background_ctb" class="sequence_clustering_paint">
 
     </div>
     <div class="structure_sec">

@@ -6,7 +6,8 @@ from .utils import (
     make_prediction,
     get_seq_properties,
     process_buffer,
-    get_clones
+    get_clones,
+    plot_levenshtein
 )
 
 
@@ -34,7 +35,8 @@ def prediction(request):
             context = {
                 'result': make_prediction(descriptors),
                 'buffer': process_buffer(user_input),
-                'clones': get_clones(user_input.get('sequence'))
+                'clones': get_clones(user_input.get('sequence')),
+                'levenshtein': plot_levenshtein(user_input.get('sequence'))
             }
             context.update(seq_properties)
 
