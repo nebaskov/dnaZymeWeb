@@ -20,7 +20,7 @@
 	position:absolute;
 }
 .article_background {
-	width:99vw;
+    width:99vw;
 	height:50vh;
 	position:absolute;
 }
@@ -47,14 +47,14 @@
 }
 .main_article_text {
 	color:rgba(0, 0, 0, 1);
-	width:60vw;
+	width: 76vw;
 	height:100vh;
 	position:absolute;
-	left:17.5vw;
+	left:12vw;
 	top:65vh;
 	font-family:Roboto;
 	text-align: justify;
-	font-size:2.5vh;
+	font-size:3vh;
 	letter-spacing:0;
 }
 .article_title {
@@ -62,12 +62,12 @@
 	width:36vw;
 	height:18vh;
 	position:absolute;
-    top: 4vh;
+    top: 5.5vh;
     left: 2vw;
-    font-weight: 500;
+    font-weight: 600;
 	font-family:Roboto;
 	text-align:left;
-	font-size:32px;
+	font-size:4vh;
 	letter-spacing:0;
 }
 .e65_152 {
@@ -92,26 +92,33 @@
 }
 
 .e65_163 {
+    border: 0;
+    padding: 0;
 	width:25vw;
 	height:40vh;
-	position:absolute;
-	top:24vh;
+    position: absolute;
     background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
 	border-top-left-radius:10px;
 	border-top-right-radius:10px;
 	border-bottom-left-radius:10px;
 	border-bottom-right-radius:10px;
 }
+.e65_163:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: scale(1.01);
+}
 
+.e65_163:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
 .recommended_articles_image {
 	background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 0.5299999713897705);
 	width:25vw;
 	height:25vh;
-	position:absolute;
+    position: relative;
+    top: -7.5vh;
 	border-top-left-radius:10px;
 	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
 }
 .recommended_articles_title {
 	color:rgba(0, 0, 0, 1);
@@ -126,10 +133,11 @@
 	letter-spacing:0;
 }
 .e65_172 {
+    padding:0;
+    border: 0;
 	width:25vw;
 	height:40vh;
 	position:absolute;
-	top:24vh;
     left: 27vw;
     background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
 	border-top-left-radius:10px;
@@ -137,12 +145,20 @@
 	border-bottom-left-radius:10px;
 	border-bottom-right-radius:10px;
 }
+.e65_172:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: scale(1.01);
+}
 
+.e65_172:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
 .e65_176 {
+    padding: 0;
+    border: 0;
 	width:25vw;
 	height:40vh;
 	position:absolute;
-	top:24vh;
     left: 54vw;
     background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
 	border-top-left-radius:10px;
@@ -150,7 +166,14 @@
 	border-bottom-left-radius:10px;
 	border-bottom-right-radius:10px;
 }
+.e65_176:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: scale(1.01);
+}
 
+.e65_176:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
 .e65_184 {
 	width:60vw;
 	height:30vh;
@@ -189,7 +212,7 @@
 }
 .recommended_articles {
     position: absolute;
-    top: 140vh;
+    top: 165vh;
     left: 10vw;
     width:79vw;
 	height:70vh;
@@ -197,7 +220,7 @@
 
 .abuot_author {
     position: absolute;
-    top: 220vh;
+    top: 245vh;
     left: 10vw;
     width:79vw;
 	height:70vh;
@@ -224,6 +247,13 @@
 	font-size:6vh;
 	letter-spacing:0;
 }
+
+.buttons_ra {
+    position: absolute;
+    top: 25vh;
+    width:79vw;
+	height:40vh;
+}
 </style>
 
 <div class=e54_138>
@@ -249,21 +279,21 @@ Overall, predicting DNAzyme activity using biological principles is essential fo
     <div class="recommended_articles">
         <div  class="e65_152">Recommended</div>
         <div  class="e65_153">Articles</div>
-
-        <div class=e65_163>
-            <img src="{% static '/main/img/backgroung_edited_2.jpg' %}" alt="background_ctb" class="recommended_articles_image">
-            <div  class="recommended_articles_title">At SequenceCraft we are leading the </div>
+        <div class="buttons_ra">
+            <button class=e65_163 onclick="location.href='challenges-and-future-prospects'">
+                <img src="{% static '/knowledgebase/img/article_2.png' %}" alt="buttonpng" class="recommended_articles_image">
+                <div  class="recommended_articles_title">Discover the fundamentals of DNAzymes</div>
+            </button>
+            <button class=e65_172 onclick="location.href='strategies-for-predicting'">
+                <img src="{% static '/knowledgebase/img/article_7.png' %}" alt="buttonpng" class="recommended_articles_image">
+                <div  class="recommended_articles_title">Challenges and potential of DNAzymes in gene therapy</div>
+            </button>
+            <button class=e65_176 onclick="location.href='strategies-for-predicting'">
+                <img src="{% static '/knowledgebase/img/article_6.png' %}" alt="buttonpng" class="recommended_articles_image">
+                <div  class="recommended_articles_title">Explore DNAzyme potential and applications</div>
+            </button>
         </div>
 
-        <div class=e65_172>
-            <img src="{% static '/main/img/dna.jpg' %}" alt="background_ctb" class="recommended_articles_image">
-        <div  class="recommended_articles_title">At SequenceCraft we are leading the </div>
-        </div>
-
-        <div class=e65_176>
-            <img src="{% static '/main/img/prediction_edited_thick.jpg' %}" alt="background_ctb" class="recommended_articles_image">
-            <div  class="recommended_articles_title">At SequenceCraft we are leading the </div>
-        </div>
     </div>
 
     <div class="abuot_author">
@@ -272,18 +302,17 @@ Overall, predicting DNAzyme activity using biological principles is essential fo
 
         <div class=e65_184>
 
-        <div  class="e65_185">Jenna Bradley is our DNAzyme expert.
+        <div  class="e65_185">Maria Eremeeva is our DNAzyme expert.
         She leads our research and development efforts, providing valuable insights and expertise
-        in the field of DNAzyme design.
+        in the field of DNAzyme digital design.
         <div></div>
             <br>
-        Follow her @jenna.b</div>
+        Contact her: eremeeva_maria@scamt-itmo.ru</div>
         </div>
 
         <img src="{% static '/main/img/masha_photoaidcom_cropped.jpg' %}" alt="background_ctb" class="e65_183">
 
     </div>
-
 </div>
 
 {% endblock %}
