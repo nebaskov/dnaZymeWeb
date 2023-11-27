@@ -29,7 +29,7 @@ def get_clones(sequence: str) -> int:
         cursor.execute(
             'SELECT COUNT(*) FROM '
             '(SELECT id, sequence FROM dnazyme) AS t '
-            'WHERE LEVENSHTEIN(%s, t.sequence) < 10',
+            'WHERE LEVENSHTEIN(%s, t.sequence) < 15',
             [sequence]
         )
         count = cursor.fetchone()
