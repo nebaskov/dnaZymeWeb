@@ -5,6 +5,8 @@
 {% load static%}
 <link href="https://fonts.googleapis.com/css?family=Spline+Sans Mono&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 <head> </head>
 <style>
@@ -25,7 +27,7 @@
 	font-size:4vh;
 	letter-spacing:0;
 }
-.e9_699 {
+.searching_form {
 	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
 	position:absolute;
 	border-top-left-radius:20px;
@@ -37,6 +39,7 @@
     top:12vh;
 	background-repeat:no-repeat;
 	background-size:cover;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .e9_701 {
 	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
@@ -52,10 +55,10 @@
 }
 .table-fix {
     overflow-y: scroll;
-    height: 58vh;
+    height: 56vh;
     width: 80vw;
     position: relative;
-    font-size: 1.7vh;
+    font-size: 2vh;
     border-collapse: collapse;
     border-spacing: 0;
     border-bottom-left-radius:20px;
@@ -78,8 +81,10 @@ td {
 }
 
 tr{
- background-color: #fafafa;
+    background-color: #fafafa;
 	font-family:Roboto;
+     border-bottom: 1pt solid #d9d7d7;
+    height: 6vh;
 }
 
 td:nth-child(1){
@@ -107,17 +112,13 @@ td:nth-child(4){
 .table_head_fixed {
     position: relative;
     max-width: 80vw;
-    max-height: 7vh;
+    max-height: 9vh;
 }
 .fixed_header {
     max-width: 80vw;
-    max-height: 5vh;
+    max-height: 7vh;
 }
-.fixed_header tr {
-    width: 80vw;
-    font-size: 2vh;
-	font-family:Roboto;
-}
+
 .fixed_th_1 {
     font-family:Roboto;
     width: 15vw;
@@ -126,6 +127,7 @@ td:nth-child(4){
     background-color: #eeeeee;
     text-align:center;
     border-top-left-radius:20px;
+    font-size: 2.4vh;
 }
 .fixed_th_2 {
     font-family:Roboto;
@@ -134,6 +136,7 @@ td:nth-child(4){
     padding: 1vw 2vh;
     background-color: #eeeeee;
     text-align:center;
+    font-size: 2.4vh;
 }
 .fixed_th_3 {
     font-family:Roboto;
@@ -142,6 +145,7 @@ td:nth-child(4){
     padding: 1vw 2vh;
     background-color: #eeeeee;
     text-align:center;
+    font-size: 2.4vh;
 }
 .fixed_th_4 {
     font-family:Roboto;
@@ -151,6 +155,44 @@ td:nth-child(4){
     background-color: #eeeeee;
     text-align:center;
     border-top-right-radius:20px;
+    font-size: 2.4vh;
+}
+form {
+    background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+    position:absolute;
+    width:35vw;
+	height:5vh;
+    top:12vh;
+    border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+    background-repeat:no-repeat;
+	background-size:cover;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-control {
+    background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+    border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+    border: 0 !important;
+    top: 0.25vh;
+}
+.input-group-append {
+    background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+    height:4.5vh;
+    margin-top: 0.25vh;
+    border: 0 !important;
+    border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+}
+.input-group-text {
+    border: 0 !important;
+}
+.form-group {
+    border: 0 !important;
+    height:4vh;
 }
 </style>
 
@@ -158,10 +200,29 @@ td:nth-child(4){
   <div class=database_main>
       <div  class="header_database">DataBase of DNAzymes</div>
       <div  class="e9_698">Source</div>
-      <div class="e9_699"></div>
-      <div class="e9_701"></div>
+{#        <form class="form-inline my-2 my-lg-0">#}
+{#            <input class="searching_form" name="q" type="search" placeholder="Search" aria-label="Search">#}
+{#            <button class="e9_701" type="submit">Search</button>#}
+{#        </form>#}
+{#      <div class="searching_form"></div>#}
 
-<div class="tbl-conteiner">
+    <form method="GET" action=".">
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <div class="input-group">
+                        <input class="form-control py-2" type="search" name="title_or_author"
+                               placeholder="Title or author..." />
+                        <span class="input-group-append">
+                            <div class="input-group-text bg-transparent">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+    </form>
+    <div class="e9_701"></div>
+    <div class="tbl-conteiner">
     <div class="table_head_fixed">
         <table class="fixed_header">
             <thead>
@@ -206,6 +267,10 @@ td:nth-child(4){
         </div>
 </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 
 

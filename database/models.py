@@ -14,4 +14,4 @@ class MainDnaDataBase(models.Model):
         db_table = 'dnazyme'
 
     def __str__(self):
-        return self.name
+        return self.id
