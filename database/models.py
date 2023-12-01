@@ -6,6 +6,7 @@ class MainDnaDataBase(models.Model):
     sequence = models.CharField(max_length=96, null=False, default='')
     activity = models.FloatField(null=False, default=0)
     year_of_publication = models.IntegerField()
+    name = models.CharField(max_length=50, null=False, default='')
 
     class Meta:
         ordering = ['id']
