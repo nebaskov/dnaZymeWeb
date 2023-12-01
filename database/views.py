@@ -32,10 +32,16 @@ def is_valid_queryparam(param):
 
 def database_filter(request):
     full_model = MainDnaDataBase.objects.all()
+    output_fin = serializers.serialize("python", full_model)
     _query = request.GET.get('title_or_author')
-    if _query.endswith('u'):
-        _query.replace('u', '')
     if is_valid_queryparam(_query):
+        if '(' in _query or ')' in _query:
+            return output_fin
+        _query = _query.strip()
+        print(_query)
+        if _query.endswith('u'):
+            _query.replace('u', '')
+
         float_type = True
         int_type = True
         try:
@@ -46,13 +52,16 @@ def database_filter(request):
             float(_query)
         except:
             float_type = False
-        start_query = f"select * from public.dnazyme where sequence ~* '{_query}'"
+        start_query = f"select * from public.dnazyme where dnazyme.sequence ~* '{_query}' " \
+                      f"union all select * from public.dnazyme where dnazyme.name ~* '{_query}'"
         if float_type and int_type:
             start_query = start_query + '' \
                           + f"union all select * from public.dnazyme where dnazyme.year_of_publication = '{_query}'"
         if float_type:
             start_query = start_query + '' \
                           + f"union all select * from public.dnazyme where dnazyme.activity = '{_query}'"
+        # start_query = start_query + '' \
+        #                   + f"union all select * from public.dnazyme"
         filtered_model = MainDnaDataBase.objects.raw(start_query)
         output_fin = serializers.serialize("python", filtered_model)
         if len(output_fin) == 0:

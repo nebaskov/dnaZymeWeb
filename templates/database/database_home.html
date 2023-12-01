@@ -91,14 +91,14 @@ td:nth-child(1){
     width: 15vw;
 }
 td:nth-child(2){
-    width: 50vw;
+    width: 45vw;
     word-break: break-all;
 }
 td:nth-child(3){
     width: 20vw;
 }
 td:nth-child(4){
-    width: 15vw;
+    width: 20vw;
 }
 .e9_698 {
     color:rgba(0, 0, 0, 1);
@@ -131,7 +131,7 @@ td:nth-child(4){
 }
 .fixed_th_2 {
     font-family:Roboto;
-    width: 50vw;
+    width: 45vw;
     font-weight: bolder;
     padding: 1vw 2vh;
     background-color: #eeeeee;
@@ -149,7 +149,7 @@ td:nth-child(4){
 }
 .fixed_th_4 {
     font-family:Roboto;
-    width:15vw;
+    width:20vw;
     font-weight: bolder;
     padding: 1vw 2vh;
     background-color: #eeeeee;
@@ -177,7 +177,8 @@ form {
     border-top-left-radius:20px;
 	border-bottom-left-radius:20px;
     border: 0 !important;
-    top: 0.25vh;
+    top: 0.5vh;
+    height: 4vh;
 }
 .input-group-append {
     background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
@@ -193,6 +194,7 @@ form {
 .form-group {
     border: 0 !important;
     height:4vh;
+    margin-bottom: 0;
 }
 </style>
 
@@ -229,15 +231,35 @@ form {
                 <tr>
                     <th class="fixed_th_1">
                         Name
+                        <button type="submit" name="sort_by_name">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-vertical" viewBox="0 0 16 16">
+                            <path d="M8.354 14.854a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 13.293V2.707L6.354 3.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 2.707v10.586l1.146-1.147a.5.5 0 0 1 .708.708l-2 2Z"/>
+                            </svg>
+                        </button>
                     </th>
                     <th class="fixed_th_2">
                         Sequence
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-vertical" viewBox="0 0 16 16">
+                            <path d="M8.354 14.854a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 13.293V2.707L6.354 3.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 2.707v10.586l1.146-1.147a.5.5 0 0 1 .708.708l-2 2Z"/>
+                            </svg>
+                        </span>
                     </th>
                     <th class="fixed_th_3">
                         Activity
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-vertical" viewBox="0 0 16 16">
+                            <path d="M8.354 14.854a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 13.293V2.707L6.354 3.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 2.707v10.586l1.146-1.147a.5.5 0 0 1 .708.708l-2 2Z"/>
+                            </svg>
+                        </span>
                     </th>
                     <th class="fixed_th_4">
                         Tear of publication
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-vertical" viewBox="0 0 16 16">
+                            <path d="M8.354 14.854a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 13.293V2.707L6.354 3.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 2.707v10.586l1.146-1.147a.5.5 0 0 1 .708.708l-2 2Z"/>
+                            </svg>
+                        </span>
                     </th>
                 </tr>
                 </thead>
@@ -249,7 +271,7 @@ form {
                 <tbody>
                     <tr>
                         <td>
-                            {{ instance.fields.id }}
+                            {{ instance.fields.name }}
                         </td>
                         <td>
                             {{ instance.fields.sequence }}
