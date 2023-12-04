@@ -5,6 +5,10 @@ from django.db.models import Q
 
 
 def database_home(request):
+    print(request)
+    if request.method == "POST":
+        db_filtered = sorting_query(request)
+        return render(request, 'database/database_home.html', {'db': db_filtered})
     db_filtered = database_filter(request)
     return render(request, 'database/database_home.html', {'db': db_filtered})
 
@@ -38,7 +42,6 @@ def database_filter(request):
         if '(' in _query or ')' in _query:
             return output_fin
         _query = _query.strip()
-        print(_query)
         if _query.endswith('u'):
             _query.replace('u', '')
 
@@ -67,3 +70,9 @@ def database_filter(request):
         if len(output_fin) == 0:
             output_fin = serializers.serialize("python", full_model)
     return output_fin
+
+
+def sorting_query(request):
+    if 'sort_by_name' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by dnazyme.name asc")
+    return serializers.serialize("python", filtered_model)

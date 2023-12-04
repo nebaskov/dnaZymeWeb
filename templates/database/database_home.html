@@ -157,7 +157,7 @@ td:nth-child(4){
     border-top-right-radius:20px;
     font-size: 2.4vh;
 }
-form {
+.form_search {
     background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
     position:absolute;
     width:35vw;
@@ -196,6 +196,15 @@ form {
     height:4vh;
     margin-bottom: 0;
 }
+.button_sort {
+    border: 0;
+}
+.button_sort:hover {background-color: #DCDCDC; font-family:Roboto;}
+
+.button_sort:active {
+  background-color: #DCDCDC;
+  transform: translateY(4px);
+}
 </style>
 
 <body>
@@ -208,12 +217,12 @@ form {
 {#        </form>#}
 {#      <div class="searching_form"></div>#}
 
-    <form method="GET" action=".">
+    <form method="GET" action="." class="form_search">
             <div class="form-row">
                 <div class="form-group col-12">
                     <div class="input-group">
                         <input class="form-control py-2" type="search" name="title_or_author"
-                               placeholder="Title or author..." />
+                               placeholder="Search..." />
                         <span class="input-group-append">
                             <div class="input-group-text bg-transparent">
                                 <i class="fa fa-search"></i>
@@ -230,12 +239,15 @@ form {
             <thead>
                 <tr>
                     <th class="fixed_th_1">
-                        Name
-                        <button type="submit" name="sort_by_name">
+
+                        <form method="POST" action=".">
+                            {% csrf_token %}
+                        Name<button title="sort_name_button" class="button_sort" name="sort_by_name" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-vertical" viewBox="0 0 16 16">
                             <path d="M8.354 14.854a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 13.293V2.707L6.354 3.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 2.707v10.586l1.146-1.147a.5.5 0 0 1 .708.708l-2 2Z"/>
                             </svg>
                         </button>
+                            </form>
                     </th>
                     <th class="fixed_th_2">
                         Sequence
