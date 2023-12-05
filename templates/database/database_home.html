@@ -41,18 +41,6 @@
 	background-size:cover;
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.e9_701 {
-	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
-	width:10vw;
-	height:5vh;
-	position:absolute;
-	left:50vw;
-	top:12vh;
-	border-top-left-radius:20px;
-	border-top-right-radius:20px;
-	border-bottom-left-radius:20px;
-	border-bottom-right-radius:20px;
-}
 .table-fix {
     overflow-y: scroll;
     height: 56vh;
@@ -69,7 +57,7 @@
     max-height: 65vh;
     position: relative;
     top: 17vh;
-    box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    box-shadow: 0 2px 5px rgba(64,64,64,.7);
     border-top-left-radius:20px;
 	border-top-right-radius:20px;
 	border-bottom-left-radius:20px;
@@ -169,7 +157,7 @@ td:nth-child(4){
 	border-bottom-right-radius:20px;
     background-repeat:no-repeat;
 	background-size:cover;
-    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);
 }
 
 .form-control {
@@ -180,6 +168,8 @@ td:nth-child(4){
     top: 0.5vh;
     height: 4vh;
 }
+
+
 .input-group-append {
     background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
     height:4.5vh;
@@ -196,32 +186,95 @@ td:nth-child(4){
     height:4vh;
     margin-bottom: 0;
 }
-.button_sort {
+.button_sort_down {
     border: 0;
+    position: relative;
+    top: -1.5vh;
+    height: 2vh;
+    padding: 0;
 }
-.button_sort:hover {background-color: #DCDCDC; font-family:Roboto;}
+.button_sort_down:hover {background-color: #DCDCDC; font-family:Roboto;}
 
-.button_sort:active {
+.button_sort_down:active {
   background-color: #DCDCDC;
-  transform: translateY(4px);
+  transform: translateY(2px);
+}
+
+.button_sort_up {
+    border: 0;
+    height: 2vh;
+    padding: 0;
+    position: relative;
+}
+.button_sort_up:hover {background-color: #DCDCDC; font-family:Roboto;}
+
+.button_sort_up:active {
+  background-color: #DCDCDC;
+  transform: translateY(2px);
+}
+
+.back_to_full_base {
+    background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:10vw;
+	height:5vh;
+	position:absolute;
+	left:69vw;
+	top:12vh;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+    border: 0;
+    background-repeat:no-repeat;
+	background-size:cover;
+    box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.button_sort_up .bi {
+    margin-bottom: 2vh;
+}
+
+.button_sort_down .bi {
+    margin-bottom: 3vh;
+}
+
+.sorting_arrows {
+    position: absolute;
+    bottom: 0.3vh;
+    display: inline-block;
+    width: 2vw;
+    height: 6vh;
+}
+.header_search {
+    position: relative;
+    left: 7vw;
+    width: 40vw;
+}
+.db_header_paint {
+    position: absolute;
+    width: 10vw;
+    height: 20vh;
+    {#top: 2vh;#}
+    {#left:5vw;#}
+    border-top-left-radius:100px;
+	border-top-right-radius:100px;
+	border-bottom-left-radius:100px;
+	border-bottom-right-radius:100px;
 }
 </style>
 
 <body>
   <div class=database_main>
+  <div class="header_search">
       <div  class="header_database">DataBase of DNAzymes</div>
       <div  class="e9_698">Source</div>
-{#        <form class="form-inline my-2 my-lg-0">#}
-{#            <input class="searching_form" name="q" type="search" placeholder="Search" aria-label="Search">#}
-{#            <button class="e9_701" type="submit">Search</button>#}
-{#        </form>#}
-{#      <div class="searching_form"></div>#}
+<img src="{% static '/main/img/database_header.jpg' %}" alt="background_ctb" class="db_header_paint">
 
     <form method="GET" action="." class="form_search">
             <div class="form-row">
                 <div class="form-group col-12">
                     <div class="input-group">
-                        <input class="form-control py-2" type="search" name="title_or_author"
+                        <input class="form-control" type="text" name="title_or_author"
                                placeholder="Search..." />
                         <span class="input-group-append">
                             <div class="input-group-text bg-transparent">
@@ -232,6 +285,13 @@ td:nth-child(4){
                 </div>
             </div>
     </form>
+  </div>
+
+      <button class="back_to_full_base"  onclick="location.href='https://sequencecraft.aicidlab.itmo.ru/database/'">
+      Back to full <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+</svg>
+      </button>
     <div class="e9_701"></div>
     <div class="tbl-conteiner">
     <div class="table_head_fixed">
@@ -242,36 +302,82 @@ td:nth-child(4){
 
                         <form method="POST" action=".">
                             {% csrf_token %}
-                        Name<button title="sort_name_button" class="button_sort" name="sort_by_name" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-vertical" viewBox="0 0 16 16">
-                            <path d="M8.354 14.854a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 13.293V2.707L6.354 3.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 2.707v10.586l1.146-1.147a.5.5 0 0 1 .708.708l-2 2Z"/>
-                            </svg>
+                        Name <div class="sorting_arrows">
+                                <button title="sort_name_up" class="button_sort_up" name="sort_by_name_up" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+                                <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+                                </svg>
+                                    <div></div>
+                                    <br>
+                                </button>
+                                <button title="sort_name_down" class="button_sort_down" name="sort_by_name_down" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                  <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506
+                                  0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                                </svg>
                         </button>
+                            </div>
                             </form>
                     </th>
                     <th class="fixed_th_2">
-                        Sequence
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-vertical" viewBox="0 0 16 16">
-                            <path d="M8.354 14.854a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 13.293V2.707L6.354 3.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 2.707v10.586l1.146-1.147a.5.5 0 0 1 .708.708l-2 2Z"/>
-                            </svg>
-                        </span>
+                        <form method="POST" action=".">
+                            {% csrf_token %}
+                        Sequence <div class="sorting_arrows">
+                                <button title="sort_name_up" class="button_sort_up" name="sort_by_sequence_up" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+                                <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+                                </svg>
+                                    <div></div>
+                                    <br>
+                                </button>
+                                <button title="sort_name_down" class="button_sort_down" name="sort_by_sequence_down" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                  <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506
+                                  0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                                </svg>
+                        </button>
+                            </div>
+                            </form>
                     </th>
                     <th class="fixed_th_3">
-                        Activity
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-vertical" viewBox="0 0 16 16">
-                            <path d="M8.354 14.854a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 13.293V2.707L6.354 3.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 2.707v10.586l1.146-1.147a.5.5 0 0 1 .708.708l-2 2Z"/>
-                            </svg>
-                        </span>
+                        <form method="POST" action=".">
+                            {% csrf_token %}
+                        Activity <div class="sorting_arrows">
+                                <button title="sort_name_up" class="button_sort_up" name="sort_by_activity_up" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+                                <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+                                </svg>
+                                    <div></div>
+                                    <br>
+                                </button>
+                                <button title="sort_name_down" class="button_sort_down" name="sort_by_activity_down" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                  <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506
+                                  0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                                </svg>
+                        </button>
+                            </div>
+                            </form>
                     </th>
                     <th class="fixed_th_4">
-                        Tear of publication
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-vertical" viewBox="0 0 16 16">
-                            <path d="M8.354 14.854a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 13.293V2.707L6.354 3.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 2.707v10.586l1.146-1.147a.5.5 0 0 1 .708.708l-2 2Z"/>
-                            </svg>
-                        </span>
+                        <form method="POST" action=".">
+                            {% csrf_token %}
+                        Tear of publication <div class="sorting_arrows">
+                                <button title="sort_name_up" class="button_sort_up" name="sort_by_yop_up" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+                                <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+                                </svg>
+                                    <div></div>
+                                    <br>
+                                </button>
+                                <button title="sort_name_down" class="button_sort_down" name="sort_by_yop_down" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                  <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506
+                                  0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                                </svg>
+                                    </button>
+                            </div>
+                            </form>
                     </th>
                 </tr>
                 </thead>
@@ -289,7 +395,7 @@ td:nth-child(4){
                             {{ instance.fields.sequence }}
                         </td>
                         <td>
-                            kobs = {{ instance.fields.activity }} min <sup>-1</sup>
+                            kobs = {{ instance.fields.activity|floatformat:5}} min <sup>-1</sup>
                         </td>
                         <td>
                             {{ instance.fields.year_of_publication }}

@@ -73,6 +73,21 @@ def database_filter(request):
 
 
 def sorting_query(request):
-    if 'sort_by_name' in request.POST.keys():
-        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by dnazyme.name asc")
+    print(request.POST)
+    if 'sort_by_name_up' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by name asc")
+    if 'sort_by_name_down' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by name desc")
+    if 'sort_by_sequence_up' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by sequence asc")
+    if 'sort_by_sequence_down' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by sequence desc")
+    if 'sort_by_activity_up' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by activity asc")
+    if 'sort_by_activity_down' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by activity desc")
+    if 'sort_by_yop_up' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by year_of_publication asc")
+    if 'sort_by_yop_down' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by year_of_publication desc")
     return serializers.serialize("python", filtered_model)
