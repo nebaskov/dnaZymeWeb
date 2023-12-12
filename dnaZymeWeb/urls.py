@@ -26,4 +26,5 @@ urlpatterns = [
     path('database/', include('database.urls')),
     path('prediction/', include('prediction.urls')),
     path('knowledgebase/', include('knowledgebase.urls')),
+    path('generation/', include('generation.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

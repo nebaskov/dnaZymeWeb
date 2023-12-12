@@ -7,7 +7,3 @@ def index(request):
 
 def contacts(request):
     return render(request, 'main/contacts.html')
-
-
-def generation(request):
-    return render(request, 'main/generation.html')

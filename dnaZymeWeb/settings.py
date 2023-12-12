@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'database',
     'prediction',
     'knowledgebase',
-    'import_export'
+    'import_export',
+    'generation'
 ]
 
 MIDDLEWARE = [

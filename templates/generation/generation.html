@@ -61,18 +61,12 @@ tr{
     height: 6vh;
 }
 
-td:nth-child(1){
-    width: 15vw;
-}
-td:nth-child(2){
-    width: 45vw;
+.sequence_td_g{
+    width: 40vw;
     word-break: break-all;
 }
-td:nth-child(3){
-    width: 20vw;
-}
-td:nth-child(4){
-    width: 20vw;
+.activity_td_g {
+    width: 40vw;
 }
 .e9_698 {
     color:rgba(0, 0, 0, 1);
@@ -93,42 +87,22 @@ td:nth-child(4){
     max-height: 7vh;
 }
 
-.fixed_th_1 {
+.fixed_th_2_g {
     font-family:Roboto;
-    width: 15vw;
-    font-weight: bolder;
-    padding: 1vw 2vh;
-    background-color: #eeeeee;
-    text-align:center;
-    border-top-left-radius:20px;
-    font-size: 2.4vh;
-}
-.fixed_th_2 {
-    font-family:Roboto;
-    width: 45vw;
+    width: 40vw;
     font-weight: bolder;
     padding: 1vw 2vh;
     background-color: #eeeeee;
     text-align:center;
     font-size: 2.4vh;
 }
-.fixed_th_3 {
+.fixed_th_3_g {
     font-family:Roboto;
-    width: 20vw;
+    width: 40vw;
     font-weight: bolder;
     padding: 1vw 2vh;
     background-color: #eeeeee;
     text-align:center;
-    font-size: 2.4vh;
-}
-.fixed_th_4 {
-    font-family:Roboto;
-    width:20vw;
-    font-weight: bolder;
-    padding: 1vw 2vh;
-    background-color: #eeeeee;
-    text-align:center;
-    border-top-right-radius:20px;
     font-size: 2.4vh;
 }
 .form_search {
@@ -252,11 +226,11 @@ td:nth-child(4){
 <body>
   <div class=database_main>
   <div class="header_search">
-      <div  class="header_database">DataBase of DNAzymes</div>
+      <div  class="header_database">Generation DataBase</div>
       <div  class="e9_698">Source</div>
 <img src="{% static '/main/img/database_header.jpg' %}" alt="background_ctb" class="db_header_paint">
 
-    <form method="GET" action="." class="form_search">
+    <form method="GET" action="../main" class="form_search">
             <div class="form-row">
                 <div class="form-group col-12">
                     <div class="input-group">
@@ -284,28 +258,8 @@ td:nth-child(4){
         <table class="fixed_header">
             <thead>
                 <tr>
-                    <th class="fixed_th_1">
-
-                        <form method="POST" action=".">
-                            {% csrf_token %}
-                        Name <div class="sorting_arrows">
-                                <button title="sort_name_up" class="button_sort_up" name="sort_by_name_up" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                                  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-                                </svg>
-                                    <div></div>
-                                    <br>
-                                </button>
-                                <button title="sort_name_down" class="button_sort_down" name="sort_by_name_down" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                </svg>
-                        </button>
-                            </div>
-                            </form>
-                    </th>
-                    <th class="fixed_th_2">
-                        <form method="POST" action=".">
+                    <th class="fixed_th_2_g">
+                        <form method="POST" action="../main">
                             {% csrf_token %}
                         Sequence <div class="sorting_arrows">
                                 <button title="sort_name_up" class="button_sort_up" name="sort_by_sequence_up" type="submit">
@@ -323,8 +277,8 @@ td:nth-child(4){
                             </div>
                             </form>
                     </th>
-                    <th class="fixed_th_3">
-                        <form method="POST" action=".">
+                    <th class="fixed_th_3_g">
+                        <form method="POST" action="../main">
                             {% csrf_token %}
                         Activity <div class="sorting_arrows">
                                 <button title="sort_name_up" class="button_sort_up" name="sort_by_activity_up" type="submit">
@@ -342,25 +296,6 @@ td:nth-child(4){
                             </div>
                             </form>
                     </th>
-                    <th class="fixed_th_4">
-                        <form method="POST" action=".">
-                            {% csrf_token %}
-                        Tear of publication <div class="sorting_arrows">
-                                <button title="sort_name_up" class="button_sort_up" name="sort_by_yop_up" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                                  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-                                </svg>
-                                    <div></div>
-                                    <br>
-                                </button>
-                                <button title="sort_name_down" class="button_sort_down" name="sort_by_yop_down" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                </svg>
-                                    </button>
-                            </div>
-                            </form>
-                    </th>
                 </tr>
                 </thead>
         </table>
@@ -370,17 +305,11 @@ td:nth-child(4){
                 {% for instance in db %}
                 <tbody>
                     <tr>
-                        <td>
-                            {{ instance.fields.name }}
-                        </td>
-                        <td>
+                        <td class="sequence_td_g">
                             {{ instance.fields.sequence }}
                         </td>
-                        <td>
+                        <td class="activity_td_g">
                             kobs = {{ instance.fields.activity|floatformat:5}} min <sup>-1</sup>
-                        </td>
-                        <td>
-                            {{ instance.fields.year_of_publication }}
                         </td>
                     </tr>
                 {% endfor %}
