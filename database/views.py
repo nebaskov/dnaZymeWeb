@@ -90,12 +90,3 @@ def sorting_query_database(request):
     if 'sort_by_yop_down' in request.POST.keys():
         filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by year_of_publication desc")
     return serializers.serialize("python", filtered_model)
-
-
-def database_generation(request):
-    print(request)
-    if request.method == "POST":
-        db_filtered = sorting_query_database(request)
-        return render(request, 'main/generation.html.html', {'db': db_filtered})
-    db_filtered = database_filter(request)
-    return render(request, 'main/generation.html.html', {'db': db_filtered})

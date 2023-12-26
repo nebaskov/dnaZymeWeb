@@ -230,7 +230,7 @@ tr{
       <div  class="e9_698">Source</div>
 <img src="{% static '/main/img/database_header.jpg' %}" alt="background_ctb" class="db_header_paint">
 
-    <form method="GET" action="../main" class="form_search">
+    <form method="GET" action="." class="form_search">
             <div class="form-row">
                 <div class="form-group col-12">
                     <div class="input-group">
@@ -259,17 +259,17 @@ tr{
             <thead>
                 <tr>
                     <th class="fixed_th_2_g">
-                        <form method="POST" action="../main">
+                        <form method="POST" action=".">
                             {% csrf_token %}
                         Sequence <div class="sorting_arrows">
-                                <button title="sort_name_up" class="button_sort_up" name="sort_by_sequence_up" type="submit">
+                                <button title="sort_name_up" class="button_sort_up" name="g_sort_by_sequence_up" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
                                 </svg>
                                     <div></div>
                                     <br>
                                 </button>
-                                <button title="sort_name_down" class="button_sort_down" name="sort_by_sequence_down" type="submit">
+                                <button title="sort_name_down" class="button_sort_down" name="g_sort_by_sequence_down" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                                   <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                                 </svg>
@@ -278,17 +278,17 @@ tr{
                             </form>
                     </th>
                     <th class="fixed_th_3_g">
-                        <form method="POST" action="../main">
+                        <form method="POST" action=".">
                             {% csrf_token %}
                         Activity <div class="sorting_arrows">
-                                <button title="sort_name_up" class="button_sort_up" name="sort_by_activity_up" type="submit">
+                                <button title="sort_name_up" class="button_sort_up" name="g_sort_by_activity_up" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
                                 </svg>
                                     <div></div>
                                     <br>
                                 </button>
-                                <button title="sort_name_down" class="button_sort_down" name="sort_by_activity_down" type="submit">
+                                <button title="sort_name_down" class="button_sort_down" name="g_sort_by_activity_down" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                                   <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                                 </svg>

@@ -54,12 +54,8 @@ def database_filter(request):
             float(_query)
         except:
             float_type = False
-        start_query = f"select * from public.dnazyme where dnazyme.sequence ~* '{_query}' " \
-                      f"union all select * from public.dnazyme where dnazyme.name ~* '{_query}'"
-        if float_type and int_type:
-            start_query = start_query + '' \
-                          + f"union all select * from public.dnazyme where dnazyme.year_of_publication = '{_query}'"
-        if float_type:
+        start_query = f"select * from public.candidates where dnazyme.sequence ~* '{_query}' "
+        if float_type or int_type:
             start_query = start_query + '' \
                           + f"union all select * from public.dnazyme where dnazyme.activity = '{_query}'"
         # start_query = start_query + '' \
@@ -72,30 +68,12 @@ def database_filter(request):
 
 
 def sorting_query_database(request):
-    print(request.POST)
-    if 'sort_by_name_up' in request.POST.keys():
-        filtered_model = CandidatesDb.objects.raw("select * from public.dnazyme order by name asc")
-    if 'sort_by_name_down' in request.POST.keys():
-        filtered_model = CandidatesDb.objects.raw("select * from public.dnazyme order by name desc")
-    if 'sort_by_sequence_up' in request.POST.keys():
-        filtered_model = CandidatesDb.objects.raw("select * from public.dnazyme order by sequence asc")
-    if 'sort_by_sequence_down' in request.POST.keys():
-        filtered_model = CandidatesDb.objects.raw("select * from public.dnazyme order by sequence desc")
-    if 'sort_by_activity_up' in request.POST.keys():
-        filtered_model = CandidatesDb.objects.raw("select * from public.dnazyme order by activity asc")
-    if 'sort_by_activity_down' in request.POST.keys():
-        filtered_model = CandidatesDb.objects.raw("select * from public.dnazyme order by activity desc")
-    if 'sort_by_yop_up' in request.POST.keys():
-        filtered_model = CandidatesDb.objects.raw("select * from public.dnazyme order by year_of_publication asc")
-    if 'sort_by_yop_down' in request.POST.keys():
-        filtered_model = CandidatesDb.objects.raw("select * from public.dnazyme order by year_of_publication desc")
+    if 'g_sort_by_sequence_up' in request.POST.keys():
+        filtered_model = CandidatesDb.objects.raw("select * from public.candidates order by sequence asc")
+    if 'g_sort_by_sequence_down' in request.POST.keys():
+        filtered_model = CandidatesDb.objects.raw("select * from public.candidates order by sequence desc")
+    if 'g_sort_by_activity_up' in request.POST.keys():
+        filtered_model = CandidatesDb.objects.raw("select * from public.candidates order by activity asc")
+    if 'g_sort_by_activity_down' in request.POST.keys():
+        filtered_model = CandidatesDb.objects.raw("select * from public.candidates order by activity desc")
     return serializers.serialize("python", filtered_model)
-
-
-def database_generation(request):
-    print(request)
-    if request.method == "POST":
-        db_filtered = sorting_query_database(request)
-        return render(request, 'main/generation.html.html', {'db': db_filtered})
-    db_filtered = database_filter(request)
-    return render(request, 'main/generation.html.html', {'db': db_filtered})
