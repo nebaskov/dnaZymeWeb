@@ -14,6 +14,7 @@ COPY ./knowledgebase ./knowledgebase
 COPY ./templates ./templates
 COPY ./static ./static
 COPY ./manage.py .
+COPY ./generation ./generation
 
 RUN pip3 install -r requirements.txt
 
