@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .models import MainDnaDataBase
 from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
 def database_home(request):
     print(request)
     if request.method == "POST":
