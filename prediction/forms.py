@@ -8,6 +8,7 @@ class Prediction(forms.Form):
         required=True,
         # label='DNA sequence',
         label='',
+        initial='CCCTATACAAGTGGGAGGATTAGCCATAGGCGTGGGGCAA',
         label_suffix='',
         widget=forms.TextInput(
             attrs={
@@ -24,6 +25,7 @@ class Prediction(forms.Form):
         required=True,
         # label='pH',
         label='',
+        initial=7.5,
         label_suffix='',
         widget=forms.TextInput(
             attrs={
@@ -38,6 +40,7 @@ class Prediction(forms.Form):
         required=True,
         # label='Temperature',
         label_suffix='',
+        initial=37,
         label='',
         widget=forms.TextInput(
             attrs={
@@ -66,6 +69,7 @@ class Prediction(forms.Form):
     cofactor_concentraion = forms.CharField(
         required=True,
         label_suffix='',
+        initial=0.04,
         label='',
         widget=forms.TextInput(
             attrs={
@@ -80,6 +84,7 @@ class Prediction(forms.Form):
         required=True,
         # label='NaCl',
         label='',
+        initial=0.15,
         label_suffix='',
         widget=forms.TextInput(
             attrs={
@@ -94,6 +99,7 @@ class Prediction(forms.Form):
         required=True,
         # label='KCl',
         label='',
+        initial=0.00,
         label_suffix='',
         widget=forms.TextInput(
             attrs={

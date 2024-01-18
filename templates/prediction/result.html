@@ -10,11 +10,12 @@
 </head>
 
 <style>
-.e33_2 {
+.main_result {
 	background-color:rgba(255, 255, 255, 1);
-	width:95vw;
+	width:80vw;
 	height:90vh;
 	position:absolute;
+    left: 5vw;
 }
 .candidate_header {
 	color:rgba(0, 0, 0, 1);
@@ -69,11 +70,8 @@
 	border-bottom-right-radius:10px;
 }
 .e33_10 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
 	font-family:Poppins;
-	font-size:4vh;
-    left: 2.5vw;
+	font-size:3.5vh;
 	letter-spacing:0;
 }
 .e33_13 {
@@ -93,12 +91,9 @@
 	letter-spacing:0;
 }
 .e33_12 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
 	font-family:Poppins;
 	font-size:2vh;
 	letter-spacing:0;
-    top: 5vh;
 }
 .e33_15 {
 	color:rgba(0, 0, 0, 1);
@@ -347,10 +342,12 @@
 	letter-spacing:0;
 }
 .candidate_info_rectangle {
-    border: 10px solid #E7E7E7;
-    background-color:#CDE3F2;
-	width:45%;
-	height:50%;
+    border: 10px solid rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
+    overflow:hidden;
+    padding: 1em;
+    background-color: rgba(205.00000298023224, 227.00000166893005, 242.00000077486038, 0.5299999713897705);
+	width:38vw;
+	height:15vh;
 	position:relative;
 	top:3%;
 	border-top-left-radius:10px;
@@ -360,39 +357,41 @@
 }
 
 .candidate_info_rectangle .melting_text {
-    position:absolute;
+    text-align: center;
 	top:1.5vh;
-    width:7vw;
+    width:12vw;
     left: 1vw;
 }
 
 .candidate_info_rectangle .mol_weight_text {
-    position:absolute;
-	top:1.5vh;
-    width:10vw;
-    left: 10.5vw;
+    text-align: center;
+	top:0vh;
+    width:12vw;
+    position: absolute;
+    left: 13vw;
 }
 .candidate_info_rectangle .gc_text {
-    position:absolute;
-	top:1.5vh;
-    width:7vw;
-    left: 18vw;
+    text-align: center;
+	top:0vh;
+    width:12vw;
+    position: absolute;
+    left: 25vw;
 }
-.mol_weight_text_w {
-    color:rgba(0, 0, 0, 1);
-	position:absolute;
-	font-family:Poppins;
-	font-size:2vh;
-	letter-spacing:0;
-    top: 7vh;
-    left: 0.5vw;
-}
+{#.mol_weight_text_w {#}
+{#    color:rgba(0, 0, 0, 1);#}
+{#	position:absolute;#}
+{#	font-family:Poppins;#}
+{#	font-size:2vh;#}
+{#	letter-spacing:0;#}
+{#    top: 7vh;#}
+{#    left: 0.5vw;#}
+{#}#}
 .generation_results {
     width:43vw;
 	height:25vh;
 	position:absolute;
 	left:5vw;
-	top:29vh;
+	top:30vh;
 }
 .lev_dist {
     position:absolute;
@@ -415,22 +414,22 @@
 }
 </style>
 
-<div class=e33_2>
+<div class=main_result>
   <div class=candidate_info>
       <span  class="candidate_header">DNAzyme candidate</span>
       <div class="candidate_info_rectangle">
           <div class="melting_text">
-              <span  class="e33_10"> {{ melting_temp }} </span>
-              <span  class="e33_12">Melting Point</span>
+              <p  class="e33_10"> {{ melting_temp|floatformat:1 }} </p>
+              <div></div>
+              <p  class="e33_12">Melting Point</p>
           </div>
           <div class="mol_weight_text">
-              <span  class="e33_13"> {{ mol_weight }} </span>
-              <span  class="e33_15">Molecular</span>
-              <span  class="mol_weight_text_w">Weight</span>
+              <p  class="e33_10"> {{ mol_weight|floatformat:2 }} </p>
+              <p  class="e33_12">Molecular Weight</p>
           </div>
           <div class="gc_text">
-              <span  class="e33_14"> {{ gc_content }} </span>
-              <span  class="e33_16">GC-content</span>
+              <p  class="e33_10"> {{ gc_content|floatformat:1 }} </p>
+              <p  class="e33_12">GC-content</p>
           </div>
       </div>
   </div>
