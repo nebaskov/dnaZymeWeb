@@ -81,7 +81,7 @@ def plot_structure(sequence: str):
     if not rnas:
         return
     plt.switch_backend('AGG')
-    plt.figure(figsize=(10, 6))
+    fig = plt.figure(figsize=(10, 6))
     fvm.plot_rna(
         rnas[0],
         text_kwargs={"fontweight": "black"},
