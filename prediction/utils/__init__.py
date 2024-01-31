@@ -7,4 +7,7 @@ from .seq_tools import (
     get_seq_properties,
     get_clones
 )
-from .plot_tools import plot_levenshtein
+from .plot_tools import (
+    plot_levenshtein,
+    plot_structure
+)
