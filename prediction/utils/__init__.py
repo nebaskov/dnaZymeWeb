@@ -9,5 +9,5 @@ from .seq_tools import (
 )
 from .plot_tools import (
     plot_levenshtein,
-    plot_structure
+    # plot_structure
 )

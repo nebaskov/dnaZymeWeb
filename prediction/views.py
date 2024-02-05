@@ -8,7 +8,7 @@ from .utils import (
     process_buffer,
     get_clones,
     plot_levenshtein,
-    plot_structure
+    # plot_structure
 )
 
 
@@ -38,7 +38,7 @@ def prediction(request):
                 'buffer': process_buffer(user_input),
                 'clones': get_clones(user_input.get('sequence')),
                 'levenshtein': plot_levenshtein(user_input.get('sequence')),
-                'structure': plot_structure(user_input.get('sequence'))
+                # 'structure': plot_structure(user_input.get('sequence'))
             }
             context.update(seq_properties)
 
