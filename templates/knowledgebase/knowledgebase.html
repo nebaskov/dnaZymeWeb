@@ -4,332 +4,349 @@
 <html lang="en">
 {% load static%}
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Outfit&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Spline+Sans Mono&display=swap" rel="stylesheet">
 
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-    @media (min-width: 1200px) {
-        .e54_76 {
-            background-color: rgba(255, 255, 255, 1);
-            width: 95vw;
-            height: 90vh;
-            position: absolute;
-        }
+.e54_76 {
+    background-color: rgba(255, 255, 255, 1);
+    width: 95vw;
+    height: 87vh;
+    position: absolute;
+    margin-top: 0.1vh;
+}
 
-        .e54_82 {
-            font-weight: 500;
-            color: rgba(0, 0, 0, 1);
-            text-align: left;
-            font-size: 5vh;
-            letter-spacing: 0;
-            width: 60vw;
-            height: 30vh;
-            position: absolute;
-            left: 7vw;
-            top: 3vh;
-        }
+.main_title_text {
+    font-family: Roboto;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 1);
+    text-align: left;
+    font-size: 5vh;
+    letter-spacing: 0;
+    width: 60vw;
+    height: 30vh;
+    position: absolute;
+    left: 7vw;
+    top: 3vh;
+}
 
-        .e54_96 {
-            border: 0;
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-            width: 42vw;
-            height: 15vh;
-            position: absolute;
-            left: 7vw;
-            top: 15vh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+.e54_96 {
+    border: 0;
+    background-color:#E0E2F0;
+    width: 35vw;
+    height: 15vh;
+    position: absolute;
+    left: 6vw;
+    top: 13vh;
+}
 
-        .e54_98 {
-            color: rgba(0, 0, 0, 1);
-            font-family: Roboto;
-            font-size: 2.7vh;
-            letter-spacing: 0;
-        }
+.article_title {
+    color: rgba(0, 0, 0, 1);
+    font-family: Outfit;
+    font-weight: bolder;
+    font-size: 2.3vh;
+    letter-spacing: 0;
+}
 
-        .e54_99 {
-            color: rgba(0, 0, 0, 1);
-            font-family: Roboto;
-            font-size: 1.9vh;
-            letter-spacing: 0;
-            position: absolute;
-            top: 3.5vh;
-        }
+.motivation_text {
+    color: rgba(0, 0, 0, 1);
+    font-family: Roboto;
+    font-weight: bolder;
+    font-size: 1.8vh;
+    letter-spacing: 0;
+    position: absolute;
+    top: 3.5vh;
+}
 
-        .e54_100 {
-            color: rgba(0, 0, 0, 1);
-            font-family: Roboto;
-            text-align: left;
-            font-size: 2vh;
-            letter-spacing: 0;
-        }
+.e54_100 {
+    color: rgba(0, 0, 0, 1);
+    font-family: Roboto;
+    text-align: left;
+    width: 12vw;
+    font-size: 2vh;
+    letter-spacing: 0;
+}
 
-        .e54_101 {
-            color: rgba(0, 0, 0, 1);
-            font-family: Roboto;
-            font-size: 1.9vh;
-            letter-spacing: 0;
-            position: absolute;
-            top: 2.8vh;
-        }
+.five_words_about {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Spline Sans Mono";
+    font-weight: bolder;
+    font-size: 1.6vh;
+    letter-spacing: 0;
+    position: absolute;
+    top: 2.8vh;
+}
 
-        .e54_102 {
-            background-color: rgba(91.37499645352364, 91.37499645352364, 91.37499645352364, 1);
-            width: 10vw;
-            height: 13vh;
-            position: absolute;
-            left: 1vw;
-            top: 1vh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+.e54_102 {
+    background-color: rgba(91.37499645352364, 91.37499645352364, 91.37499645352364, 1);
+    width: 6vw;
+    height: 11vh;
+    position: absolute;
+    left: 1.5vw;
+    top: 2vh;
+}
 
-        .e54_103 {
-            border: 0;
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-            width: 42vw;
-            height: 15vh;
-            position: absolute;
-            left: 7vw;
-            top: 32.5vh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+.e54_103 {
+    border: 0;
+    background-color:#E0E2F0;
+    width: 35vw;
+    height: 15vh;
+    position: absolute;
+    left: 6vw;
+    top: 31.5vh;
+}
 
-        .e54_110 {
-            border: 0;
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-            width: 42vw;
-            height: 15vh;
-            position: absolute;
-            left: 7vw;
-            top: 50vh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+.e54_110 {
+    border: 0;
+    background-color:#E0E2F0;
+    width: 35vw;
+    height: 15vh;
+    position: absolute;
+    left: 6vw;
+    top: 49.5vh;
+}
 
-        .e54_117 {
-            border: 0;
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-            width: 42vw;
-            height: 15vh;
-            position: absolute;
-            left: 51vw;
-            top: 15vh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+.e54_117 {
+    border: 0;
+    background-color:#E0E2F0;
+    width: 35vw;
+    height: 15vh;
+    position: absolute;
+    left: 53.7vw;
+    top: 13vh;
+}
 
-        .e54_124 {
-            border: 0;
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-            width: 42vw;
-            height: 15vh;
-            position: absolute;
-            left: 51vw;
-            top: 32.5vh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+.e54_124 {
+    border: 0;
+    background-color:#E0E2F0;
+    width: 35vw;
+    height: 15vh;
+    position: absolute;
+    left: 53.7vw;
+    top: 31.5vh;
+}
 
 
-        .e54_131 {
-            border: 0;
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-            width: 42vw;
-            height: 15vh;
-            position: absolute;
-            left: 51vw;
-            top: 50vh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+.e54_131 {
+    border: 0;
+    background-color:#E0E2F0;
+    width: 35vw;
+    height: 15vh;
+    position: absolute;
+    left: 53.7vw;
+    top: 49.5vh;
+}
 
-        .short_name_motive {
-            position: absolute;
-            left: 13vw;
-            top: 1vh;
-            width: 30vw;
-            text-align: left;
-        }
+.short_name_motive {
+    position: absolute;
+    left: 9vw;
+    top: 2vh;
+    width: 25vw;
+    text-align: left;
+}
 
-        .min_some_words {
-            position: absolute;
-            left: 13vw;
-            top: 8vh;
-            width: 50vw;
-            text-align: left;
-        }
+.min_some_words {
+    position: absolute;
+    left: 9vw;
+    top: 8vh;
+    width: 30vw;
+    text-align: left;
+}
 
-        .ni_article {
-            border: 0;
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-            width: 42vw;
-            height: 15vh;
-            position: absolute;
-            left: 51vw;
-            top: 67.5vh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+.ni_article {
+    border: 0;
+    background-color:#E0E2F0;
+    width: 35vw;
+    height: 15vh;
+    position: absolute;
+    left: 53.7vw;
+    top: 67vh;
+}
 
-        .left_ni_article {
-            border: 0;
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-            width: 42vw;
-            height: 15vh;
-            position: absolute;
-            left: 7vw;
-            top: 67.5vh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+.left_ni_article {
+    border: 0;
+    background-color:#E0E2F0;
+    width: 35vw;
+    height: 15vh;
+    position: absolute;
+    left: 6vw;
+    top: 67vh;
+}
 
-        .e54_96:hover {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-        }
+.e54_96:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
 
-        .e54_96:active {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-            transform: translateY(2px);
-        }
+.e54_96:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: translateY(2px);
+}
 
-        .e54_103:hover {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-        }
+.e54_103:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
 
-        .e54_103:active {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-            transform: translateY(2px);
-        }
+.e54_103:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: translateY(2px);
+}
 
 
-        .e54_110:hover {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-        }
+.e54_110:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
 
-        .e54_110:active {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-            transform: translateY(2px);
-        }
-
-
-        .left_ni_article:hover {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-        }
-
-        .left_ni_article:active {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-            transform: translateY(2px);
-        }
+.e54_110:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: translateY(2px);
+}
 
 
-        .e54_117:hover {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-        }
+.left_ni_article:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
 
-        .e54_117:active {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-            transform: translateY(2px);
-        }
-
-
-        .e54_124:hover {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-        }
-
-        .e54_124:active {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-            transform: translateY(2px);
-        }
+.left_ni_article:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: translateY(2px);
+}
 
 
-        .e54_131:hover {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-        }
+.e54_117:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
 
-        .e54_131:active {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-            transform: translateY(2px);
-        }
+.e54_117:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: translateY(2px);
+}
 
 
-        .ni_article:hover {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-        }
+.e54_124:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
 
-        .ni_article:active {
-            background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
-            transform: translateY(2px);
-        }
-    }
+.e54_124:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: translateY(2px);
+}
+
+
+.e54_131:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
+
+.e54_131:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: translateY(2px);
+}
+
+
+.ni_article:hover {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+}
+
+.ni_article:active {
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    transform: translateY(2px);
+}
+.start_backgroud {
+    height: 87vh;
+    width: 99.7vw;
+}
+.clock_icon {
+    background-color: #FFFFFF;
+    width: 7vw;
+    height: 5vh;
+    position: absolute;
+    left: 27vw;
+    top: 2vh;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clock_icon_paint {
+    width: 1.5vw;
+    height: 3vh;
+    margin-bottom: 0.2vh;
+}
+.clock_icon_text {
+    margin-top: 2.5vh;
+    font-size: 1.9vh;
+    font-family: Outfit;
+    font-weight: bolder;
+}
 </style>
 
 <div class=e54_76>
-    <div  class="e54_82">Discover DNAzymes</div>
+    <img src="{% static '/main/img/bcground_p_knalagebase.png' %}" alt="background_ctb" class="start_backgroud">
+    <div  class="main_title_text">Discover DNAzymes</div>
     <button class=e54_96 onclick="location.href='introduction-to-dnazymes'">
         <div class="short_name_motive">
-            <div  class="e54_98">DNAzyme Basics</div>
-            <div  class="e54_99">Get started with DNAzymes</div>
+            <div  class="article_title">DNAzyme Basics</div>
+            <div  class="motivation_text">Get started with DNAzymes</div>
         </div>
         <div class="min_some_words">
-            <div  class="e54_100">15 min</div>
-            <div  class="e54_101">Discover the fundamentals of DNAzymes</div>
+            <div  class="five_words_about">Discover the fundamentals of DNAzymes</div>
+        </div>
+        <div class="clock_icon">
+            <p class="clock_icon_text">
+                15 min <img src="{% static '/main/img/clock_paint.png' %}" alt="background_ctb" class="clock_icon_paint">
+            </p>
         </div>
         <img src="{% static '/knowledgebase/img/article_1.png' %}" alt="background_ctb" class="e54_102">
 
     </button>
     <button class=e54_103 onclick="location.href='biochemical-assays'">
         <div class="short_name_motive">
-            <div  class="e54_98">Measuring DNAzyme Activity</div>
-            <div  class="e54_99">Discover reliable methods</div>
+            <div  class="article_title">Measuring DNAzyme Activity</div>
+            <div  class="motivation_text">Discover reliable methods</div>
         </div>
         <div class="min_some_words">
-            <div  class="e54_100">15 min</div>
-            <div  class="e54_101">Research commonly used biochemical assays</div>
+            <div  class="five_words_about">Research commonly used biochemical assays</div>
+        </div>
+        <div class="clock_icon">
+            <p class="clock_icon_text">
+                15 min <img src="{% static '/main/img/clock_paint.png' %}" alt="background_ctb" class="clock_icon_paint">
+            </p>
         </div>
         <img src="{% static '/knowledgebase/img/article_2.png' %}" alt="background_ctb" class="e54_102">
     </button>
     <button class=e54_110 onclick="location.href='recent-advancements'">
         <div class="short_name_motive">
-            <div  class="e54_98">Advancements in DNAzyme Kinetics</div>
-            <div  class="e54_99">Stay updated on DNAzyme kinetics</div>
+            <div  class="article_title">Advancements in DNAzyme Kinetics</div>
+            <div  class="motivation_text">Stay updated on DNAzyme kinetics</div>
         </div>
         <div class="min_some_words">
-            <div  class="e54_100">15 min</div>
-            <div  class="e54_101">Understand DNAzymes binding and reaction pathways</div>
+            <div  class="five_words_about">Understand DNAzymes binding and reaction pathways</div>
+        </div>
+        <div class="clock_icon">
+            <p class="clock_icon_text">
+                15 min <img src="{% static '/main/img/clock_paint.png' %}" alt="background_ctb" class="clock_icon_paint">
+            </p>
         </div>
         <img src="{% static '/knowledgebase/img/article_3.png' %}" alt="background_ctb" class="e54_102">
     </button>
     <button class=left_ni_article onclick="location.href='exploring-the-impact-of-sequence'">
         <div class="short_name_motive">
-            <div  class="e54_98">Sequence and Structure Impact</div>
-            <div  class="e54_99">Understand the influence of DNA sequence</div>
+            <div  class="article_title">Sequence and Structure Impact</div>
+            <div  class="motivation_text">Understand the influence of DNA sequence</div>
         </div>
         <div class="min_some_words">
-            <div  class="e54_100">15 min</div>
-            <div  class="e54_101">Explore DNAzyme sequence and structure relationship</div>
+            <div  class="five_words_about">Explore DNAzyme sequence and structure relationship</div>
+        </div>
+        <div class="clock_icon">
+            <p class="clock_icon_text">
+                15 min <img src="{% static '/main/img/clock_paint.png' %}" alt="background_ctb" class="clock_icon_paint">
+            </p>
         </div>
         <img src="{% static '/knowledgebase/img/article_4.png' %}" alt="background_ctb" class="e54_102">
     </button>
@@ -337,45 +354,61 @@
 {#    right block#}
     <button class=e54_117 onclick="location.href='strategies-for-predicting'">
         <div class="short_name_motive">
-            <div  class="e54_98">Predicting DNAzyme Activity</div>
-            <div  class="e54_99">Master DNAzyme prediction</div>
+            <div  class="article_title">Predicting DNAzyme Activity</div>
+            <div  class="motivation_text">Master DNAzyme prediction</div>
         </div>
         <div class="min_some_words">
-            <div  class="e54_100">15 min</div>
-            <div  class="e54_101">Predict DNAzyme activity for effective design</div>
+            <div  class="five_words_about">Predict DNAzyme activity for effective design</div>
+        </div>
+        <div class="clock_icon">
+            <p class="clock_icon_text">
+                15 min <img src="{% static '/main/img/clock_paint.png' %}" alt="background_ctb" class="clock_icon_paint">
+            </p>
         </div>
         <img src="{% static '/knowledgebase/img/article_5.png' %}" alt="background_ctb" class="e54_102">
     </button>
     <button class=e54_124 onclick="location.href='the-role-of-dnazymes'">
         <div class="short_name_motive">
-            <div  class="e54_98">DNAzyme Catalysis and Applications</div>
-            <div  class="e54_99">Learn DNAzyme applications</div>
+            <div  class="article_title">DNAzyme Catalysis and Applications</div>
+            <div  class="motivation_text">Learn DNAzyme applications</div>
         </div>
         <div class="min_some_words">
-            <div  class="e54_100">15 min</div>
-            <div  class="e54_101">Uncover the advantages of DNAzyme catalysis</div>
+            <div  class="five_words_about">Uncover the advantages of DNAzyme catalysis</div>
+        </div>
+        <div class="clock_icon">
+            <p class="clock_icon_text">
+                15 min <img src="{% static '/main/img/clock_paint.png' %}" alt="background_ctb" class="clock_icon_paint">
+            </p>
         </div>
         <img src="{% static '/knowledgebase/img/article_6.png' %}" alt="background_ctb" class="e54_102">
     </button>
     <button class=e54_131 onclick="location.href='challenges-and-future-prospects'">
         <div class="short_name_motive">
-            <div  class="e54_98">DNAzymes research</div>
-            <div  class="e54_99">Discuss DNAzyme's future</div>
+            <div  class="article_title">DNAzymes research</div>
+            <div  class="motivation_text">Discuss DNAzyme's future</div>
         </div>
         <div class="min_some_words">
-            <div  class="e54_100">15 min</div>
-            <div  class="e54_101">Challenges and potential of DNAzymes in gene therapy</div>
+            <div  class="five_words_about">Challenges and potential of DNAzymes in gene therapy</div>
+        </div>
+        <div class="clock_icon">
+            <p class="clock_icon_text">
+                15 min <img src="{% static '/main/img/clock_paint.png' %}" alt="background_ctb" class="clock_icon_paint">
+            </p>
         </div>
         <img src="{% static '/knowledgebase/img/article_7.png' %}" alt="background_ctb" class="e54_102">
     </button>
     <button class=ni_article onclick="location.href='importance-of-dnazymes'">
         <div class="short_name_motive">
-            <div  class="e54_98">DNAzymes in Gene Therapeutics</div>
-            <div  class="e54_99">Explore DNAzyme Regulation</div>
+            <div  class="article_title">DNAzymes in Gene Therapeutics</div>
+            <div  class="motivation_text">Explore DNAzyme Regulation</div>
         </div>
         <div class="min_some_words">
-            <div  class="e54_100">15 min</div>
-            <div  class="e54_101">Discover the potential of DNAzymes in therapy</div>
+            <div  class="five_words_about">Discover the potential of DNAzymes in therapy</div>
+        </div>
+        <div class="clock_icon">
+            <p class="clock_icon_text">
+                15 min <img src="{% static '/main/img/clock_paint.png' %}" alt="background_ctb" class="clock_icon_paint">
+            </p>
         </div>
         <img src="{% static '/knowledgebase/img/article_8.png' %}" alt="background_ctb" class="e54_102">
     </button>
