@@ -15,6 +15,9 @@ from database.models import MainDnaDataBase
 from seqfold import fold, dot_bracket
 import forgi.visual.mplotlib as fvm
 import forgi
+from forgi.threedee.model.coarse_grain import CoarseGrainRNA
+from forgi.graph.sequence import Sequence
+import forgi.graph.residue as frg
 
 
 def get_graph():
@@ -77,13 +80,14 @@ def plot_levenshtein(sequence: str):
 def plot_structure(sequence: str):
     seq_f = fold(sequence)
     dot_seq = dot_bracket(sequence, seq_f)
-    rnas = forgi.load_rna(dot_seq)
-    if not rnas:
-        return
+    f_seq_raw = forgi.load_rna(dot_seq, allow_many=False)
+    residues = [frg.RESID(f'{letter}:{num}') for num, letter in enumerate('ATGC')]
+    seq = Sequence(sequence, residues)
+    f_seq = CoarseGrainRNA(f_seq_raw, seq)
     plt.switch_backend('AGG')
-    fig = plt.figure(figsize=(10, 6))
+    fig = plt.figure(figsize=(6, 4))
     fvm.plot_rna(
-        rnas[0],
+        f_seq,
         text_kwargs={"fontweight": "black"},
         lighten=0.7,
         backbone_kwargs={"linewidth": 3}
