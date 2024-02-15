@@ -6,6 +6,9 @@
 <html lang="en">
 {% load static%}
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Spline+Sans Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Outfit&display=swap" rel="stylesheet">
+
 
 <head>
     <meta charset="UTF-8">
@@ -14,58 +17,47 @@
 
 <style>
 .e54_138 {
-	background-color:rgba(255, 255, 255, 1);
-	width:95vw;
-	height:300vh;
-	position:absolute;
-}
-.article_background {
-    width:99vw;
-	height:50vh;
-	position:absolute;
-}
-.article_title_block {
-	width:40vw;
-	height:27vh;
-	position:absolute;
-	left:10vw;
-	top:30vh;
-    background-color:rgba(119.00000050663948, 173.00000488758087, 235.0000011920929, 1);
-	border-top-left-radius:30px;
-	border-top-right-radius:30px;
-	border-bottom-left-radius:30px;
-	border-bottom-right-radius:30px;
+	width:98vw;
+	height: fit-content;
+    position: absolute;
+    margin-top: 0.1vh;
+    background-image: url('{% static '/main/img/article_background.png' %}');
+    background-size: 98vw 100%;
 }
 
-.e54_146 {
-	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
-	width:36vw;
-	height:1px;
-	position:absolute;
-	left:2vw;
-	top:22vh;
+.article_title_block {
+	width:84.2vw;
+	height:24vh;
+	position:relative;
+	left:5vw;
+	top:5vh;
+    background-color:#575A6C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .main_article_text {
+    background-color: #FFFFFF;
 	color:rgba(0, 0, 0, 1);
-	width: 76vw;
-	height:100vh;
-	position:absolute;
-	left:12vw;
-	top:65vh;
+	width: 73vw;
+	position:relative;
+	left:10vw;
+	top:10vh;
 	font-family:Roboto;
-	text-align: justify;
+	text-align: left;
 	font-size:2.8vh;
 	letter-spacing:0;
 }
 .article_title {
 	color:rgba(255, 255, 255, 1);
-	width:36vw;
-	height:18vh;
+	width:50vw;
 	position:absolute;
-    top: 5.5vh;
-    left: 2vw;
+    top: 5vh;
+    left: 6vw;
     font-weight: 600;
-	font-family:Roboto;
+	font-family:Outfit;
+    font-weight: bold;
 	text-align:left;
 	font-size:4vh;
 	letter-spacing:0;
@@ -73,8 +65,8 @@
 .e65_152 {
 	color:rgba(0, 0, 0, 1);
 	position:absolute;
-	left:14vw;
-	font-family:Roboto;
+	font-family:Outfit;
+    font-weight: bolder;
 	text-align:left;
 	font-size:10vh;
 	letter-spacing:0;
@@ -83,9 +75,9 @@
 	color:rgba(0, 0, 0, 1);
 	width:50vw;
 	position:absolute;
-	left:14vw;
 	top:12vh;
-	font-family:Roboto;
+	font-family:Outfit;
+    font-weight: bolder;
 	text-align:left;
 	font-size:6vh;
 	letter-spacing:0;
@@ -98,10 +90,6 @@
 	height:40vh;
     position: absolute;
     background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
 }
 .e65_163:hover {
     background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
@@ -113,23 +101,28 @@
 }
 .recommended_articles_image {
 	width:25vw;
-	height:25vh;
+	height:40vh;
     position: relative;
-    top: -7.5vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
 }
 .recommended_articles_title {
-	color:rgba(0, 0, 0, 1);
+    background-color: #FFFFFF;
 	width:19vw;
-	height:10vh;
+	height:17vh;
 	position:absolute;
 	left:3vw;
-	top:27vh;
-	font-family:Roboto;
-	text-align:left;
-	font-size:3vh;
+	top:18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rat_text {
+    color:rgba(0, 0, 0, 1);
+    text-align:center;
+    font-family:Roboto;
+    font-weight: bolder;
+	font-size:2.5vh;
 	letter-spacing:0;
+    margin: 3vh;
 }
 .e65_172 {
     padding:0;
@@ -139,10 +132,6 @@
 	position:absolute;
     left: 27vw;
     background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
 }
 .e65_172:hover {
     background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
@@ -177,13 +166,8 @@
 	width:60vw;
 	height:30vh;
 	position:absolute;
-	left:16vw;
-	top:27vh;
-    background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 1);
-	border-top-left-radius:30px;
-	border-top-right-radius:30px;
-	border-bottom-left-radius:30px;
-	border-bottom-right-radius:30px;
+	top:24vh;
+    background-color: #E0E2F0;
 }
 
 .e65_185 {
@@ -193,43 +177,35 @@
 	position:absolute;
 	left:4vw;
 	top:4vh;
-	font-family:Roboto;
+    font-family: 'Spline Sans Mono';
+    font-weight: bolder;
 	text-align:left;
-	font-size:3vh;
+	font-size:2.5vh;
 	letter-spacing:0;
 }
-.e65_183 {
-	background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 1);
-	width:12.5vw;
-	height:25vh;
-	position:absolute;
-	top:15vh;
-	border-top-left-radius:100px;
-	border-top-right-radius:100px;
-	border-bottom-left-radius:100px;
-	border-bottom-right-radius:100px;
-}
+
 .recommended_articles {
-    position: absolute;
-    top: 165vh;
+    position: relative;
     left: 10vw;
+    top: 15vh;
     width:79vw;
 	height:70vh;
 }
 
 .abuot_author {
-    position: absolute;
-    top: 245vh;
+    position: relative;
     left: 10vw;
+    top: 15vh;
     width:79vw;
 	height:70vh;
+    margin-bottom: 20vh;
 }
 
 .abuot_author_about {
     color:rgba(0, 0, 0, 1);
 	position:absolute;
-	left:16vw;
-	font-family:Roboto;
+	font-family:Outfit;
+    font-weight: bolder;
 	text-align:left;
 	font-size:10vh;
 	letter-spacing:0;
@@ -239,9 +215,9 @@
     color:rgba(0, 0, 0, 1);
 	width:50vw;
 	position:absolute;
-	left:16vw;
 	top:12vh;
-	font-family:Roboto;
+	font-family:Outfit;
+    font-weight: bolder;
 	text-align:left;
 	font-size:6vh;
 	letter-spacing:0;
@@ -253,13 +229,12 @@
     width:79vw;
 	height:40vh;
 }
+
 </style>
 
 <div class=e54_138>
-    <img src="{% static '/knowledgebase/img/article_1_fon.png' %}" alt="background_ctb" class="article_background">
   <div class=article_title_block>
       <div  class="article_title">Introduction to DNAzymes: Understanding structure and function</div>
-        <div class="e54_146"></div>
   </div>
 
     <div  class="main_article_text">DNAzymes, also known as catalytic DNA or deoxyribozymes, are a fascinating class of molecules that possess both the information storage capabilities of DNA and the enzymatic activity typically associated with proteins. These unique molecules were first discovered in 1994 by Ronald Breaker and Gerald Joyce, who demonstrated that certain single-stranded DNA sequences had the ability to catalyze specific chemical reactions.
@@ -281,36 +256,47 @@ In conclusion, DNAzymes are remarkable molecules that combine the information st
         <div class="buttons_ra">
             <button class=e65_163 onclick="location.href='challenges-and-future-prospects'">
                 <img src="{% static '/knowledgebase/img/article_7.png' %}" alt="buttonpng" class="recommended_articles_image">
-                    <div  class="recommended_articles_title">Challenges and potential of DNAzymes in gene therapy</div>
-                </button>
-                <button class=e65_172 onclick="location.href='strategies-for-predicting'">
-                    <img src="{% static '/knowledgebase/img/article_5.png' %}" alt="buttonpng" class="recommended_articles_image">
-                <div  class="recommended_articles_title">Predict DNAzyme activity for effective design</div>
-                </button>
+                <div  class="recommended_articles_title">
+                    <p class="rat_text">
+                        Challenges and potential of DNAzymes in gene therapy
+                    </p>
+                </div>
+            </button>
+            <button class=e65_172 onclick="location.href='strategies-for-predicting'">
+                <img src="{% static '/knowledgebase/img/article_5.png' %}" alt="buttonpng" class="recommended_articles_image">
+                <div  class="recommended_articles_title">
+                    <p class="rat_text">
+                        Predict DNAzyme activity for effective design
+                    </p>
+                </div>
+            </button>
 
-                <button class=e65_176 onclick="location.href='the-role-of-dnazymes'">
-                    <img src="{% static '/knowledgebase/img/article_6.png' %}" alt="buttonpng" class="recommended_articles_image">
-                    <div  class="recommended_articles_title">Uncover the advantages of DNAzyme catalysis</div>
-                </button>
+            <button class=e65_176 onclick="location.href='the-role-of-dnazymes'">
+                <img src="{% static '/knowledgebase/img/article_6.png' %}" alt="buttonpng" class="recommended_articles_image">
+                <div  class="recommended_articles_title">
+                    <p class="rat_text">
+                        Uncover the advantages of DNAzyme catalysis
+                    </p>
+                </div>
+            </button>
         </div>
 
     </div>
 
     <div class="abuot_author">
         <div  class="abuot_author_about">About</div>
-        <div  class="abuot_author_authtor">the author</div>
+        <div  class="abuot_author_authtor">The author</div>
 
         <div class=e65_184>
-
-        <div  class="e65_185">Maria Eremeeva is our DNAzyme expert.
-        She leads our research and development efforts, providing valuable insights and expertise
-        in the field of DNAzyme digital design.
-        <div></div>
-            <br>
-        Contact her: eremeeva_maria@scamt-itmo.ru</div>
+            <div  class="e65_185">
+                Maria Eremeeva is our   DNAzyme expert.
+                She leads our research and development efforts, providing valuable insights and expertise
+                in the field of DNAzyme digital design.
+                <div></div>
+                <br>
+                Contact her: eremeeva_maria@scamt-itmo.ru
+            </div>
         </div>
-
-        <img src="{% static '/main/img/masha_photoaidcom_cropped.jpg' %}" alt="background_ctb" class="e65_183">
 
     </div>
 

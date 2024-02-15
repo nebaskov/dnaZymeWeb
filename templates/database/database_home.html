@@ -30,35 +30,31 @@
 }
 .table-fix {
     overflow-y: scroll;
-    height: 56vh;
+    height: 54vh;
     width: 80vw;
     position: relative;
     font-size: 2vh;
     border-collapse: collapse;
     border-spacing: 0;
-    border-bottom-left-radius:20px;
 }
 
 .tbl-conteiner {
     max-width: 80vw;
-    max-height: 50vh;
+    height: 62vh;
     position: relative;
-    top: 30vh;
-    box-shadow: 0 2px 5px rgba(64,64,64,.7);
-    border-top-left-radius:20px;
-	border-top-right-radius:20px;
-	border-bottom-left-radius:20px;
-	border-bottom-right-radius:20px;
+    top: 24vh;
 }
 td {
- padding: 0.5vw 1vh;
- text-align: center;
+    padding: 0.5vw 1vh;
+    text-align: center;
+    border-left: 2pt solid #FFFFFF;
+    border-right: 2pt solid #FFFFFF;
 }
 
 tr{
-    background-color: #fafafa;
+    background-color: #E0E2F0;
 	font-family:Roboto;
-     border-bottom: 1pt solid #d9d7d7;
+    border-bottom: 2pt solid #FFFFFF;
     height: 6vh;
 }
 
@@ -82,9 +78,10 @@ td:nth-child(4){
 	text-align:left;
 	font-size:3vh;
 	letter-spacing:0;
+    position: relative;
+    top: -1vh;
 }
 .table_head_fixed {
-    position: relative;
     max-width: 80vw;
     max-height: 9vh;
 }
@@ -94,65 +91,103 @@ td:nth-child(4){
 }
 
 .fixed_th_1 {
-    font-family:Roboto;
-    width: 15vw;
+    background-color: #575A6C;
+    width: 12vw;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.white_th_1 {
+    font-family:Outfit;
+    width: 9vw;
+    height: 6vh;
     font-weight: bolder;
-    padding: 1vw 2vh;
-    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align:center;
-    border-top-left-radius:20px;
-    font-size: 2.4vh;
+    font-size: 2.3vh;
+    background-color: white;
 }
 .fixed_th_2 {
-    font-family:Roboto;
-    width: 45vw;
-    font-weight: bolder;
-    padding: 1vw 2vh;
-    background-color: #eeeeee;
-    text-align:center;
-    font-size: 2.4vh;
+    width: 36vw;
+    height: 9vh;
+    background-color: #575A6C;
+    align-items: center;
+    justify-content: center;
 }
-.fixed_th_3 {
-    font-family:Roboto;
-    width: 20vw;
+.white_th_2 {
+    margin-left: 1.5vw;
+    font-family:Outfit;
+    width: 33vw;
+    height: 6vh;
     font-weight: bolder;
-    padding: 1vw 2vh;
-    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align:center;
-    font-size: 2.4vh;
+    font-size: 2.3vh;
+    background-color: white;
+}
+
+.fixed_th_3 {
+    width: 14vw;
+    height: 9vh;
+    background-color: #575A6C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.white_th_3 {
+    font-family:Outfit;
+    width: 11vw;
+    height: 6vh;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    font-size: 2.3vh;
+    background-color: white;
 }
 .fixed_th_4 {
-    font-family:Roboto;
-    width:20vw;
+    width:18vw;
+    background-color: #575A6C;
+    align-items: center;
+    justify-content: center;
+}
+.white_th_4 {
+    margin-left: 1.5vw;
+    font-family:Outfit;
+    width: 15vw;
+    height: 6vh;
     font-weight: bolder;
-    padding: 1vw 2vh;
-    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align:center;
-    border-top-right-radius:20px;
-    font-size: 2.4vh;
+    font-size: 2.3vh;
+    background-color: white;
 }
 .form_search {
-    background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
     position:absolute;
     width:35vw;
-	height:5vh;
-    top:20vh;
-    {#border-top-left-radius:20px;#}
-	{#border-top-right-radius:20px;#}
-	{#border-bottom-left-radius:20px;#}
-	{#border-bottom-right-radius:20px;#}
+	height:3vh;
+    top:16vh;
     background-repeat:no-repeat;
 	background-size:cover;
-    box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);
+    border: solid;
 }
 
 .form-control {
-    background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
-    {#border-top-left-radius:20px;#}
-	{#border-bottom-left-radius:20px;#}
-    border: 0 !important;
-    top: 0.5vh;
-    height: 4vh;
+    border: solid;
+    position:absolute;
+    width:35vw;
+	height:4.5vh;
+    top:16vh;
+    border: solid;
+    border-color: #E0E2F0;
 }
 
 
@@ -173,6 +208,7 @@ td:nth-child(4){
     margin-bottom: 0;
 }
 .button_sort_down {
+    background-color: white;
     border: 0;
     position: relative;
     top: -1.5vh;
@@ -187,6 +223,7 @@ td:nth-child(4){
 }
 
 .button_sort_up {
+    background-color: white;
     border: 0;
     height: 2vh;
     padding: 0;
@@ -200,20 +237,13 @@ td:nth-child(4){
 }
 
 .back_to_full_base {
-    background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+    background-color: white;
 	width:10vw;
 	height:5vh;
 	position:absolute;
 	left:69vw;
-	top:12vh;
-	border-top-left-radius:20px;
-	border-top-right-radius:20px;
-	border-bottom-left-radius:20px;
-	border-bottom-right-radius:20px;
-    border: 0;
-    background-repeat:no-repeat;
-	background-size:cover;
-    box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);
+	top:16vh;
+    border: solid #E0E2F0;
 }
 
 .button_sort_up .bi {
@@ -237,23 +267,43 @@ td:nth-child(4){
 }
 .db_header_paint {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 7vw;
+    height: 13vh;
     top: 0vh;
-    left:-8vw;
-    border-top-left-radius:20px;
-	border-top-right-radius:20px;
-	border-bottom-left-radius:20px;
-	border-bottom-right-radius:20px;
+    left: -20%;
+    border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
 }
 .header_text {
     position: absolute;
-    top: 5vh;
+    top: 4vh;
+}
+
+.button_back {
+    color:rgba(30.00000011175871, 64.00000378489494, 107.00000122189522, 1);
+	font-family: Outfit;
+	font-size:2.5vh;
+	letter-spacing:0;
+    font-weight: initial;
+}
+.arrow_direct_left {
+    position: relative;
+    width: 1vw;
+    height: 2vh;
+    margin-bottom: 0.4vh;
+}
+.start_backgroud {
+    margin-top: 0.1vh;
+    height: 89.6vh;
+    width: 99.7vw;
 }
 </style>
 </head>
 
 <body>
+<img src="{% static '/main/img/bcground_paint.png' %}" alt="background_ctb" class="start_backgroud">
   <div class=database_main>
   <div class="header_search">
       <div class="header_text">
@@ -262,7 +312,7 @@ td:nth-child(4){
       </div>
 <img src="{% static '/main/img/db_2.jpg' %}" alt="background_ctb" class="db_header_paint">
 
-    <form method="GET" action="." class="form_search">
+    <form method="GET" action=".">
 {#            <div class="form-row">#}
 {#                <div class="form-group col-12">#}
 {#                    <div class="input-group">#}
@@ -280,9 +330,7 @@ td:nth-child(4){
   </div>
 
       <button class="back_to_full_base"  onclick="location.href='.'">
-      Back to full <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-</svg>
+        <p class="button_back">Back to full <img src="{% static '/main/img/arrow_direct-left.png' %}" alt="background_ctb" class="arrow_direct_left"></p>
       </button>
     <div class="e9_701"></div>
     <div class="tbl-conteiner">
@@ -291,81 +339,89 @@ td:nth-child(4){
             <thead>
                 <tr>
                     <th class="fixed_th_1">
-
-                        <form method="POST" action="/database/">
-                            {% csrf_token %}
-                        Name <div class="sorting_arrows">
-                                <button title="sort_name_up" class="button_sort_up" name="sort_by_name_up" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                                  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-                                </svg>
-                                    <div></div>
-                                    <br>
-                                </button>
-                                <button title="sort_name_down" class="button_sort_down" name="sort_by_name_down" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                </svg>
-                        </button>
-                            </div>
+                        <div class="white_th_1">
+                            <form method="POST" action="/database/">
+                                {% csrf_token %}
+                            Name <div class="sorting_arrows">
+                                    <button title="sort_name_up" class="button_sort_up" name="sort_by_name_up" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+                                      <path d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
+                                    </svg>
+                                        <div></div>
+                                        <br>
+                                    </button>
+                                    <button title="sort_name_down" class="button_sort_down" name="sort_by_name_down" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                      <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                    </svg>
+                                    </button>
+                                </div>
                             </form>
+                        </div>
                     </th>
                     <th class="fixed_th_2">
-                        <form method="POST" action=".">
-                            {% csrf_token %}
-                        Sequence <div class="sorting_arrows">
-                                <button title="sort_name_up" class="button_sort_up" name="sort_by_sequence_up" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                                  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-                                </svg>
-                                    <div></div>
-                                    <br>
-                                </button>
-                                <button title="sort_name_down" class="button_sort_down" name="sort_by_sequence_down" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                </svg>
-                        </button>
-                            </div>
-                            </form>
+                        <div class="white_th_2">
+                            <form method="POST" action=".">
+                                {% csrf_token %}
+                            Sequence <div class="sorting_arrows">
+                                    <button title="sort_name_up" class="button_sort_up" name="sort_by_sequence_up" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+                                      <path d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
+                                    </svg>
+                                        <div></div>
+                                        <br>
+                                    </button>
+                                    <button title="sort_name_down" class="button_sort_down" name="sort_by_sequence_down" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                      <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                    </svg>
+                            </button>
+                                </div>
+                                </form>
+                        </div>
                     </th>
                     <th class="fixed_th_3">
-                        <form method="POST" action=".">
-                            {% csrf_token %}
-                        Activity <div class="sorting_arrows">
-                                <button title="sort_name_up" class="button_sort_up" name="sort_by_activity_up" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                                  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-                                </svg>
-                                    <div></div>
-                                    <br>
-                                </button>
-                                <button title="sort_name_down" class="button_sort_down" name="sort_by_activity_down" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                </svg>
-                        </button>
-                            </div>
-                            </form>
+                        <div class="white_th_3">
+                            <form method="POST" action=".">
+                                {% csrf_token %}
+                            Activity <div class="sorting_arrows">
+                                    <button title="sort_name_up" class="button_sort_up" name="sort_by_activity_up" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+                                      <path d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
+                                    </svg>
+                                        <div></div>
+                                        <br>
+                                    </button>
+                                    <button title="sort_name_down" class="button_sort_down" name="sort_by_activity_down" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                      <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                    </svg>
+                            </button>
+                                </div>
+                                </form>
+
+                        </div>
                     </th>
                     <th class="fixed_th_4">
-                        <form method="POST" action=".">
-                            {% csrf_token %}
-                        Tear of publication <div class="sorting_arrows">
-                                <button title="sort_name_up" class="button_sort_up" name="sort_by_yop_up" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                                  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-                                </svg>
-                                    <div></div>
-                                    <br>
-                                </button>
-                                <button title="sort_name_down" class="button_sort_down" name="sort_by_yop_down" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                </svg>
+                        <div class="white_th_4">
+                            <form method="POST" action=".">
+                                {% csrf_token %}
+                            Tear of publication <div class="sorting_arrows">
+                                    <button title="sort_name_up" class="button_sort_up" name="sort_by_yop_up" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+                                      <path d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
+                                    </svg>
+                                        <div></div>
+                                        <br>
                                     </button>
-                            </div>
-                            </form>
+                                    <button title="sort_name_down" class="button_sort_down" name="sort_by_yop_down" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                      <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                    </svg>
+                                        </button>
+                                </div>
+                                </form>
+                        </div>
                     </th>
                 </tr>
                 </thead>

@@ -2,10 +2,12 @@
 <!doctype html>
 {% block content %}
 <html lang="en">
-{#{% load static%}#}
+{% load static%}
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Outfit&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Spline+Sans Mono&display=swap" rel="stylesheet">
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +15,6 @@
 <style>
 
 .main_1 {
-    margin-top: 50px;
 	background-color:rgba(255, 255, 255, 1);
 	width:95vw;
 	height:100%;
@@ -23,109 +24,37 @@
 	color:rgba(0, 0, 0, 1);
 	width:50vw;
 	height:5vh;
-	position:absolute;
-	left: 10%;
-	top: 12%;
-	{#font-family:Roboto;#}
+    font-weight: bolder;
+	font-family:Outfit;
 	text-align:left;
 	font-size:4vh;
 	letter-spacing:0;
 }
 .main_text {
 	color:rgba(0, 0, 0, 1);
-	width:40%;
-	height:56px;
-	position:absolute;
-	left:10%;
-	top:20%;
-	{#font-family:Open Sans;#}
+	height:12vh;
+    font-family: 'Spline Sans Mono';
 	text-align:left;
-	font-size:1.8vh;
+	font-size:1.9vh;
 	letter-spacing:0;
 }
-.row_1 .e11_715 {
+.e11_715 {
 	color:rgba(0, 0, 0, 1);
-	position:relative;
-	text-align:left;
-    font-family:Open Sans;
-	font-size:2vh;
-    width:20vw;
-	height:5vh;
+    font-family:Outfit;
+	font-size:2.3vh;
 	letter-spacing:0;
 }
-.row_1 .e11_716 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
-	left:50%;
-	top: 0.5vh;
-	{#font-family:Open Sans;#}
-	{#text-align:left;#}
-	font-size:2vh;
-    width:20vw;
-	height:5vh;
-	letter-spacing:0;
-}
-.row_2 .e11_719 {
-	color:rgba(0, 0, 0, 1);
-	position:relative;
-	text-align:left;
-	font-size:2vh;
-    width:20vw;
-	height:5vh;
-	letter-spacing:0;
-}
-.row_3 .e11_720 {
-	color:rgba(0, 0, 0, 1);
-	text-align:left;
-	font-size:2vh;
-    width:20vw;
-	height:5vh;
-	letter-spacing:0;
-}
-.row_3 .e11_721 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
-	left:50%;
-	top: 0.5vh;
-	text-align:left;
-	font-size:2vh;
-    width:20vw;
-	height:5vh;
-}
-.row_4 .e11_725 {
-	color:rgba(0, 0, 0, 1);
-	text-align:left;
-	font-size:2vh;
-    width:20vw;
-	height:5vh;
-	letter-spacing:0;
-}
-.row_4 .e11_726 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
-	left:50%;
-	top: 0.5vh;
-	text-align:left;
-	font-size:2vh;
-    width:20vw;
-	height:5vh;
-	letter-spacing:0;
-}
+
 .button_calculate {
     border: 0;
-    font-family:Roboto !important;
-    font-size:2vh;
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+	background-color:#575A6C;
 	width:43vw;
 	height:8vh;
 	position:absolute;
-	left:10%;
-	top:84%;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+	top:72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button_calculate:hover {background-color: #DCDCDC; font-family:Roboto;}
@@ -134,49 +63,67 @@
   background-color: #DCDCDC;
   transform: translateY(4px);
 }
-
-.row_2 .sequence_form {
-    border: 0;
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:95%;
-	height:5vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+.button_text {
+    color: #FFFFFF;
+    font-family:Outfit;
+    font-size:3vh;
+    margin-bottom: 0vw;
 }
-.quick_quest .e11_731 {
+.sequence_form {
+    border: 0;
+	background-color: #E0E2F0;
+	width:43vw;
+	height:5vh;
+	position:relative;
+    top: -2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+.sequence_form:focus {
+    outline: none !important;
+    border:2px solid #B8BDDE;
+}
+.e11_731 {
 	color:rgba(0, 0, 0, 1);
-	width:100px;
-	height:32px;
-	font-family:Roboto;
-	text-align:center;
-	font-size:3.5vh;
+	width:35vw;
+	height:5vh;
+    font-weight: bolder;
+	font-family:Outfit;
+	text-align:left;
+	font-size:4vh;
 	letter-spacing:0;
 }
-.quick_quest .e14_6 {
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color:rgba(205.00000298023224, 234.00000125169754, 242.00000077486038, 1);
-	width:100%;
-	height:30%;
+.first_box_q {
+	background-color: #E0E2F0;
+	width:27vw;
+	height:22vh;
 	position:relative;
-	top:3%;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+    top: 1vh;
 }
-.quick_quest .e14_6 .e14_5 {
+.second_box_q {
+    background-color: #E0E2F0;
+	width:27vw;
+	height:22vh;
+	position:relative;
+    top: 4vh;
+}
+.third_box_q {
+    background-color: #E0E2F0;
+	width:27vw;
+	height:22vh;
+	position:relative;
+    top: 7vh;
+}
+.first_box_answer {
 	color:rgba(0, 0, 0, 1);
-    font-family:Roboto;
-	position:absolute;
-	left:5%;
-    right: 5%;
-	top:15%;
+    font-family:"Spline Sans Mono";
+	position:relative;
+	left:2.5vw;
+    width: 22vw;
+	top: 3vh;
     bottom: 15%;
 	text-align:left;
-	font-size: 1.8vh;
+	font-size: 2vh;
 }
 .quick_quest .e14_7 {
 	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -224,179 +171,183 @@
 	text-align:left;
 	font-size:1.8vh;
 }
-.tere {
-	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
-	width:40%;
-	height:2px;
-	position:absolute;
-	left:10%;
-	top:18%;
-}
 
 .quick_quest {
     text-align:center;
     position:absolute;
-    width:30%;
-	height:60%;
-    top:23%;
-    left:60%;
+    width:35vw;
+	height:88vh;
+    top: 12vh;
+    left:60vw;
 }
 .all_form {
     width: 60%;
-    margin-top:20%;
+    height: 60vh;
 }
 .row_1 {
-    position:absolute;
+    position:relative;
     width:45vw;
-    left:10%;
-	top:32%;
+    height: 10vh;
 }
 
 .row_2 {
-    position:absolute;
+    position:relative;
+    top: 2vh;
     width:45vw;
-    left:10%;
-	top:44%;
+    height: 10vh;
+    text-align:left;
 }
 .row_3 {
-    position:absolute;
+    position:relative;
     width:45vw;
-    left:10%;
-	top:57%;
+	top: 4vh;
+    height: 10vh;
+    text-align:left;
 }
 .row_4 {
-    position:absolute;
-    width:45vw;
-    left:10%;
-	top:70%;
-}
-.row_4 .nacl_form {
-    border: 0;
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:45%;
-	height:5vh;
     position:relative;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+    width:45vw;
+	top: 6vh;
+    height: 10vh;
+    text-align:left;
 }
-.row_1 .ph_form {
+.temp_form {
     border: 0;
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:45%;
-	height:5vh;
-    position:absolute;
-	left:50%;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.row_4 .kcl_form {
-    border: 0;
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:45%;
-	height:5vh;
-    position:absolute;
-	left:50%;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.row_1 .temp_form {
-    border: 0;
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:45%;
+	background-color: #E0E2F0;
+	width:20vw;
 	height:5vh;
 	position:relative;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+    top: -2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
-.row_3 .cofactor_form {
-    border: 0;
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:45%;
-	height:5vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+.temp_form:focus {
+    outline: none !important;
+    border:2px solid #B8BDDE;
 }
-.row_3 .cofactore_concentration_form {
-    border: 0;
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:45%;
-	height:5vh;
-	position:absolute;
-	left:50%;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+.left_part {
+    width:43vw;
+    height:88%;
+    position: absolute;
+    left:10%;
+    top: 12%;
+}
+.tempreture_form_block {
+    width:20vw;
+    height: 10vh;
+    text-align:left;
+}
+.ph_form_block {
+    position: absolute;
+    width:20vw;
+    height: 10vh;
+    text-align:left;
+    left: 23vw;
+    top: 0vh;
+}
+.box_with_quest {
+    background-color: #FFFFFF;
+	width:23vw;
+	height:4vh;
+    position: relative;
+    left:2vw;
+    top: 1vw;
+    text-align: left;
+}
+.first_q_text {
+    margin-left: 0.5vw;
+    font-family: Outfit;
+    font-weight: bolder;
+    font-size: 2.4vh;
+}
+.start_backgroud {
+    margin-top: 0.1vh;
+    height: 89.6vh;
+    width: 99.7vw;
 }
 </style>
+<img src="{% static '/main/img/bcground_paint.png' %}" alt="background_ctb" class="start_backgroud">
 <div class=main_1>
-    <span  class="header_1">Prediction Tool</span>
-    <div class="tere"></div>
-    <span  class="main_text">
-    Empower your scientific endeavors with our DNAzymes prediction tool.
-    Predict the activity of DNAzymes based on five critical parameters and let the divine dance
-    of the nucleotides lead you to remarkable breakthroughs!
-    </span>
-    <div class="all_form">
-    <form action="/prediction/prediction" method="post">
-        {% csrf_token %}
-    <div class="row_1">
-        <span  class="e11_715">Temperature,°C</span>
-        <br>
-        {{ form.temp }}
-    <span  class="e11_716">pH</span>
-        {{ form.ph }}
-        </div>
-    <div class="row_2">
-    <span  class="e11_719">DNA Sequence</span>
-        <br>
-        {{ form.sequence }}
-        </div>
-    <div class="row_3">
-    <span  class="e11_720">Cofactor</span>
-        <br>
-        {{ form.cofactor_element }}
-    <span  class="e11_721">Cofactor concentration</span>
-        {{ form.cofactor_concentraion }}
+    <div class="left_part">
+        <p  class="header_1">Prediction Tool</p>
+        <p  class="main_text">
+        Empower your scientific endeavors with our DNAzymes prediction tool.
+        Predict the activity of DNAzymes based on five critical parameters and let the divine dance
+        of the nucleotides lead you to remarkable breakthroughs!
+        </p>
+        <div class="all_form">
+            <form action="/prediction/prediction" method="post">
+                {% csrf_token %}
+                <div class="row_1">
+                    <div class="tempreture_form_block">
+                        <p  class="e11_715">Temperature,°C</p>
+                        {{ form.temp }}
+                    </div>
+                    <div class="ph_form_block">
+                        <p  class="e11_715">pH</p>
+                        {{ form.ph }}
+                    </div>
                 </div>
-    <div class="row_4">
-
-    <span  class="e11_725">NaCl</span>
-        <br>
-        {{ form.na_cl }}
-    <span  class="e11_726">KCl</span>
-        {{ form.k_cl }}
-                        </div>
-    <button class="button_calculate" type="submit">Calculate</button>
-    </form>
+                <div class="row_2">
+                    <p  class="e11_715">DNA Sequence</p>
+                    {{ form.sequence }}
+                </div>
+                <div class="row_3">
+                    <div class="tempreture_form_block">
+                        <p  class="e11_715">Cofactor</p>
+                        {{ form.cofactor_element }}
+                    </div>
+                    <div class="ph_form_block">
+                        <p  class="e11_715">Cofactor concentration</p>
+                        {{ form.cofactor_concentraion }}
+                    </div>
+                </div>
+                <div class="row_4">
+                    <div class="tempreture_form_block">
+                        <p  class="e11_715">NaCl</p>
+                        {{ form.na_cl }}
+                    </div>
+                    <div class="ph_form_block">
+                        <p  class="e11_715">KCl</p>
+                        {{ form.k_cl }}
+                    </div>
+                </div>
+                <button class="button_calculate" type="submit"><p class="button_text">Calculate</p></button>
+            </form>
         </div>
+    </div>
+
     <div class="quick_quest">
-        <span  class="e11_731">Quick Questions</span>
-        <div class=e14_6><span  class="e14_5">How does activity prediction work?
-        <div> </div><br>
-        Our tool works based on advanced machine learning algorithms taking into account multiple biological factors.</span></div>
-        <div class=e14_7><span  class="e14_8">How accurate our predictions?
-        <div> </div><br>
-        Our tool works based on advanced machine learning algorithms taking into account multiple biological factors.</span></div>
-        <div class=e14_9><span  class="e14_10">How can I submit my own sample?
-        <div> </div><br>
-        Our tool works based on advanced machine learning algorithms taking into account multiple biological factors.</span>
+        <p  class="e11_731">Quick Questions</p>
+        <div class=first_box_q>
+            <div class="box_with_quest">
+                <p class="first_q_text">
+                    How does activity prediction work?
+                </p>
+            </div>
+            <p  class="first_box_answer">
+                Our tool works based on advanced machine learning algorithms taking into account multiple biological factors.
+            </p>
+        </div>
+        <div class=second_box_q>
+            <div class="box_with_quest">
+                <p class="first_q_text">
+                    How accurate our predictions?
+                </p>
+            </div>
+            <p  class="first_box_answer">
+                Our tool works based on advanced machine learning algorithms taking into account multiple biological factors.
+            </p>
+        </div>
+        <div class=third_box_q>
+            <div class="box_with_quest">
+                <p class="first_q_text">
+                    How can I submit my own sample?
+                </p>
+            </div>
+            <p  class="first_box_answer">
+                Our tool works based on advanced machine learning algorithms taking into account multiple biological factors.
+            </p>
         </div>
 </div>
 </div>

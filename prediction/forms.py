@@ -29,7 +29,7 @@ class Prediction(forms.Form):
         label_suffix='',
         widget=forms.TextInput(
             attrs={
-                'class': 'ph_form',
+                'class': 'temp_form',
                 'id': 'ph',
                 'name': 'ph',
                 # 'placeholder': 'pH'
@@ -59,7 +59,7 @@ class Prediction(forms.Form):
         label_suffix='',
         widget=forms.TextInput(
             attrs={
-                'class': 'cofactor_form',
+                'class': 'temp_form',
                 'id': 'cofactor_element',
                 'name': 'cofactor_element',
                 # 'placeholder': 'Cofactor'
@@ -73,7 +73,7 @@ class Prediction(forms.Form):
         label='',
         widget=forms.TextInput(
             attrs={
-                'class': 'cofactore_concentration_form',
+                'class': 'temp_form',
                 'id': 'cofactor_concentration',
                 'name': 'cofactor_concentration',
                 # 'placeholder': 'Cofactor concentratione'
@@ -88,7 +88,7 @@ class Prediction(forms.Form):
         label_suffix='',
         widget=forms.TextInput(
             attrs={
-                'class': 'nacl_form',
+                'class': 'temp_form',
                 'id': 'na_cl',
                 'name': 'na_cl',
                 # 'placeholder': 'NaCl'
@@ -103,7 +103,7 @@ class Prediction(forms.Form):
         label_suffix='',
         widget=forms.TextInput(
             attrs={
-                'class': 'kcl_form',
+                'class': 'temp_form',
                 'id': 'k_cl',
                 'name': 'k_cl',
                 # 'placeholder': 'KCl'
