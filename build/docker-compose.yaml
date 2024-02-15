@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   web:
+    platform: linux/x86-64
     build:
       context: ..
       dockerfile: ./build/Dockerfile
