@@ -12,9 +12,9 @@ from matplotlib.colors import ListedColormap
 
 from database.models import MainDnaDataBase
 
-# from seqfold import fold, dot_bracket
-# import forgi.visual.mplotlib as fvm
-# import forgi
+from seqfold import fold, dot_bracket
+import forgi.visual.mplotlib as fvm
+import forgi
 
 
 def get_graph():
@@ -74,20 +74,20 @@ def plot_levenshtein(sequence: str):
     return get_graph()
 
 
-# def plot_structure(sequence: str):
-#     seq_f = fold(sequence)
-#     dot_seq = dot_bracket(sequence, seq_f)
-#     rnas = forgi.load_rna(dot_seq)
-#     if not rnas:
-#         return
-#     plt.switch_backend('AGG')
-#     fig = plt.figure(figsize=(10, 6))
-#     fvm.plot_rna(
-#         rnas[0],
-#         text_kwargs={"fontweight": "black"},
-#         lighten=0.7,
-#         backbone_kwargs={"linewidth": 3}
-#     )
-#     plt.tight_layout()
-#     return get_graph()
+def plot_structure(sequence: str):
+    seq_f = fold(sequence)
+    dot_seq = dot_bracket(sequence, seq_f)
+    rnas = forgi.load_rna(dot_seq)
+    if not rnas:
+        return
+    plt.switch_backend('AGG')
+    fig = plt.figure(figsize=(10, 6))
+    fvm.plot_rna(
+        rnas[0],
+        text_kwargs={"fontweight": "black"},
+        lighten=0.7,
+        backbone_kwargs={"linewidth": 3}
+    )
+    plt.tight_layout()
+    return get_graph()
 
