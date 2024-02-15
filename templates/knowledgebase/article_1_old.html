@@ -104,7 +104,7 @@
 	border-bottom-right-radius:10px;
 }
 .e65_163:hover {
-    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
     transform: scale(1.01);
 }
 
@@ -112,6 +112,7 @@
     background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
 }
 .recommended_articles_image {
+	background-color:rgba(205.00000298023224, 222.00000196695328, 242.00000077486038, 0.5299999713897705);
 	width:25vw;
 	height:25vh;
     position: relative;
@@ -121,10 +122,10 @@
 }
 .recommended_articles_title {
 	color:rgba(0, 0, 0, 1);
-	width:19vw;
+	width:21vw;
 	height:10vh;
 	position:absolute;
-	left:3vw;
+	left:2.5vw;
 	top:27vh;
 	font-family:Roboto;
 	text-align:left;
@@ -145,7 +146,7 @@
 	border-bottom-right-radius:10px;
 }
 .e65_172:hover {
-    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
     transform: scale(1.01);
 }
 
@@ -166,7 +167,7 @@
 	border-bottom-right-radius:10px;
 }
 .e65_176:hover {
-    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
+    background-color: rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 1);
     transform: scale(1.01);
 }
 
@@ -256,42 +257,44 @@
 </style>
 
 <div class=e54_138>
-    <img src="{% static '/knowledgebase/img/article_1_fon.png' %}" alt="background_ctb" class="article_background">
+    <img src="{% static '/knowledgebase/img/article_8_fon.png' %}" alt="background_ctb" class="article_background">
   <div class=article_title_block>
-      <div  class="article_title">Introduction to DNAzymes: Understanding structure and function</div>
+      <div  class="article_title">Importance of DNAzymes in gene regulation and therapeutics</div>
         <div class="e54_146"></div>
   </div>
 
-    <div  class="main_article_text">DNAzymes, also known as catalytic DNA or deoxyribozymes, are a fascinating class of molecules that possess both the information storage capabilities of DNA and the enzymatic activity typically associated with proteins. These unique molecules were first discovered in 1994 by Ronald Breaker and Gerald Joyce, who demonstrated that certain single-stranded DNA sequences had the ability to catalyze specific chemical reactions.
+    <div  class="main_article_text">DNAzymes, a class of catalytic DNA molecules, play a crucial role in gene regulation and therapeutics. These unique enzymes have the ability to target specific RNA sequences, making them powerful tools for controlling gene expression. By binding to and cleaving targeted RNA molecules, DNAzymes can effectively silence or inhibit the expression of disease-causing genes.
 
-The structure of DNAzymes is similar to regular DNA, consisting of nucleotide bases - adenine (A), cytosine (C), guanine (G), and thymine (T). However, what sets DNAzymes apart is their ability to fold into complex three-dimensional structures that enable them to bind and cleave specific target molecules. This folding is facilitated by the pairing interactions between complementary bases within the same molecule.
+The potential of DNAzymes in therapeutic applications is immense. In gene therapy, they can be used to correct genetic mutations by specifically targeting and repairing faulty genes. This offers hope for treating a wide range of genetic disorders.
 
-DNAzymes can be designed to perform a wide range of functions. One key function is their ability to act as molecular scissors, selectively cleaving RNA or other DNA molecules at specific sites. This property has significant implications in various fields such as gene therapy and genetic engineering.
+Furthermore, DNAzymes are also utilized in RNA interference (RNAi), a process that regulates gene expression by degrading specific RNA molecules. This mechanism has been widely explored as a potential therapeutic strategy for various diseases including cancer, viral infections, and neurodegenerative disorders.
 
-Additionally, DNAzymes can also serve as sensors or detectors for specific analytes. By incorporating specific binding domains into their structure, they can recognize and bind to target molecules such as metal ions or small organic compounds. This binding event triggers a conformational change in the DNAzyme structure which can be detected through fluorescence or color changes, providing a simple yet effective means for detecting analytes in biological samples.
+Recent studies have shown promising advancements in DNAzyme-based gene regulation and therapeutics. Scientists have developed novel strategies to enhance the stability and efficiency of these enzymes, improving their therapeutic potential. Additionally, advancements in delivery systems have made it possible to deliver DNAzymes directly into target cells or tissues.
 
-Furthermore, researchers have even developed aptazymes - hybrid molecules composed of both an aptamer (a short single-stranded piece of RNA or DNA that binds specifically to a target molecule) and a catalytic domain derived from a DNAzyme. Aptazymes combine the high specificity of aptamers with the catalytic activity of DNAzymes, opening up new possibilities for applications in diagnostics, therapeutics, and biosensing.
+One notable study published in Nature Communications demonstrated the successful use of DNAzymes to treat Duchenne muscular dystrophy (DMD), a devastating genetic disorder characterized by muscle degeneration. The researchers designed DNAzymes that specifically targeted the mutated mRNA responsible for DMD and showed significant improvement in muscle function when administered in animal models.
 
-In conclusion, DNAzymes are remarkable molecules that combine the information storage capabilities of DNA with enzymatic activity. Their unique structure and composition allow them to perform a variety of functions such as cleaving specific target molecules and detecting analytes. As researchers continue to explore the potential of DNAzymes, we can expect exciting advancements in fields ranging from medicine to environmental monitoring.
+Another exciting development is the use of DNAzyme-based nanoparticles for targeted drug delivery. These nanoparticles can be loaded with therapeutic agents such as small interfering RNAs (siRNAs) or drugs and delivered directly to diseased cells while minimizing off-target effects.
+
+In conclusion, DNAzymes hold great importance in gene regulation and therapeutics due to their ability to target specific RNA sequences. They offer promising opportunities for precise control over gene expression and hold tremendous potential for the development of novel therapeutic approaches. With ongoing research and advancements in this field, DNAzymes are paving the way for more effective treatments for a wide range of diseases.
 </div>
 
     <div class="recommended_articles">
         <div  class="e65_152">Recommended</div>
         <div  class="e65_153">Articles</div>
         <div class="buttons_ra">
-            <button class=e65_163 onclick="location.href='challenges-and-future-prospects'">
-                <img src="{% static '/knowledgebase/img/article_7.png' %}" alt="buttonpng" class="recommended_articles_image">
-                    <div  class="recommended_articles_title">Challenges and potential of DNAzymes in gene therapy</div>
-                </button>
-                <button class=e65_172 onclick="location.href='strategies-for-predicting'">
-                    <img src="{% static '/knowledgebase/img/article_5.png' %}" alt="buttonpng" class="recommended_articles_image">
-                <div  class="recommended_articles_title">Predict DNAzyme activity for effective design</div>
-                </button>
+            <button class=e65_163 onclick="location.href='introduction-to-dnazymes'">
+                <img src="{% static '/knowledgebase/img/article_2.png' %}" alt="buttonpng" class="recommended_articles_image">
+                <div  class="recommended_articles_title">Research commonly used biochemical assays</div>
+            </button>
+            <button class=e65_172 onclick="location.href='biochemical-assays'">
+                <img src="{% static '/knowledgebase/img/article_3.png' %}" alt="buttonpng" class="recommended_articles_image">
+                <div  class="recommended_articles_title">Understand DNAzymes binding and reaction pathways</div>
+            </button>
 
-                <button class=e65_176 onclick="location.href='the-role-of-dnazymes'">
-                    <img src="{% static '/knowledgebase/img/article_6.png' %}" alt="buttonpng" class="recommended_articles_image">
-                    <div  class="recommended_articles_title">Uncover the advantages of DNAzyme catalysis</div>
-                </button>
+            <button class=e65_176 onclick="location.href='recent-advancements'">
+                <img src="{% static '/knowledgebase/img/article_4.png' %}" alt="buttonpng" class="recommended_articles_image">
+                <div  class="recommended_articles_title">Explore DNAzyme sequence and structure relationship</div>
+            </button>
         </div>
 
     </div>
@@ -313,7 +316,6 @@ In conclusion, DNAzymes are remarkable molecules that combine the information st
         <img src="{% static '/main/img/masha_photoaidcom_cropped.jpg' %}" alt="background_ctb" class="e65_183">
 
     </div>
-
 </div>
 
 {% endblock %}
