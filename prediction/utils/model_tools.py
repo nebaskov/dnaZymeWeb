@@ -32,9 +32,9 @@ SEQUANT_FEATURES = [
     'NumRotatableBonds',
     'NumAtoms',
     'FractionCSP3',
-    'NumBridgeheadAtoms',
     'CrippenMR',
-    'chi0n'
+    'chi0n',
+    'kappa3'
 ]
 
 KMERS = ['AC', 'AT', 'CC', 'CG', 'TA', 'TC', 'TT']
@@ -47,11 +47,11 @@ ALL_FEATURES = [
     'TA',
     'TC',
     'TT',
-    'Temperature',
+    'temperature',
     'pH',
     'NaCl',
     'KCl',
-    'cofactor_conc',
+    'cofactor concentration',
     'electron_affinity',
     'exactmw',
     'amw',
@@ -59,7 +59,6 @@ ALL_FEATURES = [
     'NumRotatableBonds',
     'NumAtoms',
     'FractionCSP3',
-    'NumBridgeheadAtoms',
     'CrippenMR',
     'chi0n'
 ]
@@ -104,7 +103,10 @@ def get_descriptors(
             max_sequence_length=MAX_PEPTIDE_LENGTH,
             model_folder_path=SEQUANT_MODELS_PATH,
         )
-        sequant_desc: pd.DataFrame = seqtools.generate_latent_representations()
+        sequant_desc_raw: pd.DataFrame = seqtools.generate_latent_representations()
+        for column in sequant_desc_raw.columns:
+            sequant_desc_raw.rename(columns={column: column.replace('_repr', '')}, inplace=True)
+        sequant_desc = sequant_desc_raw[SEQUANT_FEATURES]
 
     descriptors: pd.DataFrame = sequant_desc.copy()
     for feature in PYMATGEN_FEATURES:
@@ -120,7 +122,7 @@ def get_descriptors(
     descriptors['cofactor_concentration'] = cofactor_conc
 
     sequence_kmers: dict[str, int] = get_kmers(sequence)
-    for key, value in sequence_kmers:
+    for key, value in sequence_kmers.items():
         descriptors[key] = value
 
     return descriptors
@@ -132,10 +134,10 @@ def make_prediction(descriptors: pd.DataFrame) -> float:
     )
     feature_renaming = {
         'ph': 'pH',
-        'temp': 'Temperature',
+        'temp': 'temperature',
         'k_cl': 'KCl',
         'na_cl': 'NaCl',
-        'cofactor_concentration': 'cofactor_conc',
+        'cofactor_concentration': 'cofactor concentration' 
     }
     descriptors.rename(columns=feature_renaming, inplace=True)
     prediction = model.predict(descriptors[ALL_FEATURES])
