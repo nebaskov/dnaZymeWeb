@@ -55,26 +55,26 @@ def _get_positions(sequence: str) -> np.array:
     return model, pos, sample
 
 
-def plot_levenshtein(sequence: str):
-    model, pos, sample = _get_positions(sequence)
-
-    cmap = ListedColormap(["#2E4451", "#9C5551"])
-    plt.switch_backend('AGG')
-    plt.figure(figsize=(10, 6))
-    plt.scatter(
-        x=pos[:, 0],
-        y=pos[:, 1],
-        c=model.labels_,
-        cmap=cmap
-    )
-    plt.scatter(
-        x=[sample[0]],
-        y=[sample[1]],
-        c='r',
-        marker='*'
-    )
-    plt.tight_layout()
-    return get_graph()
+# def plot_levenshtein(sequence: str):
+#     model, pos, sample = _get_positions(sequence)
+#
+#     cmap = ListedColormap(["#2E4451", "#9C5551"])
+#     plt.switch_backend('AGG')
+#     plt.figure(figsize=(10, 6))
+#     plt.scatter(
+#         x=pos[:, 0],
+#         y=pos[:, 1],
+#         c=model.labels_,
+#         cmap=cmap
+#     )
+#     plt.scatter(
+#         x=[sample[0]],
+#         y=[sample[1]],
+#         c='r',
+#         marker='*'
+#     )
+#     plt.tight_layout()
+#     return get_graph()
 
 
 def plot_structure(sequence: str):

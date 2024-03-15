@@ -3,7 +3,9 @@
 {% block content %}
 <html lang="en">
 
-<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Outfit&display=swap" rel="stylesheet">
+
+
 {% load static%}
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,30 +15,18 @@
 .main_result {
 	background-color:rgba(255, 255, 255, 1);
 	width:80vw;
-	height:90vh;
+	height:180vh;
 	position:absolute;
     left: 5vw;
 }
 .candidate_header {
 	color:rgba(0, 0, 0, 1);
-	font-family:Poppins;
+	font-family:Outfit;
+    font-weight: bolder;
 	text-align:left;
-	font-size:5vh;
+	font-size:3.2vh;
 	letter-spacing:0;
-}
-.e33_17 {
-	color:rgba(0, 0, 0, 1);
-	font-family:Poppins;
-	text-align:left;
-	font-size:3vh;
-	letter-spacing:0;
-}
-.e33_63 {
-	color:rgba(0, 0, 0, 1);
-	font-family:Poppins;
-	text-align:left;
-	font-size:3vh;
-	letter-spacing:0;
+    margin-left: 2vw;
 }
 .candidate_info {
 	width:60vw;
@@ -45,72 +35,18 @@
 	left:5vw;
 	top:3vh;
 }
-.e33_6 {
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:492px;
-	height:138px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e33_8 {
-	background-color:rgba(205.00000298023224, 227.00000166893005, 242.00000077486038, 0.5299999713897705);
-	width:464px;
-	height:109px;
-	position:absolute;
-	left:14px;
-	top:14px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
 .e33_10 {
-	font-family:Poppins;
-	font-size:3.5vh;
+	font-family:Outfit;
+	font-size:2vh;
 	letter-spacing:0;
-}
-.e33_13 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
-	font-family:Poppins;
-	font-size:4vh;
-    left: 1.7vw;
-	letter-spacing:0;
-}
-.e33_14 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
-	font-family:Poppins;
-	font-size:4vh;
-    left: 2.5vw;
-	letter-spacing:0;
+    color: #1E406B;
 }
 .e33_12 {
-	font-family:Poppins;
-	font-size:2vh;
+	font-family:Outfit;
+	font-size:3vh;
 	letter-spacing:0;
 }
-.e33_15 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
-	font-family:Poppins;
-	font-size:2vh;
-	letter-spacing:0;
-    top: 5vh;
-}
-.e33_16 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
-	font-family:Poppins;
-	font-size:2vh;
-	letter-spacing:0;
-    top: 5vh;
-}
+
 .buffer_conditions {
 	width:43vw;
 	height:30vh;
@@ -119,273 +55,164 @@
 	top:60vh;
 }
 .buffer_conditions_rect {
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:43vw;
+	background-color:#E0E2F0;
+	width:40vw;
 	height:16vh;
-    margin-top:4vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+    margin-top:1vh;
+    display: flex;
+    justify-content: center;
 }
-.e33_66 {
-	background-color:rgba(205.00000298023224, 227.00000166893005, 242.00000077486038, 0.5299999713897705);
-	width:10vw;
-	height:12vh;
-	position:absolute;
-	left:2vw;
-	top:6.5vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+.buffer_conditions_rect_white {
+	background-color:#FFFFFF;
+	width:39vw;
+	height:14vh;
+    position: relative;
+    top: 1vh;
 }
 .e33_71 {
-	color:rgba(0, 0, 0, 1);
+    background-color: #E0E2F0;
 	width:25vw;
+    height: 5vh;
 	position:absolute;
-	left:13vw;
-	top:10vh;
-	font-family:Poppins;
-	text-align:left;
-	font-size:3vh;
+	left:3vw;
+	top:1vh;
+}
+.buf_cond {
+    color:#575A6C;
+    position: absolute;
+    top: -1.5vh;
+    left: 1.5vw;
+	font-size:2.5vh;
+	font-family:Outfit;
+    font-weight: bolder;
 }
 .e33_72 {
-	color:rgba(0, 0, 0, 1);
-	width:25vw;
-	position:absolute;
-	left:13vw;
-	top:14vh;
-	font-family:Poppins;
+	width:30vw;
 	text-align:left;
-	font-size:2vh;
+    height: 5vh;
+	position:relative;
+	left:3vw;
+	top:7vh;
+}
+.buf_cond_input {
+    width:30vw;
+	color:rgba(0, 0, 0, 1);
+    position: absolute;
+    top: -1.5vh;
+    left: 1.5vw;
+	font-size:3vh;
+	font-family:Outfit;
 }
 .lenght_block {
 	position:absolute;
-    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:13vw;
-	height:22vh;
+    background-color:#E0E2F0;
+	width:14vw;
+	height:23vh;
     top: 5vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+    display: flex;
+    justify-content: center;
 }
-.e33_18 {
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:204px;
-	height:218px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+.white_bl_gen_res{
+    width:13vw;
+	height:21vh;
+    position:absolute;
+    top: 1vh;
+    background-color:#FFFFFF;
 }
+
 .e33_24 {
-	color:rgba(0, 0, 0, 1);
+	color:#575A6C;
 	position:absolute;
     width:13vw;
-	top:13vh;
-	font-family:Poppins;
-	text-align:center;
-	font-size:2vh;
+    top: 1vh;
+    left: 1vw;
+	font-family:Outfit;
+	text-align:left;
+	font-size:3vh;
 	letter-spacing:0;
 }
 .e33_21 {
-	color:rgba(0, 0, 0, 1);
+	color:#1E406B;
     width:13vw;
-	position:absolute;
-	top:15.5vh;
-	font-family:Poppins;
-	text-align:center;
+	position:relative;
+	top:8.75vh;
+    left: 1vw;
+	font-family:Outfit;
+	text-align:left;
 	font-size:3.5vh;
 	letter-spacing:0;
-}
-.e33_29 {
-	background-color:rgba(205.00000298023224, 227.00000166893005, 242.00000077486038, 0.5299999713897705);
-	position:absolute;
-	left:1vw;
-	top:2vh;
-	width:11vw;
-	height:10vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.clones_block {
-	position:absolute;
-    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:13vw;
-	height:22vh;
-    left: 15vw;
-    top: 5vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e33_52 {
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:204px;
-	height:218px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e33_53 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
-    width:13vw;
-	top:13vh;
-	font-family:Poppins;
-	text-align:center;
-	font-size:2vh;
-	letter-spacing:0;
-}
-.e33_54 {
-	color:rgba(0, 0, 0, 1);
-    width:13vw;
-	position:absolute;
-	top:15.5vh;
-	font-family:Poppins;
-	text-align:center;
-	font-size:3.5vh;
-	letter-spacing:0;
-}
-.e33_55 {
-	background-color:rgba(205.00000298023224, 227.00000166893005, 242.00000077486038, 0.5299999713897705);
-	position:absolute;
-	left:1vw;
-	top:2vh;
-	width:11vw;
-	height:10vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
 }
 .kobs_block {
-	position:absolute;
-    background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:13vw;
-	height:22vh;
-    left: 30vw;
+    position:absolute;
+    background-color:#E0E2F0;
+	width:14vw;
+	height:23vh;
     top: 5vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e33_57 {
-	background-color:rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
-	width:204px;
-	height:218px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e33_58 {
-	color:rgba(0, 0, 0, 1);
-	position:absolute;
-    width:13vw;
-	top:13vh;
-	font-family:Poppins;
-	text-align:center;
-	font-size:2vh;
-	letter-spacing:0;
-}
-.e33_59 {
-	color:rgba(0, 0, 0, 1);
-    width:13vw;
-	position:absolute;
-	top:15.5vh;
-	font-family:Poppins;
-	text-align:center;
-	font-size:3.5vh;
-	letter-spacing:0;
-}
-.e33_60 {
-	background-color:rgba(205.00000298023224, 227.00000166893005, 242.00000077486038, 0.5299999713897705);
-	position:absolute;
-	left:1vw;
-	top:2vh;
-	width:11vw;
-	height:10vh;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e33_74 {
-	color:rgba(0, 0, 0, 1);
-	font-family:Poppins;
-	text-align:left;
-	font-size:2.5vh;
-	letter-spacing:0;
+    left: 15vw;
+    display: flex;
+    justify-content: center;
 }
 .e33_73 {
 	color:rgba(0, 0, 0, 1);
-	font-family:Poppins;
+	font-family:Outfit;
 	text-align:left;
 	font-size:2.5vh;
 	letter-spacing:0;
 }
 .candidate_info_rectangle {
-    border: 10px solid rgba(231.00000143051147, 231.00000143051147, 231.00000143051147, 0.5299999713897705);
     overflow:hidden;
-    padding: 1em;
-    background-color: rgba(205.00000298023224, 227.00000166893005, 242.00000077486038, 0.5299999713897705);
-	width:38vw;
-	height:15vh;
+	width:51.4vw;
+	height:18vh;
 	position:relative;
-	top:3%;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+    margin-top: 1vh;
 }
 
-.candidate_info_rectangle .melting_text {
-    text-align: center;
-	top:1.5vh;
-    width:12vw;
-    left: 1vw;
+.melting_text {
+    text-align: start;
+    width:17vw;
+    height:20vh;
+    background-color:#E0E2F0;
+    display: flex;
+    justify-content: center;
 }
 
-.candidate_info_rectangle .mol_weight_text {
+._number_b {
     text-align: center;
-	top:0vh;
-    width:12vw;
-    position: absolute;
-    left: 13vw;
+    top:3vh;
+    position:absolute;
+    width:14vw;
+    height:8vh;
+    background-color:#FFFFFF;
 }
-.candidate_info_rectangle .gc_text {
-    text-align: center;
-	top:0vh;
-    width:12vw;
+.feature_name_b{
     position: absolute;
-    left: 25vw;
+    top: 9vh;
+    text-align:left;
+    width:14vw;
+    height:6vh;
 }
-{#.mol_weight_text_w {#}
-{#    color:rgba(0, 0, 0, 1);#}
-{#	position:absolute;#}
-{#	font-family:Poppins;#}
-{#	font-size:2vh;#}
-{#	letter-spacing:0;#}
-{#    top: 7vh;#}
-{#    left: 0.5vw;#}
-{#}#}
+.mol_weight_text {
+    text-align: start;
+    width:17vw;
+    background-color:#E0E2F0;
+    height:20vh;
+    position: absolute;
+    top: 0;
+    left: 17.2vw;
+    display: flex;
+    justify-content: center;
+}
+.gc_text {
+    text-align: start;
+    width:17vw;
+    background-color:#E0E2F0;
+    height:20vh;
+    position: absolute;
+    top: 0;
+    left: 34.4vw;
+    display: flex;
+    justify-content: center;
+}
 .generation_results {
     width:43vw;
 	height:25vh;
@@ -393,24 +220,41 @@
 	left:5vw;
 	top:30vh;
 }
-.lev_dist {
-    position:absolute;
-	top:3vh;
-    width:35vw;
-    left:55vw;
-}
-
 .structure_sec {
-    position:absolute;
-	top:45vh;
-    width:35vw;
-    left: 55vw;
+    width:80vw;
+	height:80vh;
+	position:absolute;
+	left:5vw;
+	top:85vh;
 }
-.sequence_clustering_paint {
-    position:absolute;
-	top:4vh;
-    width:40vw;
-	height:38vh;
+.paint_structure_rect {
+	background-color:#E0E2F0;
+	width:80vw;
+	height:80vh;
+    margin-top:1vh;
+    display: flex;
+    justify-content: center;
+}
+.paint_structure_rect_white {
+	background-color:#FFFFFF;
+	width:79vw;
+	height:78vh;
+    position: relative;
+    top: 1vh;
+}
+.paint_structure_text {
+    background-color:#E0E2F0;
+	width:30vw;
+	height:64vh;
+    margin-top:7vh;
+    margin-left: 3vw;
+}
+.sequence_structure_paint {
+    width:39.5vw;
+	height:64vh;
+    position: absolute;
+    top:7vh;
+    left: 36vw;
 }
 </style>
 
@@ -419,60 +263,76 @@
       <span  class="candidate_header">DNAzyme candidate</span>
       <div class="candidate_info_rectangle">
           <div class="melting_text">
-              <p  class="e33_10"> {{ melting_temp|floatformat:1 }} </p>
+              <div class="_number_b">
+                  <p  class="e33_10"> {{ melting_temp|floatformat:1 }} </p>
+              </div>
               <div></div>
-              <p  class="e33_12">Melting Point</p>
+              <div class="feature_name_b">
+                  <p class="e33_12">Melting Point</p>
+              </div>
           </div>
           <div class="mol_weight_text">
-              <p  class="e33_10"> {{ mol_weight|floatformat:2 }} </p>
-              <p  class="e33_12">Molecular Weight</p>
+              <div class="_number_b">
+                  <p  class="e33_10"> {{ mol_weight|floatformat:2 }} </p>
+              </div>
+              <div class="feature_name_b">
+                  <p  class="e33_12">Molecular Weight</p>
+              </div>
           </div>
           <div class="gc_text">
-              <p  class="e33_10"> {{ gc_content|floatformat:1 }} </p>
-              <p  class="e33_12">GC-content</p>
+              <div class="_number_b">
+                  <p  class="e33_10"> {{ gc_content|floatformat:1 }} </p>
+              </div>
+                <div class="feature_name_b">
+                    <p  class="e33_12">GC-content</p>
+                </div>
           </div>
       </div>
   </div>
     <div class="generation_results">
-        <span  class="e33_17">Generation result</span>
-        <div class=lenght_block>
-            <div  class="e33_24">Sequence length</div>
-            <div  class="e33_21"> {{ seq_length }} </div>
-            <div class="e33_29"></div>
+        <span  class="candidate_header">Generation result</span>
+        <div class="lenght_block">
+            <div class=white_bl_gen_res>
+                <div  class="e33_24">Sequence length</div>
+                <div  class="e33_21"> {{ seq_length }} </div>
+                <div class="e33_29"></div>
+            </div>
         </div>
 
-        <div class=clones_block>
-            <div  class="e33_53">Number of clones</div>
-            <div  class="e33_54"> {{ clones }}</div>
-            <div class="e33_55"></div>
-        </div>
 
         <div class=kobs_block>
-            <div  class="e33_58">Predicted Kobs</div>
-            <div  class="e33_59">{{ result }}</div>
-            <div class="e33_60"></div>
+            <div class="white_bl_gen_res">
+                <div  class="e33_24">Predicted Kobs</div>
+                <div  class="e33_21"> {{ result }}</div>
+            </div>
         </div>
+
     </div>
 
   <div class=buffer_conditions>
-        <div  class="e33_63">Sequence Achievements</div>
+        <div  class="candidate_header">Sequence Achievements</div>
         <div class="buffer_conditions_rect">
-            <div  class="e33_71">Buffer Conditions</div>
-            <div  class="e33_72"> {{ buffer }} </div>
+            <div class="buffer_conditions_rect_white">
+                <div  class="e33_71">
+                    <p class="buf_cond">Buffer Conditions</p>
+                </div>
+                <div  class="e33_72"> <p class="buf_cond_input"> {{ buffer }} </p> </div>
+            </div>
         </div>
-        <div class="e33_66"></div>
   </div>
-    <div class="lev_dist">
-        <div  class="e33_74">Levenstein distances</div>
-        <!-- <img src="{% static 'main/img/sequence_clustering.png' %}" alt="background_ctb" class="sequence_clustering_paint"> -->
-        <img src="data:image/png;base64, {{ levenshtein|safe }}" alt="background_ctb" class="sequence_clustering_paint">
 
-    </div>
+
     <div class="structure_sec">
-        <div  class="e33_73">Secondary structure</div>
-        <img src="data:image/png;base64, {{ structure|safe }}" alt="background_ctb" class="sequence_structure_paint">
-    </div>
+        <div  class="candidate_header">Secondary structure</div>
+        <div class="paint_structure_rect">
+            <div class="paint_structure_rect_white">
+                <div class="paint_structure_text">
 
+                </div>
+                <img src="data:image/png;base64, {{ structure|safe }}" alt="background_ctb" class="sequence_structure_paint">
+            </div>
+        </div>
+    </div>
 </div>
         
 {% endblock %}

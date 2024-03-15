@@ -8,6 +8,6 @@ from .seq_tools import (
     get_clones
 )
 from .plot_tools import (
-    plot_levenshtein,
+    # plot_levenshtein,
     plot_structure
 )
