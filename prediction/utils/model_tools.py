@@ -1,24 +1,15 @@
 import os
+import re
 from dotenv import load_dotenv
 
 import joblib
 import pandas as pd
-import tensorflow as tf
-
 from pymatgen.core import Element
-
-from prediction.src.SeQuant_user.Funcs import (
-    generate_rdkit_descriptors,
-    generate_latent_representations,
-    SeQuant_encoding,
-)
+from prediction.src.SeQuant.app.sequant_tools import SequantTools
 
 load_dotenv()
 SEQUANT_MODELS_PATH = os.environ['SEQUANT_MODELS_PATH']
 MAIN_MODELS_PATH = os.getenv('MAIN_MODELS_PATH')
-
-print(f'{SEQUANT_MODELS_PATH=}')
-print(f'{MAIN_MODELS_PATH=}')
 
 POLYMER_TYPE = 'DNA'
 MAX_PEPTIDE_LENGTH = 96
@@ -46,7 +37,16 @@ SEQUANT_FEATURES = [
     'chi0n'
 ]
 
+KMERS = ['AC', 'AT', 'CC', 'CG', 'TA', 'TC', 'TT']
+
 ALL_FEATURES = [
+    'AC',
+    'AT',
+    'CC',
+    'CG',
+    'TA',
+    'TC',
+    'TT',
     'Temperature',
     'pH',
     'NaCl',
@@ -73,27 +73,11 @@ def get_pymatgen_desc(element: str) -> dict[str, float]:
     return desc_dict
 
 
-def get_sequant_descriptors(sequences: list[str]) -> dict[str, float]:
-    raw_rdkit_descriptors: pd.DataFrame = generate_rdkit_descriptors(
-        normalize=None
-    )
-    rdkit_descriptors = raw_rdkit_descriptors.loc[NUCLEOTIDES]
-    descriptor_names: list[str] = rdkit_descriptors.columns.tolist()
-    encoded_sequences: tf.Tensor = SeQuant_encoding(
-        sequences_list=sequences,
-        polymer_type=POLYMER_TYPE,
-        descriptors=rdkit_descriptors,
-        num=MAX_PEPTIDE_LENGTH
-    )
-    latent_representation = generate_latent_representations(
-        sequences_list=sequences,
-        sequant_encoded_sequences=encoded_sequences,
-        polymer_type=POLYMER_TYPE,
-        add_peptide_descriptors=False,
-        path_to_model_folder=SEQUANT_MODELS_PATH
-    )
-    repr_df = pd.DataFrame(latent_representation, columns=descriptor_names)
-    return repr_df[SEQUANT_FEATURES]
+def get_kmers(sequence: str) -> dict[str, int]:
+    output: dict[str, int] = dict()
+    for kmer in KMERS:
+        output[kmer] = len(re.findall(kmer, sequence))
+    return output
 
 
 def get_descriptors(
@@ -114,9 +98,13 @@ def get_descriptors(
         pymatgen_desc: dict[str, float] = get_pymatgen_desc(cofactor)
 
     if use_sequant:
-        sequant_desc: pd.DataFrame = get_sequant_descriptors(
-            sequences=[sequence]
+        seqtools = SequantTools(
+            sequences=[sequence],
+            polymer_type=POLYMER_TYPE,
+            max_sequence_length=MAX_PEPTIDE_LENGTH,
+            model_folder_path=SEQUANT_MODELS_PATH,
         )
+        sequant_desc: pd.DataFrame = seqtools.generate_latent_representations()
 
     descriptors: pd.DataFrame = sequant_desc.copy()
     for feature in PYMATGEN_FEATURES:
@@ -130,6 +118,10 @@ def get_descriptors(
             descriptors[feature] = desc_value
 
     descriptors['cofactor_concentration'] = cofactor_conc
+
+    sequence_kmers: dict[str, int] = get_kmers(sequence)
+    for key, value in sequence_kmers:
+        descriptors[key] = value
 
     return descriptors
 
@@ -148,7 +140,3 @@ def make_prediction(descriptors: pd.DataFrame) -> float:
     descriptors.rename(columns=feature_renaming, inplace=True)
     prediction = model.predict(descriptors[ALL_FEATURES])
     return round(prediction[0], 4)
-
-
-
-
