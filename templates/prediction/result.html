@@ -37,13 +37,16 @@
 }
 .e33_10 {
 	font-family:Outfit;
-	font-size:2vh;
+    position:absolute;
+    top: 2.75vh;
+    font-weight: bolder;
+	font-size:2.5vh;
 	letter-spacing:0;
     color: #1E406B;
 }
 .e33_12 {
 	font-family:Outfit;
-	font-size:3vh;
+	font-size:2.5vh;
 	letter-spacing:0;
 }
 
@@ -80,14 +83,14 @@
 .buf_cond {
     color:#575A6C;
     position: absolute;
-    top: -1.5vh;
+    top: 0.5vh;
     left: 1.5vw;
 	font-size:2.5vh;
 	font-family:Outfit;
     font-weight: bolder;
 }
 .e33_72 {
-	width:30vw;
+	max-width:30vw;
 	text-align:left;
     height: 5vh;
 	position:relative;
@@ -95,25 +98,24 @@
 	top:7vh;
 }
 .buf_cond_input {
-    width:30vw;
+    max-width:30vw;
 	color:rgba(0, 0, 0, 1);
-    position: absolute;
-    top: -1.5vh;
+    position: relative;
     left: 1.5vw;
-	font-size:3vh;
+	font-size:2.5vh;
 	font-family:Outfit;
 }
 .lenght_block {
 	position:absolute;
     background-color:#E0E2F0;
-	width:14vw;
+	width:17vw;
 	height:23vh;
     top: 5vh;
     display: flex;
     justify-content: center;
 }
 .white_bl_gen_res{
-    width:13vw;
+    width:16vw;
 	height:21vh;
     position:absolute;
     top: 1vh;
@@ -123,12 +125,12 @@
 .e33_24 {
 	color:#575A6C;
 	position:absolute;
-    width:13vw;
+    max-width:12vw;
     top: 1vh;
     left: 1vw;
 	font-family:Outfit;
 	text-align:left;
-	font-size:3vh;
+	font-size:2.9vh;
 	letter-spacing:0;
 }
 .e33_21 {
@@ -138,6 +140,7 @@
 	top:8.75vh;
     left: 1vw;
 	font-family:Outfit;
+    font-weight: bold;
 	text-align:left;
 	font-size:3.5vh;
 	letter-spacing:0;
@@ -145,10 +148,10 @@
 .kobs_block {
     position:absolute;
     background-color:#E0E2F0;
-	width:14vw;
+	width:17vw;
 	height:23vh;
     top: 5vh;
-    left: 15vw;
+    left: 18vw;
     display: flex;
     justify-content: center;
 }
@@ -177,16 +180,17 @@
 }
 
 ._number_b {
-    text-align: center;
     top:3vh;
     position:absolute;
     width:14vw;
     height:8vh;
     background-color:#FFFFFF;
+    display: flex;
+    justify-content: center;
 }
 .feature_name_b{
     position: absolute;
-    top: 9vh;
+    top: 12vh;
     text-align:left;
     width:14vw;
     height:6vh;
@@ -250,11 +254,17 @@
     margin-left: 3vw;
 }
 .sequence_structure_paint {
-    width:39.5vw;
-	height:64vh;
+    max-width:39.5vw;
+	max-height:64vh;
+}
+.sequence_structure_paint_block {
     position: absolute;
     top:7vh;
     left: 36vw;
+    max-width:39.5vw;
+	max-height:64vh;
+    display: flex;
+    justify-content: center;
 }
 </style>
 
@@ -329,7 +339,9 @@
                 <div class="paint_structure_text">
 
                 </div>
-                <img src="data:image/png;base64, {{ structure|safe }}" alt="background_ctb" class="sequence_structure_paint">
+                <div class="sequence_structure_paint_block">
+                    <img src="data:image/png;base64, {{ structure|safe }}" alt="background_ctb" class="sequence_structure_paint">
+                </div>
             </div>
         </div>
     </div>
