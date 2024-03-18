@@ -64,7 +64,10 @@ ALL_FEATURES = [
     'NumAtoms',
     'FractionCSP3',
     'CrippenMR',
-    'chi0v'
+    'chi0v',
+    'kappa3',
+    'ionic_radii',
+    'charge'
 ]
 
 
