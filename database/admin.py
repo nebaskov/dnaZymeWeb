@@ -5,4 +5,4 @@ from import_export.admin import ImportExportModelAdmin
 
 @admin.register(MainDnaDataBase)
 class ViewAdmin(ImportExportModelAdmin):
-    list_display = ('sequence', 'activity', 'year_of_publication')
+    list_display = ('sequence', 'activity', 'doi')
