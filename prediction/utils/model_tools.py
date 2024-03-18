@@ -68,12 +68,31 @@ ALL_FEATURES = [
 ]
 
 
+CHARGES: dict[str, int] = {
+    'Mg': 2,
+    'Zn': 2,
+    'Pb': 2,
+    'Na': 1,
+    'Ca': 2,
+    'Mn': 2,
+    'Ce': 3,
+    'Co': 2,
+    'Ni': 2,
+    'Cd': 2,
+    'Cu': 2,
+    'Tm': 3,
+    'Er': 3,
+    'Gd': 3,
+    'Ag': 1,
+}
+
+
 def get_pymatgen_desc(element: str) -> dict[str, float]:
     element_obj = Element(element)
     desc_dict: dict[str, float] = {
         'electron_affinity': element_obj.electron_affinity,
         'ionic_radii': element_obj.ionic_radii,
-        'charge': element_obj.charge
+        'charge': CHARGES.get(element, 0)
     }
     return desc_dict
 
