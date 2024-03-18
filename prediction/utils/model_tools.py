@@ -23,7 +23,11 @@ USER_FEATURES = [
     'cofactor',
     'cofactor_concentration'
 ]
-PYMATGEN_FEATURES = ['electron_affinity']
+PYMATGEN_FEATURES = [
+    'electron_affinity',
+    'ionic_radii',
+    'charge'
+]
 
 SEQUANT_FEATURES = [
     'exactmw',
@@ -33,7 +37,7 @@ SEQUANT_FEATURES = [
     'NumAtoms',
     'FractionCSP3',
     'CrippenMR',
-    'chi0n',
+    'chi0v',
     'kappa3'
 ]
 
@@ -60,14 +64,16 @@ ALL_FEATURES = [
     'NumAtoms',
     'FractionCSP3',
     'CrippenMR',
-    'chi0n'
+    'chi0v'
 ]
 
 
 def get_pymatgen_desc(element: str) -> dict[str, float]:
     element_obj = Element(element)
     desc_dict: dict[str, float] = {
-        'electron_affinity': element_obj.electron_affinity
+        'electron_affinity': element_obj.electron_affinity,
+        'ionic_radii': element_obj.ionic_radii,
+        'charge': element_obj.charge
     }
     return desc_dict
 
