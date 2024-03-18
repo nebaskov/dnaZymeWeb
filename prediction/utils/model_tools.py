@@ -1,24 +1,15 @@
 import os
+import re
 from dotenv import load_dotenv
 
 import joblib
 import pandas as pd
-import tensorflow as tf
-
 from pymatgen.core import Element
-
-from prediction.src.SeQuant_user.Funcs import (
-    generate_rdkit_descriptors,
-    generate_latent_representations,
-    SeQuant_encoding,
-)
+from prediction.src.SeQuant.app.sequant_tools import SequantTools
 
 load_dotenv()
 SEQUANT_MODELS_PATH = os.environ['SEQUANT_MODELS_PATH']
 MAIN_MODELS_PATH = os.getenv('MAIN_MODELS_PATH')
-
-print(f'{SEQUANT_MODELS_PATH=}')
-print(f'{MAIN_MODELS_PATH=}')
 
 POLYMER_TYPE = 'DNA'
 MAX_PEPTIDE_LENGTH = 96
@@ -32,7 +23,11 @@ USER_FEATURES = [
     'cofactor',
     'cofactor_concentration'
 ]
-PYMATGEN_FEATURES = ['electron_affinity']
+PYMATGEN_FEATURES = [
+    'electron_affinity',
+    'ionic_radii',
+    'charge'
+]
 
 SEQUANT_FEATURES = [
     'exactmw',
@@ -41,59 +36,74 @@ SEQUANT_FEATURES = [
     'NumRotatableBonds',
     'NumAtoms',
     'FractionCSP3',
-    'NumBridgeheadAtoms',
     'CrippenMR',
-    'chi0n'
+    'chi0v',
+    'kappa3'
 ]
 
+KMERS = ['AC', 'AT', 'CC', 'CG', 'TA', 'TC', 'TT']
+
 ALL_FEATURES = [
-    'Temperature',
-    'pH',
-    'NaCl',
-    'KCl',
-    'cofactor_conc',
-    'electron_affinity',
-    'exactmw',
-    'amw',
-    'lipinskiHBD',
-    'NumRotatableBonds',
-    'NumAtoms',
-    'FractionCSP3',
-    'NumBridgeheadAtoms',
-    'CrippenMR',
-    'chi0n'
+   'AC',
+   'AT',
+   'CC',
+   'CG',
+   'TA',
+   'TC',
+   'TT',
+   'exactmw',
+   'amw',
+   'lipinskiHBD',
+   'NumRotatableBonds',
+   'NumAtoms',
+   'FractionCSP3',
+   'CrippenMR',
+   'chi0v',
+   'kappa3',
+   'NaCl',
+   'pH',
+   'KCl',
+   'cofactor concentration',
+   'temperature',
+   'charge',
+   'electron_affinity',
+   'ionic_radii'
 ]
+
+CHARGES: dict[str, int] = {
+    'Mg': 2,
+    'Zn': 2,
+    'Pb': 2,
+    'Na': 1,
+    'Ca': 2,
+    'Mn': 2,
+    'Ce': 3,
+    'Co': 2,
+    'Ni': 2,
+    'Cd': 2,
+    'Cu': 2,
+    'Tm': 3,
+    'Er': 3,
+    'Gd': 3,
+    'Ag': 1,
+}
 
 
 def get_pymatgen_desc(element: str) -> dict[str, float]:
     element_obj = Element(element)
     desc_dict: dict[str, float] = {
-        'electron_affinity': element_obj.electron_affinity
+        'electron_affinity': element_obj.electron_affinity,
+        'ionic_radii': element_obj.ionic_radii,
+        'charge': CHARGES.get(element, 0)
     }
     return desc_dict
 
 
-def get_sequant_descriptors(sequences: list[str]) -> dict[str, float]:
-    raw_rdkit_descriptors: pd.DataFrame = generate_rdkit_descriptors(
-        normalize=None
-    )
-    rdkit_descriptors = raw_rdkit_descriptors.loc[NUCLEOTIDES]
-    descriptor_names: list[str] = rdkit_descriptors.columns.tolist()
-    encoded_sequences: tf.Tensor = SeQuant_encoding(
-        sequences_list=sequences,
-        polymer_type=POLYMER_TYPE,
-        descriptors=rdkit_descriptors,
-        num=MAX_PEPTIDE_LENGTH
-    )
-    latent_representation = generate_latent_representations(
-        sequences_list=sequences,
-        sequant_encoded_sequences=encoded_sequences,
-        polymer_type=POLYMER_TYPE,
-        add_peptide_descriptors=False,
-        path_to_model_folder=SEQUANT_MODELS_PATH
-    )
-    repr_df = pd.DataFrame(latent_representation, columns=descriptor_names)
-    return repr_df[SEQUANT_FEATURES]
+def get_kmers(sequence: str) -> dict[str, int]:
+    output: dict[str, int] = dict()
+    for kmer in KMERS:
+        output[kmer] = len(re.findall(kmer, sequence))
+    return output
 
 
 def get_descriptors(
@@ -114,9 +124,16 @@ def get_descriptors(
         pymatgen_desc: dict[str, float] = get_pymatgen_desc(cofactor)
 
     if use_sequant:
-        sequant_desc: pd.DataFrame = get_sequant_descriptors(
-            sequences=[sequence]
+        seqtools = SequantTools(
+            sequences=[sequence],
+            polymer_type=POLYMER_TYPE,
+            max_sequence_length=MAX_PEPTIDE_LENGTH,
+            model_folder_path=SEQUANT_MODELS_PATH,
         )
+        sequant_desc_raw: pd.DataFrame = seqtools.generate_latent_representations()
+        for column in sequant_desc_raw.columns:
+            sequant_desc_raw.rename(columns={column: column.replace('_repr', '')}, inplace=True)
+        sequant_desc = sequant_desc_raw[SEQUANT_FEATURES]
 
     descriptors: pd.DataFrame = sequant_desc.copy()
     for feature in PYMATGEN_FEATURES:
@@ -131,6 +148,10 @@ def get_descriptors(
 
     descriptors['cofactor_concentration'] = cofactor_conc
 
+    sequence_kmers: dict[str, int] = get_kmers(sequence)
+    for key, value in sequence_kmers.items():
+        descriptors[key] = value
+
     return descriptors
 
 
@@ -140,15 +161,11 @@ def make_prediction(descriptors: pd.DataFrame) -> float:
     )
     feature_renaming = {
         'ph': 'pH',
-        'temp': 'Temperature',
+        'temp': 'temperature',
         'k_cl': 'KCl',
         'na_cl': 'NaCl',
-        'cofactor_concentration': 'cofactor_conc',
+        'cofactor_concentration': 'cofactor concentration' 
     }
     descriptors.rename(columns=feature_renaming, inplace=True)
     prediction = model.predict(descriptors[ALL_FEATURES])
     return round(prediction[0], 4)
-
-
-
-
