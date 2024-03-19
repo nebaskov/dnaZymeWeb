@@ -56,19 +56,23 @@ def database_filter(request):
             float(_query)
         except:
             float_type = False
-        start_query = f"select * from public.dnazyme where dnazyme.sequence ~* '{_query}' " \
-                      f"union all select * from public.dnazyme where dnazyme.name ~* '{_query}'"
-        if float_type and int_type:
-            start_query = start_query + '' \
-                          + f"union all select * from public.dnazyme where dnazyme.year_of_publication = '{_query}'"
-        if float_type:
-            start_query = start_query + '' \
-                          + f"union all select * from public.dnazyme where dnazyme.activity = '{_query}'"
-        # start_query = start_query + '' \
-        #                   + f"union all select * from public.dnazyme"
-        filtered_model = MainDnaDataBase.objects.raw(start_query)
-        output_fin = serializers.serialize("python", filtered_model)
-        if len(output_fin) == 0:
+
+        try:
+            start_query = f"select * from public.dnazyme where dnazyme.sequence ~* '{_query}' " \
+                          f"union all select * from public.dnazyme where dnazyme.name ~* '{_query}'"
+            if float_type and int_type:
+                start_query = start_query + '' \
+                              + f"union all select * from public.dnazyme where dnazyme.year_of_publication = '{_query}'"
+            if float_type:
+                start_query = start_query + '' \
+                              + f"union all select * from public.dnazyme where dnazyme.activity = '{_query}'"
+            # start_query = start_query + '' \
+            #                   + f"union all select * from public.dnazyme"
+            filtered_model = MainDnaDataBase.objects.raw(start_query)
+            output_fin = serializers.serialize("python", filtered_model)
+            if len(output_fin) == 0:
+                output_fin = serializers.serialize("python", full_model)
+        except:
             output_fin = serializers.serialize("python", full_model)
     return output_fin
 
