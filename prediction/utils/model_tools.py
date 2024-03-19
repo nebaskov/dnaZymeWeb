@@ -155,7 +155,7 @@ def get_descriptors(
     return descriptors
 
 
-def make_prediction(descriptors: pd.DataFrame) -> float:
+def make_prediction(descriptors: pd.DataFrame) -> (float, int):
     model = joblib.load(
         os.path.join(MAIN_MODELS_PATH, 'kobs_model.pkl')
     )
@@ -168,4 +168,12 @@ def make_prediction(descriptors: pd.DataFrame) -> float:
     }
     descriptors.rename(columns=feature_renaming, inplace=True)
     prediction = model.predict(descriptors[ALL_FEATURES])
-    return round(prediction[0], 4)
+    real_kobs = 10**prediction[0]
+    n = 0
+    while int(real_kobs) == 0:
+        real_kobs *= 10
+        n += 1
+    if n == 1:
+        real_kobs /= 10
+        n -= 1
+    return round(real_kobs, 2), n

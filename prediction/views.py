@@ -32,8 +32,10 @@ def prediction(request):
             descriptors = get_descriptors(user_input=user_input)
             seq_properties = get_seq_properties(user_input.get('sequence'))
 
+            kobs_result, power = make_prediction(descriptors)
             context = {
-                'result': make_prediction(descriptors),
+                'result': kobs_result,
+                'power': power,
                 'buffer': process_buffer(user_input),
                 'clones': get_clones(user_input.get('sequence')),
                 'structure': plot_structure(user_input.get('sequence'))
