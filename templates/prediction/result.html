@@ -19,12 +19,12 @@
 .all_m_block {
     background-image: url('{% static '/main/img/calculate_result.png' %}');
     width:99.7%;
-	height:180vh;
+	height:179vh;
     background-size: 100% 100%;
 }
 .main_result {
 	width:80vw;
-	height:180vh;
+	height:179vh;
 	position:absolute;
     left: 5vw;
 }
@@ -242,7 +242,7 @@
 }
 .paint_structure_rect {
 	background-color:#E0E2F0;
-	width:80vw;
+	width:77vw;
 	height:80vh;
     margin-top:1vh;
     display: flex;
@@ -250,14 +250,14 @@
 }
 .paint_structure_rect_white {
 	background-color:#FFFFFF;
-	width:79vw;
+	width:76vw;
 	height:78vh;
     position: relative;
     top: 1vh;
 }
 .paint_structure_text {
     background-color:#E0E2F0;
-	width:30vw;
+	width:27vw;
 	height:64vh;
     margin-top:7vh;
     margin-left: 3vw;
@@ -266,14 +266,19 @@
     max-width:39.5vw;
 	max-height:64vh;
 }
-.sequence_structure_paint_block {
+.sequence_structure_paint_static_block {
     position: absolute;
     top:7vh;
-    left: 36vw;
+    left: 33vw;
+    width:39.5vw;
+	height:64vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sequence_structure_paint_block {
     max-width:39.5vw;
 	max-height:64vh;
-    display: flex;
-    justify-content: center;
 }
 .results_backgroud {
 	height:180vh;
@@ -281,7 +286,6 @@
     width: 99.7vw;
 }
 </style>
-{#<img src="{% static '/main/img/calculate_result.png' %}" alt="background_ctb" class="results_backgroud">#}
 <div class="all_m_block">
 <div class=main_result>
   <div class=candidate_info>
@@ -358,9 +362,12 @@
                 <div class="paint_structure_text">
 
                 </div>
-                <div class="sequence_structure_paint_block">
-                    <img src="data:image/png;base64, {{ structure|safe }}" alt="background_ctb" class="sequence_structure_paint">
+                <div class="sequence_structure_paint_static_block">
+                    <div class="sequence_structure_paint_block">
+                        <img src="data:image/png;base64, {{ structure|safe }}" alt="background_ctb" class="sequence_structure_paint">
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

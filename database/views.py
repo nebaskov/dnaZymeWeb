@@ -87,8 +87,14 @@ def sorting_query_database(request):
         filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by activity asc")
     if 'sort_by_activity_down' in request.POST.keys():
         filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by activity desc")
-    if 'sort_by_yop_up' in request.POST.keys():
-        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by year_of_publication asc")
-    if 'sort_by_yop_down' in request.POST.keys():
-        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by year_of_publication desc")
+    if 'sort_by_temperature_up' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by temperature asc")
+    if 'sort_by_temperature_down' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw("select * from public.dnazyme order by temperature desc")
+    if 'sort_by_metal_ions_up' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw(
+            "select * from public.dnazyme order by metal_ions asc")
+    if 'sort_by_metal_ions_down' in request.POST.keys():
+        filtered_model = MainDnaDataBase.objects.raw(
+            "select * from public.dnazyme order by metal_ions desc")
     return serializers.serialize("python", filtered_model)
