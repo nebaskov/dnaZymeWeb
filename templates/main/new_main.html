@@ -13,8 +13,8 @@
 
 
 <head>
-<link type="image/x-icon" href="/static/main/img/favicon.ico" rel="shortcut icon">
-<link type="Image/x-icon" href="/static/main/img/favicon.ico" rel="icon">
+{#<link type="image/x-icon" href="/static/main/img/favicon.ico" rel="shortcut icon">#}
+{#<link type="Image/x-icon" href="/static/main/img/favicon.ico" rel="icon">#}
     <title>Home</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="dnkzyme">
@@ -535,6 +535,35 @@
     width: 99vw;
     height: 275vh;
 }
+.container_cont {
+    width: 99vw;
+    height:15vh;
+    background-color: #FFFFFF;
+    position:absolute;
+	top:550vh;
+    display: grid;
+    grid-template-columns: 20vw 1fr 20vw;
+}
+.logo_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+}
+.scamt_logo {
+    height: 10vh;
+
+}
+.itmo_logo {
+    height: 10vh;
+    grid-column: span 10;
+}
+p {
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    margin: 0;
+}
 </style>
 <div class=e1_4>
     <div class="start_title_bl">
@@ -619,7 +648,18 @@
             </div>
         </div>
     </div>
-
+</div>
+<div class="container_cont">
+  <a href="https://scamt.ifmo.ru/" class="logo_a">
+    <img src="{% static '/main/img/scamt.jpg' %}" class="scamt_logo">
+  </a>
+  <p class="footer__credits">
+    For all technical questions: serov@scamt-itmo.ru, eremeeva_maria@scamt-itmo.ru<br>
+    Laboratory head: Dr. Vladimir V. Vinogradov
+  </p>
+  <a href="https://itmo.ru/en" class="logo_a">
+    <img src="{% static '/main/img/logo_osnovnoy_angliyskiy_chernyy.png' %}" class="itmo_logo">
+  </a>
 </div>
 {% endblock %}
 </html>
